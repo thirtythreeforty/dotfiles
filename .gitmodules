@@ -6,16 +6,16 @@
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/file-line"]
 	path = vim/bundle/file-line
-	url = git@github.com:bogado/file-line.git
+	url = https://github.com/bogado/file-line.git
 [submodule "vim/bundle/lessspace.vim"]
 	path = vim/bundle/lessspace.vim
-	url = git@github.com:thirtythreeforty/lessspace.vim.git
+	url = https://github.com/thirtythreeforty/lessspace.vim.git
 [submodule "vim/bundle/linediff.vim"]
 	path = vim/bundle/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim.git
 [submodule "vim/bundle/rust.vim"]
 	path = vim/bundle/rust.vim
-	url = git://github.com/rust-lang/rust.vim.git
+	url = https://github.com/rust-lang/rust.vim.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
