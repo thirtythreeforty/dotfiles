@@ -23,3 +23,4 @@ That said, there are a couple hooks present in case you have machine-specific th
 
  - `.bashrc_local`: For Bash.  Runs after the main `.bashrc` script.
  - `.vimrc_local`: For Vim.  Runs after the main `.vimrc` config is parsed and after all plugins are loaded.
+ - `.gitconfig_local`: For Git.  Loaded after the main `.gitconfig` is parsed.
