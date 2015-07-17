@@ -1,3 +1,14 @@
 - clean: []
-- link: {}
+- link:
+    .bashrc:
+        relink: true
+        path: bashrc
+    .vim:
+        relink: true
+        path: vim/
+    .vimrc:
+        relink: true
+        path: vimrc
+    bin: bin/
+
 - shell: []
