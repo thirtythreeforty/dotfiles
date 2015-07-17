@@ -8,11 +8,15 @@ fi
 [[ $- != *i* ]] && return
 
 # Color prompt with Git branch
-source /usr/share/git/git-prompt.sh
-PS1='\[\e[1;32m\][\u@\h \W\[\033[1;36m\]$(__git_ps1)\[\033[1;32m\]]\$\[\e[0m\] '
+if [ -f /usr/share/git/git-prompt.sh ]; then
+    source /usr/share/git/git-prompt.sh
+    PS1='\[\e[1;32m\][\u@\h \W\[\033[1;36m\]$(__git_ps1)\[\033[1;32m\]]\$\[\e[0m\] '
+fi
 
 # CNF
-source /usr/share/doc/pkgfile/command-not-found.bash
+if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
+    source /usr/share/doc/pkgfile/command-not-found.bash
+fi
 
 # Editor
 export EDITOR="vim"
