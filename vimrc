@@ -8,10 +8,10 @@ set showmode
 set autoread
 
 set background=dark
-highlight Comment ctermfg=darkgray
+highlight Comment ctermfg=244
 highlight SpecialKey ctermfg=darkgrey
 
-:set ttimeoutlen=20
+set ttimeoutlen=20
 
 set number
 
@@ -87,6 +87,9 @@ cabbrev qqq qall!
 " Reload in DOS line ending mode
 cabbrev edos :e ++ff=dos
 cabbrev eunix :e ++ff=unix
+
+" Ctrl-Space should do same as Ctrl-P: completion
+inoremap <Nul> <C-P>
 
 " Unhighlight with <Leader>/
 nnoremap <silent> <Leader>/ :noh<CR>
