@@ -162,3 +162,7 @@ let g:ycm_enable_diagnostic_highlighting = 0
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
 
+" Local hook:
+if filereadable(glob("~/.vimrc_local"))
+	source ~/.vimrc.local
+endif
