@@ -9,6 +9,8 @@
     .vimrc:
         relink: true
         path: vimrc
+    .git_template: git_template
+    .gitconfig: gitconfig
     bin: bin/
 
 - shell: []

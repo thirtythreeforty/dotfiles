@@ -1,0 +1,31 @@
+[user]
+	email = gh403@msstate.edu
+	name = George Hilliard
+[alias]
+	unstage = reset HEAD --
+	visual = !gitk --all
+	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+	st = status
+	co = checkout
+	ci = commit
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --all
+	amend = commit --amend -C HEAD
+	ignore = "!f() { curl http://www.gitignore.io/api/$@ ;}; f >> .gitignore"
+[diff]
+	algorithm = patience
+	tool = xxdiff
+[color]
+	ui = true
+[gui]
+	historybrowser = gitk
+[push]
+	default = simple
+[fetch]
+	prune = true
+[core]
+	excludesfile = /home/georgev/.gitignore_global
+[rerere]
+	enabled = true
+[init]
+	templatedir = ~/.git_template
