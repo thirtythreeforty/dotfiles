@@ -68,7 +68,7 @@ alias ls='ls --color=auto'
 # Convenient and more memorable alias for combine (from moreutils)
 alias _=combine
 
-export PATH=~/bin:$PATH
+export PATH=~/bin:~/bin_local:$PATH
 
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
 alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;\$!ba;s/\n/ /g')"
