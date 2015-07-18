@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Get real path
+SCRIPTPATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )"
+DOTFILESDIR="$(dirname "$SCRIPTPATH")"
+
+REPOPATH="${@}"
+REPONAME="$(basename $REPOPATH)"
+
+pushd ${DOTFILESDIR} > /dev/null
+	git submodule add "$REPOPATH" "./vim/bundle/$REPONAME"
+	git submodule update
+popd > /dev/null
