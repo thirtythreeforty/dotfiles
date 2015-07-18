@@ -14,6 +14,8 @@ You can copy and paste:
     git clone https://github.com/thirtythreeforty/dotfiles
     dotfiles/install
 
+You should be able to pull all changes by simply rerunning the installer script.
+
 ## Customization
 
 I don't provide many hooks for further customization; I'm a firm believer that dotfiles should be personal.
