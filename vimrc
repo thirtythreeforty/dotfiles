@@ -8,8 +8,11 @@ set showmode
 set autoread
 
 set background=dark
+set cursorline
 highlight Comment ctermfg=244
 highlight SpecialKey ctermfg=darkgrey
+highlight CursorLine cterm=NONE ctermbg=235
+highlight Search cterm=NONE ctermfg=white ctermbg=blue
 
 set ttimeoutlen=20
 
@@ -58,9 +61,6 @@ let mapleader = ","
 " Search but don't jump
 nnoremap <leader>* *``
 nnoremap <leader># #``
-
-" Better highlighting
-highlight Search cterm=NONE ctermfg=white ctermbg=blue
 
 au BufRead,BufNewFile *.md set filetype=markdown
 syntax enable
