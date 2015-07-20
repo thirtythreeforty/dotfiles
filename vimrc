@@ -81,6 +81,9 @@ vnoremap < <gv
 " Disable Ex mode
 nnoremap Q <nop>
 
+" Make Y yank to end of line (as suggested by Vim help)
+:noremap Y y$
+
 " Force quit with qq (easier to type)
 cabbrev qq q!
 cabbrev qqq qall!
