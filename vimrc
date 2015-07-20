@@ -9,6 +9,7 @@ set autoread
 
 set background=dark
 set cursorline
+set lazyredraw
 highlight Comment ctermfg=244
 highlight SpecialKey ctermfg=darkgrey
 highlight CursorLine cterm=NONE ctermbg=235
