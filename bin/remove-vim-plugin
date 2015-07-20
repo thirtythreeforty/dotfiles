@@ -5,6 +5,7 @@ SCRIPTPATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )"
 DOTFILESDIR="$(dirname "$SCRIPTPATH")"
 
 REPONAME="$(basename ${@})"
+REPONAME=${REPONAME%%.git}
 
 pushd ${DOTFILESDIR} > /dev/null
 	git submodule deinit -f "./vim/bundle/$REPONAME"

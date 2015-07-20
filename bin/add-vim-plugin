@@ -6,6 +6,7 @@ DOTFILESDIR="$(dirname "$SCRIPTPATH")"
 
 REPOPATH="${@}"
 REPONAME="$(basename $REPOPATH)"
+REPONAME=${REPONAME%%.git}
 
 pushd ${DOTFILESDIR} > /dev/null
 	git submodule add "$REPOPATH" "./vim/bundle/$REPONAME"
