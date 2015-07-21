@@ -116,6 +116,12 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 execute pathogen#helptags()
 
+" Colorscheme is PaperColor, but change the background
+let g:PaperColor_Dark_Override = {
+	\ 'background': '#000000',
+\ }
+colorscheme PaperColor
+
 " Display Airline
 set laststatus=2
 " But the bufferline integration is annoying
