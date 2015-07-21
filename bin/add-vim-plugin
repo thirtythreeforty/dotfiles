@@ -10,5 +10,5 @@ REPONAME=${REPONAME%%.git}
 
 pushd ${DOTFILESDIR} > /dev/null
 	git submodule add "$REPOPATH" "./vim/bundle/$REPONAME"
-	git submodule update
+	git submodule update --init --recursive
 popd > /dev/null
