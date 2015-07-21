@@ -92,9 +92,6 @@ cabbrev qqq qall!
 cabbrev edos :e ++ff=dos
 cabbrev eunix :e ++ff=unix
 
-" Ctrl-Space should do same as Ctrl-P: completion
-inoremap <Nul> <C-P>
-
 " Unhighlight with <Leader>/
 nnoremap <silent> <Leader>/ :noh<CR>
 
@@ -162,7 +159,8 @@ let g:SignatureMarkTextHLDynamic = 1
 let g:startify_custom_header = map(split(system('fortune'), '\n'), '"   ". v:val') + ['','']
 
 " Wrestle YouCompleteMe into behaving
-let g:ycm_auto_trigger = 0
+" Effectively disable the identifier popup, and disable some highlighting
+let g:ycm_min_num_of_chars_for_completion = 99
 let g:ycm_enable_diagnostic_highlighting = 0
 
 " Make Syntastic use C++11
