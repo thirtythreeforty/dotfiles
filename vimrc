@@ -170,6 +170,7 @@ let g:ycm_min_num_of_chars_for_completion = 99
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+set completeopt-=preview
 
 " Make Syntastic use C++11
 let g:syntastic_cpp_compiler = 'clang++'
