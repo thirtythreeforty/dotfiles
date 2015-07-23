@@ -9,7 +9,6 @@ set autoread
 
 set background=dark
 set cursorline
-set lazyredraw
 highlight Comment ctermfg=244
 highlight SpecialKey ctermfg=darkgrey
 highlight CursorLine cterm=NONE ctermbg=235
@@ -158,8 +157,23 @@ highlight LineNr ctermfg=DarkGrey
 " CtrlPTag with <leader>.
 nnoremap <leader>. :CtrlPTag<cr>
 
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
 " Color gutter marks appropriately in vim-signature
 let g:SignatureMarkTextHLDynamic = 1
+
+" Disable gitgutter key bindings
+let g:gitgutter_map_keys = 0
 
 " Startify fortune!
 let g:startify_custom_header = map(split(system('fortune'), '\n'), '"   ". v:val') + ['','']
@@ -178,5 +192,5 @@ let g:syntastic_cpp_compiler_options = ' -std=c++14'
 
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
-	source ~/.vimrc.local
+	source ~/.vimrc_local
 endif
