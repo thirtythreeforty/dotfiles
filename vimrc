@@ -193,6 +193,12 @@ set completeopt-=preview
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
 
+" Goyo and Limelight for anti-distraction writing
+let g:goyo_width=100
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+nnoremap <F12> :Goyo<CR>
+
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
 	source ~/.vimrc_local
