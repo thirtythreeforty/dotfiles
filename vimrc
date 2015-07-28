@@ -70,8 +70,11 @@ nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " insert one character
-noremap \ i<Space><Esc>r
-noremap <C-\> a<Space><Esc>r
+function! RepeatChar(char, count)
+	return repeat(a:char, a:count)
+endfunction
+nnoremap \ :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap <C-\> :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 
 " Keep selection after (un)indent
 vnoremap > >gv
