@@ -3,6 +3,9 @@
     .bashrc:
         relink: true
         path: bashrc
+    .screenrc:
+        relink: true
+        path: screenrc
     .vim:
         relink: true
         path: vim/
