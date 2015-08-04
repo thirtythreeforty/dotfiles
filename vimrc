@@ -199,6 +199,13 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 nnoremap <F12> :Goyo<CR>
 
+" DetectIndent defaults to 8, but that's ridiculous
+let g:detectindent_preferred_indent = 4
+augroup DetectIndent
+	autocmd!
+	autocmd BufReadPost *  DetectIndent
+augroup end
+
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
 	source ~/.vimrc_local

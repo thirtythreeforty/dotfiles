@@ -43,9 +43,6 @@
 [submodule "vim/bundle/vim-signature"]
 	path = vim/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
-[submodule "vim/bundle/vim-sleuth"]
-	path = vim/bundle/vim-sleuth
-	url = https://github.com/tpope/vim-sleuth.git
 [submodule "vim/bundle/vim-startify"]
 	path = vim/bundle/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
@@ -74,3 +71,6 @@
 [submodule "vim/bundle/limelight.vim"]
 	path = vim/bundle/limelight.vim
 	url = https://github.com/junegunn/limelight.vim.git
+[submodule "vim/bundle/detectindent"]
+	path = vim/bundle/detectindent
+	url = https://github.com/roryokane/detectindent.git
