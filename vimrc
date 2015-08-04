@@ -25,17 +25,17 @@ set smartcase
 
 set wrap
 set linebreak
+set breakindent
+set autoindent
+set smartindent
 
 set mouse=a
 set mousefocus
 
-" The following settings are to configure the Sleuth plugin.
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-" These aren't needed because of Sleuth.  Usually.
-" set smartindent
-" set breakindent
+" These aren't needed because of DetectIndent.
+" set tabstop=4
+" set shiftwidth=4
+" set softtabstop=4
 " set expandtab
 
 set list listchars=tab:»\ ,trail:·
