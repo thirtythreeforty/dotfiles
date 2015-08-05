@@ -31,6 +31,8 @@ set smartindent
 
 set mouse=a
 set mousefocus
+" Make mouse work in Cygwin
+set ttymouse=xterm2
 
 " These aren't needed because of DetectIndent.
 " set tabstop=4
