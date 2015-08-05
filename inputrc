@@ -11,8 +11,9 @@ set completion-ignore-case on
 set editing-mode vi
 set show-mode-in-prompt on
 
-# Vi mode seems to mess up the C-x C-r binding
+# Vi mode seems to mess up some bindings that I like
 "\C-x\C-r": re-read-init-file
+"\C-l": clear-screen
 
 # Ctrl-backspace should do the same as Ctrl-W
 "\C-_": unix-filename-rubout
