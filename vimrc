@@ -67,6 +67,9 @@ nnoremap <leader># #``
 au BufRead,BufNewFile *.md set filetype=markdown
 syntax enable
 
+" Allow plugins to interact with filetypes!
+filetype plugin on
+
 " Ctrl-J and Ctrl-K insert blank lines, remaining in command mode
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
@@ -212,6 +215,21 @@ augroup DetectIndent
 	autocmd!
 	autocmd BufReadPost *  DetectIndent
 augroup end
+
+" Integrate YCM and VimTex, from the VimTex help file
+if !exists('g:ycm_semantic_triggers')
+	let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = [
+	\ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
+	\ ]
+
+" Prefer Okular for PDF viewing with VimTex
+if executable('okular')
+	let g:vimtex_view_general_viewer = 'okular'
+	let g:vimtex_view_general_options = '--unique @pdf\#src:@line@tex'
+	let g:vimtex_view_general_options_latexmk = '--unique'
+endif
 
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))

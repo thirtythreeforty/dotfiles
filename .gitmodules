@@ -74,6 +74,9 @@
 [submodule "vim/bundle/detectindent"]
 	path = vim/bundle/detectindent
 	url = https://github.com/roryokane/detectindent.git
+[submodule "vim/bundle/vimtex"]
+	path = vim/bundle/vimtex
+	url = https://github.com/lervag/vimtex
 [submodule "vim/bundle/targets.vim"]
 	path = vim/bundle/targets.vim
 	url = https://github.com/wellle/targets.vim
