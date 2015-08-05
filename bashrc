@@ -75,9 +75,6 @@ alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/u
 
 # Various shell settings:
 
-# Ctrl-W should rub out only to filename boundary
-set bind-tty-special-chars off
-bind '\C-w:unix-filename-rubout'
 
 # tabs should be 4 chars long
 tabs 4

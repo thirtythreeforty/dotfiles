@@ -1,0 +1,34 @@
+# Append "/" to all dirnames
+set mark-directories on
+set mark-symlinked-directories on
+
+# Recognize Ctrl-arrows
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+set completion-ignore-case on
+
+set editing-mode vi
+set show-mode-in-prompt on
+
+# Vi mode seems to mess up the C-x C-r binding
+"\C-x\C-r": re-read-init-file
+
+# Ctrl-backspace should do the same as Ctrl-W
+"\C-_": unix-filename-rubout
+
+# Ctrl-W should rub out only to filename boundary
+set bind-tty-special-chars off
+"\C-w": unix-filename-rubout
+
+# Turn on Magic Space in Bash
+$if Bash
+	Space: magic-space
+$endif
+
+# Alt-. doesn't work in Vi mode, but I like it
+# (Alternately, in normal mode, _ has the same effect)
+"\e.":yank-last-arg
+
+# Local customizations
+$include .inputrc_local

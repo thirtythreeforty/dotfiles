@@ -3,6 +3,9 @@
     .bashrc:
         relink: true
         path: bashrc
+    .inputrc:
+        relink: true
+        path: inputrc
     .screenrc:
         relink: true
         path: screenrc
