@@ -181,7 +181,9 @@ let g:SignatureMarkTextHLDynamic = 1
 let g:gitgutter_map_keys = 0
 
 " Startify fortune!
-let g:startify_custom_header = map(split(system('fortune'), '\n'), '"   ". v:val') + ['','']
+if executable('fortune')
+	let g:startify_custom_header = map(split(system('fortune'), '\n'), '"   ". v:val') + ['','']
+endif
 
 " Wrestle YouCompleteMe into behaving
 " Effectively disable the identifier popup, and disable some highlighting
