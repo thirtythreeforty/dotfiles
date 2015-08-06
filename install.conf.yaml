@@ -15,6 +15,9 @@
     .vimrc:
         relink: true
         path: vimrc
+    .Xmodmap:
+        relink: true
+        path: Xmodmap
     .git_template: git_template
     .gitconfig: gitconfig
     bin: bin/
