@@ -25,9 +25,12 @@ set smartcase
 
 set wrap
 set linebreak
-set breakindent
 set autoindent
 set smartindent
+" Some older versions of Vim don't have this
+if exists('&breakindent')
+	set breakindent
+endif
 
 set mouse=a
 set mousefocus
@@ -113,9 +116,10 @@ nnoremap <Space> :
 " Don't litter the working directory with .swp files
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
-set undodir=~/.vim/undo//
-
-set undofile
+if exists('&undofile')
+	set undodir=~/.vim/undo//
+	set undofile
+endif
 
 " Plugin time!
 
