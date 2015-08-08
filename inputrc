@@ -8,6 +8,8 @@ set mark-symlinked-directories on
 
 set completion-ignore-case on
 
+# NOTE: make sure the terminal emulator is set to XFree4 mode,
+# or you will have a bad time with fancy things like Home and End.
 set editing-mode vi
 set show-mode-in-prompt on
 
