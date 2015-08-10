@@ -5,6 +5,8 @@ set mark-symlinked-directories on
 # Recognize Ctrl-arrows
 "\e[1;5C": forward-word
 "\e[1;5D": backward-word
+"\e[C": forward-word
+"\e[D": backward-word
 
 set completion-ignore-case on
 
