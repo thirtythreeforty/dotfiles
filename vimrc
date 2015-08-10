@@ -108,8 +108,9 @@ nnoremap <silent> <Leader>/ :noh<CR>
 " Toggle expandtab with <Leader>-Tab
 noremap <Leader><Tab> :set expandtab!<CR>
 
-" Delete previous word
+" Delete previous word with Ctrl-Backspace
 imap <C-BS> <C-W>
+imap <C-_> <C-W>
 
 nnoremap <Space> :
 
