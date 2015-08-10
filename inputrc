@@ -2,20 +2,21 @@
 set mark-directories on
 set mark-symlinked-directories on
 
-# Recognize Ctrl-arrows
-"\e[1;5C": forward-word
-"\e[1;5D": backward-word
-
 set completion-ignore-case on
 
 # NOTE: make sure the terminal emulator is set to XFree4 mode,
 # or you will have a bad time with fancy things like Home and End.
+# Also make sure that you don't rebind any keys before this line.
 set editing-mode vi
 set show-mode-in-prompt on
 
 # Vi mode seems to mess up some bindings that I like
 "\C-x\C-r": re-read-init-file
 "\C-l": clear-screen
+
+# Recognize Ctrl-arrows
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
 
 # Ctrl-backspace should do the same as Ctrl-W
 "\C-_": unix-filename-rubout
