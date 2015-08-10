@@ -68,6 +68,9 @@ alias ls='ls --color=auto'
 # Convenient and more memorable alias for combine (from moreutils)
 alias _=combine
 
+# Less should scroll with the mouse wheel
+export LESS="$LESS -r"
+
 export PATH=~/bin:~/bin_local:$PATH
 
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
