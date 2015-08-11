@@ -20,6 +20,7 @@ set show-mode-in-prompt on
 
 # Ctrl-backspace should do the same as Ctrl-W
 "\C-_": unix-filename-rubout
+"\e[9;5~": unix-filename-rubout
 
 # Ctrl-W should rub out only to filename boundary
 set bind-tty-special-chars off
