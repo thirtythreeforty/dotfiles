@@ -9,6 +9,9 @@
     .inputrc:
         relink: true
         path: inputrc
+    .minttyrc:
+        relink: true
+        path: minttyrc
     .screenrc:
         relink: true
         path: screenrc
