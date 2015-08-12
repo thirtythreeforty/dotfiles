@@ -60,10 +60,6 @@ set hidden
 set splitbelow
 set splitright
 
-" Close buffer without closing window with :bc
-command! BufferCloseKeepWindow bp|bd #
-cabbrev bc BufferCloseKeepWindow
-
 " Set leader to ,
 let mapleader = ","
 
@@ -245,6 +241,9 @@ endif
 
 " Integrate Racer and YCM
 let g:ycm_semantic_triggers.rust = [ '->', '.', '::' ]
+
+" Close buffer without closing window with :bc
+cabbrev bc Sayonara!
 
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
