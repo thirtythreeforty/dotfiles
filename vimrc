@@ -116,6 +116,8 @@ noremap <Leader><Tab> :set expandtab!<CR>
 imap <C-BS> <C-W>
 imap <C-_> <C-W>
 
+inoremap <S-Tab> <C-D>
+
 nnoremap <Space> :
 
 " Don't litter the working directory with .swp files
@@ -203,6 +205,7 @@ let g:ycm_min_num_of_chars_for_completion = 99
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 set completeopt-=preview
 
 " Make Syntastic use C++11
