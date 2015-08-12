@@ -240,6 +240,9 @@ if executable('okular')
 	let g:vimtex_view_general_options_latexmk = '--unique'
 endif
 
+" Integrate Racer and YCM
+let g:ycm_semantic_triggers.rust = [ '->', '.', '::' ]
+
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
 	source ~/.vimrc_local
