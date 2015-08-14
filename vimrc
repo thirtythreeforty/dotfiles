@@ -7,6 +7,9 @@ set showcmd
 set showmode
 set autoread
 
+scriptencoding utf-8
+set encoding=utf-8
+
 set background=dark
 set cursorline
 set guicursor+=a:blinkon0
