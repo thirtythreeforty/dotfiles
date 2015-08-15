@@ -90,3 +90,9 @@
 	path = vim/bundle/vim-sayonara
 	url = https://github.com/mhinz/vim-sayonara.git
 	ignore = dirty
+[submodule "vim/bundle/SimpylFold"]
+	path = vim/bundle/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git
+[submodule "vim/bundle/vim-toml"]
+	path = vim/bundle/vim-toml
+	url = https://github.com/cespare/vim-toml
