@@ -12,6 +12,12 @@
     .minttyrc:
         relink: true
         path: minttyrc
+    .nvim:
+        relink: true
+        path: vim/
+    .nvimrc:
+        relink: true
+        path: nvimrc
     .screenrc:
         relink: true
         path: screenrc

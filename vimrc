@@ -38,8 +38,10 @@ endif
 
 set mouse=a
 set mousefocus
-" Make mouse work in Cygwin
-set ttymouse=xterm2
+" Make mouse work in Cygwin, but only in Vim, not Neovim
+if !has('nvim')
+	set ttymouse=xterm2
+endif
 
 " These aren't needed because of DetectIndent.
 " set tabstop=4
