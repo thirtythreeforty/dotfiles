@@ -43,10 +43,10 @@ if !has('nvim')
 	set ttymouse=xterm2
 endif
 
-" These aren't needed because of DetectIndent.
-" set tabstop=4
-" set shiftwidth=4
-" set softtabstop=4
+" Help DetectIndent with some defaults
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 " set expandtab
 
 set list listchars=tab:»\ ,trail:·
