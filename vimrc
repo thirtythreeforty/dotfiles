@@ -246,6 +246,10 @@ let g:ycm_semantic_triggers.rust = [ '->', '.', '::' ]
 " Close buffer without closing window with :bc
 cabbrev bc Sayonara!
 
+" SimpylFold wants these :|
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
 	source ~/.vimrc_local
