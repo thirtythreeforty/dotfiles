@@ -168,6 +168,7 @@ let g:airline_powerline_fonts=1
 " Configure gutter a bit
 highlight clear SignColumn
 highlight LineNr ctermfg=DarkGrey
+let g:gitgutter_sign_column_always = 1
 
 " CtrlPTag with <leader>.
 nnoremap <leader>. :CtrlPTag<cr>
