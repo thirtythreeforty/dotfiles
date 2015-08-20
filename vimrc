@@ -94,7 +94,12 @@ vnoremap < <gv
 nnoremap Q <nop>
 
 " Make Y yank to end of line (as suggested by Vim help)
-:noremap Y y$
+noremap Y y$
+
+" in normal mode F2 will save the file
+nmap <F2> :w<CR>
+" in insert mode F2 will exit insert, save, enters insert again
+imap <F2> <ESC>:w<CR>i
 
 " Force quit with qq (easier to type)
 cabbrev qq q!
