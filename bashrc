@@ -21,8 +21,16 @@ fi
 # Editor
 export EDITOR="vim"
 
-# List largest files
-alias ducks='du -cksh *|sort -rh|head -11'
+# List largest files, with optional list of files
+function ducks() {
+    local files=("${@}")
+    if [ ${#files[@]} -eq 0 ]; then
+        files=(*);
+    fi
+    du -cksh "${files[@]}" | sort -rh |
+        ( [ ${#@} -eq 0 ] && head -11 || cat ) |
+        sed '0,/$/{s/$/\n/}'
+}
 
 function ups() {
     if [ $# -eq 0 ]; then
