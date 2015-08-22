@@ -72,6 +72,7 @@ alias .....='cd ../../../../'
 alias dammit='sudo $(history -p \!\!)'
 function mdcd() { if [ -z "$1" ]; then return; fi; mkdir "$1"; cd "$1"; }
 alias ls='ls --color=auto'
+alias ll='ls -lh'
 
 # Convenient and more memorable alias for combine (from moreutils)
 alias _=combine
