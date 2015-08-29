@@ -26,6 +26,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+set wildignorecase
 
 set wrap
 set linebreak
