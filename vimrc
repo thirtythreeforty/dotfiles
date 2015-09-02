@@ -6,6 +6,7 @@ set backspace=indent,eol,start
 set showcmd
 set showmode
 set autoread
+set autochdir
 
 scriptencoding utf-8
 set encoding=utf-8
