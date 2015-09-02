@@ -200,8 +200,8 @@ if executable('fortune')
 endif
 
 " Wrestle YouCompleteMe into behaving
-" Effectively disable the identifier popup, and disable some highlighting
-let g:ycm_min_num_of_chars_for_completion = 99
+" Tweak the identifier popup, and disable some highlighting
+let g:ycm_min_num_of_chars_for_completion = 4
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1

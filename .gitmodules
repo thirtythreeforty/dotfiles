@@ -99,3 +99,6 @@
 [submodule "git-remote-hg"]
 	path = git-remote-hg
 	url = https://github.com/fingolfin/git-remote-hg.git
+[submodule "vim/bundle/vimomni.vim"]
+	path = vim/bundle/vimomni.vim
+	url = https://github.com/c9s/vimomni.vim.git
