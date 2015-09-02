@@ -68,8 +68,8 @@ set splitright
 let mapleader = ","
 
 " Search but don't jump
-nnoremap <leader>* *``
-nnoremap <leader># #``
+nnoremap <leader>* :let b:wv = winsaveview()<CR>*``:call winrestview(b:wv)<CR>
+nnoremap <leader># :let b:wv = winsaveview()<CR>#``:call winrestview(b:wv)<CR>
 
 au BufRead,BufNewFile *.md set filetype=markdown
 syntax enable
