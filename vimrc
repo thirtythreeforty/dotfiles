@@ -14,6 +14,7 @@ set encoding=utf-8
 set background=dark
 set cursorline
 set guicursor+=a:blinkon0
+set guifont=Inconsolata-g\ for\ Powerline\ 12
 highlight Comment ctermfg=244
 highlight SpecialKey ctermfg=darkgrey
 highlight CursorLine cterm=NONE ctermbg=235
@@ -224,6 +225,8 @@ nnoremap <F12> :Goyo<CR>
 
 " DetectIndent defaults to 8, but that's ridiculous
 let g:detectindent_preferred_indent = 4
+let g:detectindent_min_indent = 2
+let g:detectindent_max_indent = 8
 augroup DetectIndent
 	autocmd!
 	autocmd BufReadPost *  DetectIndent
