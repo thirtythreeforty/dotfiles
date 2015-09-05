@@ -208,6 +208,9 @@ let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
+if !exists('g:ycm_semantic_triggers')
+	let g:ycm_semantic_triggers = {}
+endif
 set completeopt-=preview
 
 " Make Syntastic use C++11
@@ -233,9 +236,6 @@ augroup DetectIndent
 augroup end
 
 " Integrate YCM and VimTex, from the VimTex help file
-if !exists('g:ycm_semantic_triggers')
-	let g:ycm_semantic_triggers = {}
-endif
 let g:ycm_semantic_triggers.tex = [
 	\ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
 	\ ]
