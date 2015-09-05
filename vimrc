@@ -121,9 +121,9 @@ inoremap <S-Tab> <C-D>
 
 nnoremap <Space> :
 
-" Don't litter the working directory with .swp files
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
+" Don't use swap files.  Move other files to ~/.vim
+set swapfile!
+set backupdir+=~/.vim/backup//
 if exists('&undofile')
 	set undodir=~/.vim/undo//
 	set undofile
