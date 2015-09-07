@@ -6,6 +6,9 @@
     .bashrc:
         relink: true
         path: bashrc
+    .emacs:
+        relink: true
+        path: emacs
     .inputrc:
         relink: true
         path: inputrc
