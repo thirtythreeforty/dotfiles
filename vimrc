@@ -93,8 +93,18 @@ nnoremap <C-\> :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR
 vnoremap > >gv
 vnoremap < <gv
 
-" Disable Ex mode
-nnoremap Q <nop>
+" Disable Ex mode, replace it with Execute current line in Vimscript
+" GetVisual() needs some work to correctly integrate it.
+function! GetVisual()
+	let [lnum1, col1] = getpos("'<")[1:2]
+	let [lnum2, col2] = getpos("'>")[1:2]
+	let lines = getline(lnum1, lnum2)
+	let lines[-1] = lines[-1][:col2 - (&selection == 'inclusive' ? 1 : 2)]
+	let lines[0] = lines[0][col1 - 1:]
+	return join(lines, "\n")
+endfunction
+nnoremap Q :execute getline(".")<CR>
+" vnoremap Q :<BS><BS><BS><BS><BS>:execute GetVisual()<CR>
 
 " Make Y yank to end of line (as suggested by Vim help)
 :noremap Y y$
@@ -212,6 +222,9 @@ if !exists('g:ycm_semantic_triggers')
 	let g:ycm_semantic_triggers = {}
 endif
 set completeopt-=preview
+" Bind YCM's GoTo to something useful: currently the brain-dead `gd`
+" function does nothing useful most of the time
+nnoremap gt :YcmCompleter GoTo<CR>
 
 " Make Syntastic use C++11
 let g:syntastic_cpp_compiler = 'clang++'
@@ -252,6 +265,9 @@ let g:ycm_semantic_triggers.rust = [ '->', '.', '::' ]
 
 " Close buffer without closing window with :bc
 cabbrev bc Sayonara!
+
+" Git status with gs
+nnoremap gs :Gstatus<CR>
 
 " SimpylFold wants these :|
 autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
