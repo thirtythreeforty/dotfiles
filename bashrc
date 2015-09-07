@@ -19,7 +19,11 @@ if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
 fi
 
 # Editor
-export EDITOR="vim"
+if [ $(which nvim) ]; then
+    export EDITOR="nvim"
+else
+    export EDITOR="vim"
+fi
 
 # List largest files, with optional list of files
 function ducks() {
