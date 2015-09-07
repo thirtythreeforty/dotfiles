@@ -14,7 +14,7 @@ set encoding=utf-8
 set background=dark
 set cursorline
 set guicursor+=a:blinkon0
-set guifont=Inconsolata-g\ for\ Powerline\ 12
+set guifont=Inconsolata-g\ for\ Powerline\ 11
 highlight Comment ctermfg=244
 highlight SpecialKey ctermfg=darkgrey
 highlight CursorLine cterm=NONE ctermbg=235
