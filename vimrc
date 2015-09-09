@@ -73,6 +73,7 @@ nnoremap <leader>* :let b:wv = winsaveview()<CR>*``:call winrestview(b:wv)<CR>
 nnoremap <leader># :let b:wv = winsaveview()<CR>#``:call winrestview(b:wv)<CR>
 
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.tex set filetype=tex
 syntax enable
 
 " Allow plugins to interact with filetypes!
@@ -252,6 +253,9 @@ augroup end
 let g:ycm_semantic_triggers.tex = [
 	\ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
 	\ ]
+
+" Use XeLaTeX
+let g:vimtex_latexmk_options = "-pdf -xelatex"
 
 " Prefer Okular for PDF viewing with VimTex
 if executable('okular')
