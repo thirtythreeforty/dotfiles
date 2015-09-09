@@ -19,3 +19,12 @@
 
 ; No blinking cursor
 (blink-cursor-mode 0)
+
+; Ido mode
+(ido-mode 1)
+
+; Inhibit the default messages
+(setq inhibit-startup-message t
+      inhibit-startup-echo-area-message t)
+
+(setq default-tab-width 4)
