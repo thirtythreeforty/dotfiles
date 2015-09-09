@@ -189,6 +189,9 @@ let g:gitgutter_sign_column_always = 1
 " CtrlPTag with <leader>.
 nnoremap <leader>. :CtrlPTag<cr>
 
+" CtrlP should not recurse ad nauseum
+let g:ctrlp_max_depth = 15
+
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
 	" Use Ag over Grep
