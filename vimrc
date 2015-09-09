@@ -104,8 +104,7 @@ function! GetVisual()
 	let lines[0] = lines[0][col1 - 1:]
 	return join(lines, "\n")
 endfunction
-nnoremap Q :execute getline(".")<CR>
-" vnoremap Q :<BS><BS><BS><BS><BS>:execute GetVisual()<CR>
+nnoremap Q :execute getline(".") <bar> echom getline(".")<CR>
 
 " Make Y yank to end of line (as suggested by Vim help)
 :noremap Y y$
