@@ -132,6 +132,10 @@ inoremap <S-Tab> <C-D>
 
 nnoremap <Space> :
 
+" Exit insert mode with jk or kj chord
+inoremap jk <ESC>
+inoremap kj <ESC>
+
 " Don't use swap files.  Move other files to ~/.vim
 set swapfile!
 set backupdir+=~/.vim/backup//
