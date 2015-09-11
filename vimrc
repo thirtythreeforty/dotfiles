@@ -34,6 +34,7 @@ set wrap
 set linebreak
 set autoindent
 set smartindent
+set copyindent
 " Some older versions of Vim don't have this
 if exists('&breakindent')
 	set breakindent
