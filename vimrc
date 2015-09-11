@@ -107,6 +107,13 @@ command! -range ExecRange call ExecRange(<line1>, <line2>)
 nnoremap Q :ExecRange<CR>
 vnoremap Q :ExecRange<CR>
 
+" Break lines with K
+function! BreakHere()
+    s/^\(\s*\)\(.\{-}\)\(\s*\)\(\%#\)\(\s*\)\(.*\)/\1\2\r\1\4\6
+    call histdel("/", -1)
+endfunction
+nnoremap K :call BreakHere()<CR><F37>
+
 " Make Y yank to end of line (as suggested by Vim help)
 :noremap Y y$
 
