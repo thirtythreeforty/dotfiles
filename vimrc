@@ -97,17 +97,15 @@ nnoremap <C-\> :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR
 vnoremap > >gv
 vnoremap < <gv
 
-" Disable Ex mode, replace it with Execute current line in Vimscript
-" GetVisual() needs some work to correctly integrate it.
-function! GetVisual()
-	let [lnum1, col1] = getpos("'<")[1:2]
-	let [lnum2, col2] = getpos("'>")[1:2]
-	let lines = getline(lnum1, lnum2)
-	let lines[-1] = lines[-1][:col2 - (&selection == 'inclusive' ? 1 : 2)]
-	let lines[0] = lines[0][col1 - 1:]
-	return join(lines, "\n")
+" Disable Ex mode, replace it with Execute Lines in Vimscript
+function! ExecRange(line1, line2)
+	exec join(getline(a:line1, a:line2), "\n")
+	echom string(a:line2 - a:line1 + 1) . "L executed"
 endfunction
-nnoremap Q :execute getline(".") <bar> echom getline(".")<CR>
+command! -range ExecRange call ExecRange(<line1>, <line2>)
+
+nnoremap Q :ExecRange<CR>
+vnoremap Q :ExecRange<CR>
 
 " Make Y yank to end of line (as suggested by Vim help)
 :noremap Y y$
