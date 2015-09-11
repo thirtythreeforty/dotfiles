@@ -111,12 +111,12 @@ vnoremap Q :ExecRange<CR>
 :noremap Y y$
 
 " Force quit with qq (easier to type)
-cabbrev qq q!
-cabbrev qqq qall!
+cnoreabbrev qq q!
+cnoreabbrev qqq qall!
 
 " Reload in DOS line ending mode
-cabbrev edos :e ++ff=dos
-cabbrev eunix :e ++ff=unix
+cnoreabbrev edos :e ++ff=dos
+cnoreabbrev eunix :e ++ff=unix
 
 " Unhighlight with <Leader>/
 nnoremap <silent> <Leader>/ :noh<CR>
