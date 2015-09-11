@@ -74,6 +74,8 @@ nnoremap <leader># :let b:wv = winsaveview()<CR>#``:call winrestview(b:wv)<CR>
 
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.tex set filetype=tex
+au BufRead,BufNewFile SConstruct set filetype=python
+au BufRead,BufNewFile SConscript set filetype=python
 syntax enable
 
 " Allow plugins to interact with filetypes!
