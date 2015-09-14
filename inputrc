@@ -18,6 +18,10 @@ set show-mode-in-prompt on
 "\e[1;5C": forward-word
 "\e[1;5D": backward-word
 
+# Make PgUp and PgDn do something totally new
+"\e[5~": history-substring-search-backward
+"\e[6~": history-substring-search-forward
+
 # Ctrl-backspace should do the same as Ctrl-W
 "\C-_": unix-filename-rubout
 "\e[9;5~": unix-filename-rubout
