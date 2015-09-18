@@ -18,6 +18,10 @@ if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
     source /usr/share/doc/pkgfile/command-not-found.bash
 fi
 
+if [ -f /etc/profile.d/autojump.sh ]; then
+    source /etc/profile.d/autojump.sh
+fi
+
 # Editor
 if [ $(which nvim) ]; then
     export EDITOR="nvim"
