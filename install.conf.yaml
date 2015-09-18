@@ -9,6 +9,9 @@
     .emacs:
         relink: true
         path: emacs
+    .hgrc:
+        relink: true
+        path: hgrc
     .inputrc:
         relink: true
         path: inputrc

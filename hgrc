@@ -1,0 +1,7 @@
+[ui]
+username = George Hilliard <gh403@msstate.edu>
+
+[extensions]
+strip =
+prompt = ~/bin/prompt-hg.py
+

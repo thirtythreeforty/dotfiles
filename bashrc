@@ -7,11 +7,20 @@ fi
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Color prompt with Git branch
+# Color prompt with version control branch name
+__vcprompt=""
 if [ -f /usr/share/git/git-prompt.sh ]; then
     source /usr/share/git/git-prompt.sh
-    PS1='\[\e[1;32m\][\u@\h \W\[\033[1;36m\]$(__git_ps1)\[\033[1;32m\]]\$\[\e[0m\] '
+    __vcprompt="$__vcprompt"'$(__git_ps1)'
 fi
+if [ ! -z $(type -p hg) ]; then
+    __hg_ps1() {
+        hg prompt ' ({branch}{@{bookmark}})' 2> /dev/null
+    }
+    __vcprompt="$__vcprompt"'$(__hg_ps1)'
+fi
+echo $__vcprompt
+PS1='\[\e[1;32m\][\u@\h \W\[\033[1;36m\]'"$__vcprompt"'\[\033[1;32m\]]\$\[\e[0m\] '
 
 # CNF
 if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
