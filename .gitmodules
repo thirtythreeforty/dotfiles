@@ -81,7 +81,7 @@
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/racer"]
-	path = vim/bundle/racer
+	path = racer
 	url = https://github.com/phildawes/racer.git
 [submodule "vim/bundle/vim-sayonara"]
 	path = vim/bundle/vim-sayonara
@@ -108,3 +108,6 @@
 [submodule "vim/bundle/vim-plugin-AnsiEsc"]
 	path = vim/bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
+[submodule "vim/bundle/vim-racer"]
+	path = vim/bundle/vim-racer
+	url = https://github.com/racer-rust/vim-racer.git
