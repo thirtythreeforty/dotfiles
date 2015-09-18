@@ -239,7 +239,11 @@ endif
 set completeopt-=preview
 " Bind YCM's GoTo to something useful: currently the brain-dead `gd`
 " function does nothing useful most of the time
-nnoremap gt :YcmCompleter GoTo<CR>
+" And I won't miss the default functionality if YCM isn't running
+autocmd FileType c nnoremap gd :YcmCompleter GoTo<cr>
+autocmd FileType cpp nnoremap gd :YcmCompleter GoTo<cr>
+autocmd FileType c nnoremap gD :vsplit<cr>:YcmCompleter GoTo<cr>
+autocmd FileType cpp nnoremap gD :vsplit<cr>:YcmCompleter GoTo<cr>
 
 " Make Syntastic use C++11
 let g:syntastic_cpp_compiler = 'clang++'
