@@ -77,6 +77,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.tex set filetype=tex
 au BufRead,BufNewFile SConstruct set filetype=python
 au BufRead,BufNewFile SConscript set filetype=python
+au BufRead,BufNewFile TAG_EDITMSG set filetype=gitcommit
 syntax enable
 
 " Allow plugins to interact with filetypes!

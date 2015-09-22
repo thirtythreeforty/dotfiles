@@ -15,7 +15,7 @@ if [ -f /usr/share/git/git-prompt.sh ]; then
 fi
 if [ ! -z $(type -p hg) ]; then
     __hg_ps1() {
-        hg prompt ' ({branch}{@{bookmark}})' 2> /dev/null
+        hg prompt ' ({branch}{ - {bookmark}})' 2> /dev/null
     }
     __vcprompt="$__vcprompt"'$(__hg_ps1)'
 fi

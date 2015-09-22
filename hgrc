@@ -5,5 +5,7 @@ username = George Hilliard <gh403@msstate.edu>
 color =
 prompt = ~/bin/prompt-hg.py
 record =
+shelve =
 strip =
+transplant =
 
