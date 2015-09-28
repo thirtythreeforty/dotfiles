@@ -31,7 +31,7 @@ if [ -f /etc/profile.d/autojump.sh ]; then
 fi
 
 # Editor
-if [ $(which nvim) ]; then
+if [ ! -z $(type -p nvim) ]; then
     export EDITOR="nvim"
 else
     export EDITOR="vim"
