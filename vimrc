@@ -274,7 +274,7 @@ let g:ycm_semantic_triggers.tex = [
 	\ ]
 
 " Use XeLaTeX
-let g:vimtex_latexmk_options = "-pdf -xelatex"
+let g:vimtex_latexmk_options = "-pdf -lualatex"
 
 " Prefer Okular for PDF viewing with VimTex
 if executable('okular')
