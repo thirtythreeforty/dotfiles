@@ -53,7 +53,7 @@ set shiftwidth=4
 set softtabstop=4
 " set expandtab
 
-set list listchars=tab:»\ ,trail:·
+set list listchars=tab:»\ 
 
 set updatetime=500
 
@@ -140,10 +140,6 @@ inoremap <S-Tab> <C-D>
 
 nnoremap <Space> :
 
-" Exit insert mode with jk or kj chord
-inoremap jk <ESC>
-inoremap kj <ESC>
-
 " Don't use swap files.  Move other files to ~/.vim
 set swapfile!
 set backupdir+=~/.vim/backup//
@@ -151,6 +147,9 @@ if exists('&undofile')
 	set undodir=~/.vim/undo//
 	set undofile
 endif
+
+" Use tree mode in netrw
+let g:netrw_liststyle=3
 
 " Plugin time!
 
@@ -296,6 +295,9 @@ nnoremap gs :Gstatus<CR>
 " SimpylFold wants these :|
 autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+
+" Strip whitespace with <leader><space>
+nnoremap <leader><space> :StripWhitespace<CR>
 
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
