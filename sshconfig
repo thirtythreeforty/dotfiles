@@ -1,0 +1,20 @@
+Host pluto
+  HostName pluto.cse.msstate.edu
+  User gh403
+
+Host yavin
+  HostName yavin.ece.msstate.edu
+  User gh403
+
+Host anapnea.net
+  HostName anapnea.net
+  User thirtythreeforty
+
+Host insomnia247.nl
+  HostName insomnia247.nl
+  User thirtythreeforty
+
+Host crane
+  HostName 130.18.118.227
+
+

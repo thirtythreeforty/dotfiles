@@ -27,6 +27,9 @@
     .screenrc:
         relink: true
         path: screenrc
+    .ssh/config:
+        relink: true
+        path: sshconfig
     .vim:
         relink: true
         path: vim/
