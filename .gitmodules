@@ -121,3 +121,9 @@
 [submodule "vim/bundle/headlights"]
 	path = vim/bundle/headlights
 	url = https://github.com/mbadran/headlights.git
+[submodule "vim/bundle/slimv"]
+	path = vim/bundle/slimv
+	url = https://github.com/kovisoft/slimv.git
+[submodule "vim/bundle/webapi-vim"]
+	path = vim/bundle/webapi-vim
+	url = https://github.com/mattn/webapi-vim.git
