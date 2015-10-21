@@ -1,6 +1,10 @@
 [ui]
 username = George Hilliard <gh403@msstate.edu>
 
+[trusted]
+users = root
+groups = wheel
+
 [extensions]
 churn =
 color =
