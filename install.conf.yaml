@@ -21,6 +21,10 @@
     .nvim:
         relink: true
         path: vim/
+    .config/nvim:
+        relink: true
+        create: true
+        path: vim/
     .nvimrc:
         relink: true
         path: nvimrc
