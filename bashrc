@@ -113,6 +113,9 @@ export HISTFILESIZE=5000
 # tabs should be 4 chars long
 tabs 4
 
+# Enable checkwinsize to prevent garbage line-wrapping
+shopt -s checkwinsize
+
 # Local customizations allowed and encouraged!
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
