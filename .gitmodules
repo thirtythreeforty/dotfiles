@@ -124,3 +124,6 @@
 [submodule "vim/bundle/webapi-vim"]
 	path = vim/bundle/webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
+[submodule "vim/bundle/lexima.vim"]
+	path = vim/bundle/lexima.vim
+	url = https://github.com/cohama/lexima.vim.git
