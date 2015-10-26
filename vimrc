@@ -15,6 +15,10 @@ set background=dark
 set cursorline
 set guicursor+=a:blinkon0
 set guifont=Inconsolata-g\ for\ Powerline\ 11
+" Disable GUI's menu, scrollbar, and toolbar
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
 highlight Comment ctermfg=244
 highlight SpecialKey ctermfg=darkgrey
 highlight CursorLine cterm=NONE ctermbg=235
