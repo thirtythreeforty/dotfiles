@@ -140,6 +140,11 @@ inoremap <S-Tab> <C-D>
 
 nnoremap <Space> :
 
+" Disable auto-commenting new lines, everywhere.  Must use a FileType hook
+" because BufRead hooks execute before all the irritating builtin ones that
+" add these options.
+autocmd FileType * setlocal formatoptions-=ro
+
 " Don't use swap files.  Move other files to ~/.vim
 set swapfile!
 set backupdir+=~/.vim/backup//
