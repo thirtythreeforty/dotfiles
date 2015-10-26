@@ -140,6 +140,10 @@ inoremap <S-Tab> <C-D>
 
 nnoremap <Space> :
 
+" Our bashrc is not always sourced when, for instance, GVim is started
+let $PATH .= ':' . $HOME . '/bin'
+let $PATH .= ':' . $HOME . '/bin_local'
+
 " Disable auto-commenting new lines, everywhere.  Must use a FileType hook
 " because BufRead hooks execute before all the irritating builtin ones that
 " add these options.
