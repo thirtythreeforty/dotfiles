@@ -1,5 +1,6 @@
 [ui]
 username = George Hilliard <gh403@msstate.edu>
+ignore = ~/.hgignore
 
 [trusted]
 users = root
