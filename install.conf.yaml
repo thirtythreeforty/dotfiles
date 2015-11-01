@@ -6,9 +6,9 @@
     .bashrc:
         relink: true
         path: bashrc
-    .emacs:
+    .emacs.d:
         relink: true
-        path: emacs
+        path: spacemacs.d
     .hgrc:
         relink: true
         path: hgrc
@@ -34,6 +34,9 @@
     .ssh/config:
         relink: true
         path: sshconfig
+    .spacemacs:
+        relink: true
+        path: spacemacs
     .vim:
         relink: true
         path: vim/
