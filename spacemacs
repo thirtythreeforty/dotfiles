@@ -236,6 +236,7 @@ values."
                 )
   ;; Various extra leader bindings
   (evil-leader/set-key
+    "bc" 'spacemacs/new-empty-buffer
     "wo" 'delete-other-windows
     "ha" 'apropos
     "hs" 'helm-spacemacs
