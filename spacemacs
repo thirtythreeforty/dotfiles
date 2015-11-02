@@ -291,5 +291,9 @@ values."
         (list 'isearch-forward 'isearch-backward 'evil-search-previous 'evil-search-next))
   )
 
+(setq local-spacemacs-config (expand-file-name "~/.spacemacs_local"))
+(when (file-exists-p local-spacemacs-config)
+  (advice-add 'dotspacemacs/user-config :after (lambda () (load-file local-spacemacs-config))))
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

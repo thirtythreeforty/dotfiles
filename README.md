@@ -25,6 +25,7 @@ That said, there are a couple hooks present in case you have machine-specific th
 
  - `.bashrc_local`: For Bash.  Runs after the main `.bashrc` script.
  - `bin_local/`: A directory in which you can add additional commands, like `bin/`.
+ - `.spacemacs_local`: For Emacs.  This file is loaded directly after `spacemacs/user-config`, so code in this file is run directly after that function.
  - `.gitconfig_local`: For Git.  Loaded after the main `.gitconfig` is parsed.
  - `.inputrc_local`: For Readline.  Sourced after the main `.inputrc` configuration.
  - `.vimrc_local`: For Vim.  Runs after the main `.vimrc` config is parsed and after all plugins are loaded.
@@ -43,3 +44,10 @@ There is also the corresponding command to remove a plugin:
 
 (You can pass the original URL too.)
 This will remove the plugin's directory and remove it as a submodule from the dotfiles repo.
+
+### Emacs plugins
+
+Emacs performs its own package management via Spacemacs.
+See the layer and package list definitions in `~/.spacemacs`.
+Of course, you could append to this list on a per-machine basis using the above file.
+Once you change these lists, Emacs will need to be restarted, then maybe restarted again.
