@@ -237,11 +237,14 @@ values."
   ;; Various extra leader bindings
   (evil-leader/set-key
     "bc" 'spacemacs/new-empty-buffer
+    "br" 'rename-buffer
     "wo" 'delete-other-windows
     "ha" 'apropos
     "hs" 'helm-spacemacs
     "hw" 'where-is
-    "hK" 'describe-key
+    ;; helm-make is on 'SPC h k' by default but I don't use it much yet.
+    "hk" 'describe-key
+    "hK" 'helm-make
     "q RET" 'evil-quit
     )
 
