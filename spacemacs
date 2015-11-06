@@ -65,9 +65,6 @@ values."
    ;; configuration in `dotspacemacs/config'.
    dotspacemacs-additional-packages '(
      pulse
-     ;; A hack to work around a bug in Spacemacs that insists on installing then
-     ;; removing s every time.
-     s
    )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(
