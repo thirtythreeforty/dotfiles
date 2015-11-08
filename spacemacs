@@ -264,7 +264,7 @@ values."
   (global-ycmd-mode)
   ;; Set the path to find racer and ycmd
   (setq exec-path (append exec-path '("~/bin"))
-        ycmd-server-command "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")
+        ycmd-server-command `("python2" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
   ;; Line numbers everywhere (linum-relative-mode enables global-linum-mode)
   (linum-relative-mode)
   ;; ...except on Spacemacs home page.  It is already loaded when this function runs, so disable it there too.
