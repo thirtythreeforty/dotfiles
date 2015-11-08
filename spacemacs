@@ -270,6 +270,11 @@ values."
   ;; ...except on Spacemacs home page.  It is already loaded when this function runs, so disable it there too.
   (add-hook 'spacemacs-mode-hook (lambda () (linum-mode -1)))
   (with-current-buffer "*spacemacs*" (linum-mode -1))
+  ;; Disable relative mode in INSERT state, and re-enable when leaving it.  Also make its format match that
+  ;; of the default linum-mode.
+  (add-hook 'evil-insert-state-entry-hook 'linum-relative-off)
+  (add-hook 'evil-insert-state-exit-hook 'linum-relative-on)
+  (setq linum-relative-format "%4s")
   ;; Draw tabs in comment face, and keywords in warning face
   (defun add-georgev-highlights ()
     "Adds several highlights, such as tabs and TODOs, that I like."
