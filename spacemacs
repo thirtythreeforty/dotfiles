@@ -284,6 +284,7 @@ values."
         ("\\<TODO\\>" 0 'font-lock-warning-face prepend)
         ("\\<HACK\\>" 0 'font-lock-warning-face prepend)
         ("\\<FIXME\\>" 0 'font-lock-warning-face prepend)))))
+  (add-hook 'prog-mode-hook 'add-georgev-highlights)
   ;; Pulse the current line after a search
   (require 'pulse)
   (defun pulse-current-line (&rest _ignored)
