@@ -247,6 +247,20 @@ values."
     "q RET" 'evil-quit
     )
 
+  ;; Fix tab and indentation handling.
+  ;; No editor on this planet completely understands the concepts implemented below, it seems.
+  ;; Fortunately, Emacs is in fact a virtual machine cleverly disguised as an editor.
+  (defun backward-delete-char-maybe-unindent (&optional num)
+    "Checks if point is in leading whitespace, calling clean-aindent--bsunindent if so, and calling
+backward-delete-char otherwise."
+    (interactive)
+    (let ((line-to-point (buffer-substring-no-properties (line-beginning-position) (point)))
+          (num (or num 1)))
+      (if (string-match-p "^[[:space:]]+$" line-to-point)
+          (clean-aindent--bsunindent num)
+        (delete-backward-char num))))
+  (bind-key "<backspace>" #'backward-delete-char-maybe-unindent evil-insert-state-map)
+
   ;; I would prefer that the options for "ws" and "wS" be reversed
   (evil-leader/set-key "ws" 'split-window-below-and-focus
     "wS" 'split-window-below
