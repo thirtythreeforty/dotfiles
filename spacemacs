@@ -236,6 +236,7 @@ values."
   (evil-leader/set-key
     "bc" 'spacemacs/new-empty-buffer
     "br" 'rename-buffer
+    "fE" 'revert-buffer
     "wo" 'delete-other-windows
     "ha" 'apropos
     "hs" 'helm-spacemacs
