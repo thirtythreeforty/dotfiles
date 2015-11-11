@@ -53,6 +53,7 @@ values."
      vinegar
      (whitespace :variables
                  whitespace-global-butler t
+                 whitespace-smart-tabs nil
                  whitespace-global-detect-indent t
                  whitespace-global-show t)
      xkcd

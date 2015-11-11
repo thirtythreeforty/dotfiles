@@ -15,6 +15,7 @@
 (setq whitespace-packages
       '(
         dtrt-indent
+        smart-tabs-mode
         whitespace
         ws-butler
         ))
@@ -31,6 +32,18 @@
 (defun whitespace/post-init-dtrt-indent ()
   (when whitespace-global-detect-indent
     (dtrt-indent-mode)))
+
+;; smart-tabs-mode initialization
+(defun whitespace/init-smart-tabs-mode ()
+  (use-package smart-tabs-mode
+    :commands (smart-tabs-mode
+               smart-tabs-mode-enable
+               smart-tabs-advice
+               smart-tabs-insinuate)))
+
+(defun whitespace/post-init-smart-tabs-mode ()
+  (when whitespace-smart-tabs
+    (smart-tabs-insinuate 'c 'c++ 'java 'javascript 'cperl 'python 'ruby 'nxml)))
 
 ;; whitespace initialization
 (defun whitespace/post-init-whitespace ()
