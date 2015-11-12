@@ -226,10 +226,6 @@ values."
                 undo-tree-auto-save-history t
                 mouse-autoselect-window t
                 sentence-end-double-space nil
-                ;; Indent width fixup:
-                tab-width my-preferred-indent
-                c-basis-offset my-preferred-indent
-
                 whitespace-style '(trailing tabs newline tab-mark space-before-tab)
                 ;; Allow cursor closer to the bottom of the window than
                 ;; Spacemacs default... Smooth-scroll seems to be in use, but only
@@ -265,6 +261,9 @@ backward-delete-char otherwise."
           (clean-aindent--bsunindent num)
         (delete-backward-char num))))
   (bind-key "<backspace>" #'backward-delete-char-maybe-unindent evil-insert-state-map)
+  (setq-default tab-width my-preferred-indent
+                c-basic-offset my-preferred-indent
+                indent-tabs-mode t)
 
   ;; I would prefer that the options for "ws" and "wS" be reversed
   (evil-leader/set-key
