@@ -262,7 +262,8 @@ backward-delete-char otherwise."
   (bind-key "<backspace>" #'backward-delete-char-maybe-unindent evil-insert-state-map)
 
   ;; I would prefer that the options for "ws" and "wS" be reversed
-  (evil-leader/set-key "ws" 'split-window-below-and-focus
+  (evil-leader/set-key
+    "ws" 'split-window-below-and-focus
     "wS" 'split-window-below
     "wv" 'split-window-right-and-focus
     "wV" 'split-window-right)
@@ -279,8 +280,8 @@ backward-delete-char otherwise."
                 ycmd-request-message-level -1)
   (global-ycmd-mode)
   ;; Set the path to find racer and ycmd
-  (setq exec-path (append exec-path '("~/bin"))
-        ycmd-server-command `("python2" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
+  (setq-default exec-path (append exec-path '("~/bin" "~/bin_local"))
+                ycmd-server-command `("python2" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
   ;; Line numbers everywhere (linum-relative-mode enables global-linum-mode)
   (linum-relative-mode)
   ;; ...except on Spacemacs home page.  It is already loaded when this function runs, so disable it there too.
@@ -292,7 +293,7 @@ backward-delete-char otherwise."
   (add-hook 'evil-insert-state-exit-hook 'linum-relative-on)
   (setq linum-relative-format "%4s")
   ;; Draw tabs in comment face, and keywords in warning face
-  (defun add-georgev-highlights ()
+  (defun my-add-highlights ()
     "Adds several highlights, such as tabs and TODOs, that I like."
     (unless (eq major-mode 'org-mode)
       (font-lock-add-keywords nil '(
@@ -300,7 +301,7 @@ backward-delete-char otherwise."
         ("\\<TODO\\>" 0 'font-lock-warning-face prepend)
         ("\\<HACK\\>" 0 'font-lock-warning-face prepend)
         ("\\<FIXME\\>" 0 'font-lock-warning-face prepend)))))
-  (add-hook 'prog-mode-hook 'add-georgev-highlights)
+  (add-hook 'prog-mode-hook 'my-add-highlights)
   ;; Pulse the current line after a search
   (require 'pulse)
   (defun pulse-current-line (&rest _ignored)
