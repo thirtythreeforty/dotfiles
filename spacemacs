@@ -219,12 +219,17 @@ values."
    This function is called at the very end of Spacemacs initialization after
    layers configuration. You are free to put any user code."
   ;; Various options
+  (defvar my-preferred-indent 4
+    "My preferred indentation amount, whether for tab-width or for number of spaces")
   (setq-default frame-resize-pixelwise t
                 window-resize-pixelwise t
                 undo-tree-auto-save-history t
                 mouse-autoselect-window t
                 sentence-end-double-space nil
-                tab-width 4
+                ;; Indent width fixup:
+                tab-width my-preferred-indent
+                c-basis-offset my-preferred-indent
+
                 whitespace-style '(trailing tabs newline tab-mark space-before-tab)
                 ;; Allow cursor closer to the bottom of the window than
                 ;; Spacemacs default... Smooth-scroll seems to be in use, but only
