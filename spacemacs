@@ -272,6 +272,9 @@ backward-delete-char otherwise."
     "wv" 'split-window-right-and-focus
     "wV" 'split-window-right)
 
+  ;; Global visual-line-mode is like Vim's breakindent
+  (global-visual-line-mode)
+
   (defun ycmd-restart ()
     "Restarts YouCompleteMe by stopping and starting it."
     (interactive)
@@ -284,7 +287,7 @@ backward-delete-char otherwise."
                 ycmd-request-message-level -1)
   (global-ycmd-mode)
   ;; Set the path to find racer and ycmd
-  (setq-default exec-path (append exec-path '("~/bin" "~/bin_local"))
+  (setq-default exec-path (append exec-path '("~/bin" "~/bin_local" "~/.local/bin"))
                 ycmd-server-command `("python2" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
   ;; Line numbers everywhere (linum-relative-mode enables global-linum-mode)
   (linum-relative-mode)
