@@ -3,6 +3,9 @@
     .abcde.conf:
         relink: true
         path: abcde.conf
+    .bash_profile:
+        relink: true
+        path: bash_profile
     .bashrc:
         relink: true
         path: bashrc

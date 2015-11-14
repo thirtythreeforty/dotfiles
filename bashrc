@@ -96,11 +96,6 @@ alias _=combine
 # Less should scroll with the mouse wheel
 export LESS="$LESS -r"
 
-export PATH=~/bin:~/bin_local:$PATH
-
-# Help for Racer which is in dotfiles
-export PATH=$PATH:~/dotfiles/racer/target/release
-
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
 alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;\$!ba;s/\n/ /g')"
 
