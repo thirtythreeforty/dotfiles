@@ -12,6 +12,7 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --all
 	amend = commit --amend -C HEAD
 	ignore = "!f() { curl http://www.gitignore.io/api/$@ ;}; f >> .gitignore"
+	undo = reset --merge master@{1}
 [diff]
 	algorithm = patience
 	tool = xxdiff
