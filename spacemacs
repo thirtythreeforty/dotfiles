@@ -289,8 +289,9 @@ backward-delete-char otherwise."
   ;; Set the path to find racer and ycmd
   (setq-default exec-path (append exec-path '("~/bin" "~/bin_local" "~/.local/bin"))
                 ycmd-server-command `("python2" ,(expand-file-name "~/.vim/bundle/YouCompleteMe/third_party/ycmd/ycmd")))
-  ;; Line numbers everywhere (linum-relative-mode enables global-linum-mode)
+  ;; Line numbers everywhere
   (linum-relative-mode)
+  (global-linum-mode)
   ;; ...except on Spacemacs home page.  It is already loaded when this function runs, so disable it there too.
   (add-hook 'spacemacs-mode-hook (lambda () (linum-mode -1)))
   (with-current-buffer "*spacemacs*" (linum-mode -1))
