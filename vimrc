@@ -43,6 +43,10 @@ set copyindent
 if exists('&breakindent')
 	set breakindent
 endif
+autocmd FileType c setlocal cindent
+autocmd FileType cpp setlocal cindent
+set cinoptions=:0,l1,g0,(0
+set cinkeys=0{,0},0),:,0#,!<Tab>,o,O,e
 
 set mouse=a
 set mousefocus
