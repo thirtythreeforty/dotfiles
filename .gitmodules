@@ -134,3 +134,6 @@
 [submodule "spacemacs.d"]
 	path = spacemacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
+[submodule "vim/bundle/vim-speeddating"]
+	path = vim/bundle/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating.git
