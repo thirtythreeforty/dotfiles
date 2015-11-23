@@ -318,6 +318,15 @@ autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 " Strip whitespace with <leader><space>
 nnoremap <leader><space> :StripWhitespace<CR>
 
+" Extra shortcuts for lexima.vim
+call lexima#add_rule({'char': ')', 'at': '(.*\%#.*)', 'leave': ')'})
+call lexima#add_rule({'char': '}', 'at': '{.*\%#.*}', 'leave': '}'})
+call lexima#add_rule({'char': ']', 'at': '\[.*\%#.*\]', 'leave': ']'})
+"These have a bug related to not being able to type spaces.
+"call lexima#add_rule({'char': '<Space>', 'at': '( \+.*\%# \+)', 'leave': ' '})
+"call lexima#add_rule({'char': '<Space>', 'at': '{ \+.*\%# \+}', 'leave': ' '})
+"call lexima#add_rule({'char': '<Space>', 'at': '[ \+.*\%# \+]', 'leave': ' '})
+
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
 	source ~/.vimrc_local
