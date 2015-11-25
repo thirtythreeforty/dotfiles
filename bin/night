@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xflux -z 39762 -k 3000 -r 1
