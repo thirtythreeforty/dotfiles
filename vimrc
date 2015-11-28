@@ -43,6 +43,8 @@ set copyindent
 if exists('&breakindent')
 	set breakindent
 endif
+autocmd FileType c setlocal foldmethod=syntax
+autocmd FileType cpp setlocal foldmethod=syntax
 autocmd FileType c setlocal cindent
 autocmd FileType cpp setlocal cindent
 set cinoptions=:0,l1,g0,(0
