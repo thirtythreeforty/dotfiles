@@ -139,8 +139,8 @@ cnoreabbrev eunix :e ++ff=unix
 " Unhighlight with <Leader>/
 nnoremap <silent> <Leader>/ :noh<CR>
 
-" Toggle expandtab with <Leader>-Tab
-noremap <Leader><Tab> :set expandtab!<CR>
+" Toggle recent buffer with <Leader>-Tab
+nnoremap <Leader><Tab> :b#<CR>
 
 " Delete previous word with Ctrl-Backspace
 imap <C-BS> <C-W>
@@ -148,11 +148,11 @@ imap <C-_> <C-W>
 
 inoremap <S-Tab> <C-D>
 
+" Hitting Space is much easier than hitting Shift-;
 nnoremap <Space> :
 
-" Our bashrc is not always sourced when, for instance, GVim is started
-let $PATH .= ':' . $HOME . '/bin'
-let $PATH .= ':' . $HOME . '/bin_local'
+" Easy mapping for Sayonara!
+nnoremap <leader>q :Sayonara!<CR>
 
 " Disable auto-commenting new lines, everywhere.  Must use a FileType hook
 " because BufRead hooks execute before all the irritating builtin ones that
