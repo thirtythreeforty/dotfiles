@@ -311,10 +311,6 @@ cabbrev bc Sayonara!
 " Git status with gs
 nnoremap gs :Gstatus<CR>
 
-" SimpylFold wants these :|
-autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
-
 " Strip whitespace with <leader><space>
 nnoremap <leader><space> :StripWhitespace<CR>
 
@@ -326,6 +322,9 @@ call lexima#add_rule({'char': ']', 'at': '\[.*\%#.*\]', 'leave': ']'})
 "call lexima#add_rule({'char': '<Space>', 'at': '( \+.*\%# \+)', 'leave': ' '})
 "call lexima#add_rule({'char': '<Space>', 'at': '{ \+.*\%# \+}', 'leave': ' '})
 "call lexima#add_rule({'char': '<Space>', 'at': '[ \+.*\%# \+]', 'leave': ' '})
+
+" Disable python-mode's completion in favor of YCM's
+let g:pymode_rope_completion = 0
 
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
