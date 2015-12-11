@@ -30,6 +30,9 @@ if [ -f /etc/profile.d/autojump.sh ]; then
     source /etc/profile.d/autojump.sh
 fi
 
+# Configure TheFuck
+eval "$(thefuck --alias f)"
+
 # Editor
 if [ ! -z $(type -p nvim) ]; then
     export EDITOR="nvim"
