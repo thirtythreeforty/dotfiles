@@ -297,6 +297,10 @@ if executable('okular')
 	let g:vimtex_view_general_options_latexmk = '--unique'
 endif
 
+" Configure Racer
+let g:racer_cmd = "~/dotfiles/racer/target/release/racer"
+"let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
+
 " Integrate Racer and YCM
 let g:ycm_semantic_triggers.rust = [ '->', '.', '::' ]
 
