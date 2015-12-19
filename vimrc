@@ -317,10 +317,9 @@ nnoremap <leader><space> :StripWhitespace<CR>
 call lexima#add_rule({'char': ')', 'at': '(.*\%#.*)', 'leave': ')'})
 call lexima#add_rule({'char': '}', 'at': '{.*\%#.*}', 'leave': '}'})
 call lexima#add_rule({'char': ']', 'at': '\[.*\%#.*\]', 'leave': ']'})
-"These have a bug related to not being able to type spaces.
-"call lexima#add_rule({'char': '<Space>', 'at': '( \+.*\%# \+)', 'leave': ' '})
-"call lexima#add_rule({'char': '<Space>', 'at': '{ \+.*\%# \+}', 'leave': ' '})
-"call lexima#add_rule({'char': '<Space>', 'at': '[ \+.*\%# \+]', 'leave': ' '})
+call lexima#add_rule({'char': '<Space>', 'at': '( \+.*\%# \+)', 'leave': ' '})
+call lexima#add_rule({'char': '<Space>', 'at': '{ \+.*\%# \+}', 'leave': ' '})
+call lexima#add_rule({'char': '<Space>', 'at': '\[ \+.*\%# \+\]', 'leave': ' '})
 
 " Disable python-mode's completion in favor of YCM's
 let g:pymode_rope_completion = 0
