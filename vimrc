@@ -323,6 +323,8 @@ call lexima#add_rule({'char': '<Space>', 'at': '\[ \+.*\%# \+\]', 'leave': ' '})
 
 " Disable python-mode's completion in favor of YCM's
 let g:pymode_rope_completion = 0
+" Don't show the nag window full of errors (that's what the sidebar is for)
+let g:pymode_lint_cwindow = 0
 
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
