@@ -140,3 +140,6 @@
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
 	url = https://github.com/klen/python-mode.git
+[submodule "vim/bundle/Smart-Tabs"]
+	path = vim/bundle/Smart-Tabs
+	url = https://github.com/vim-scripts/Smart-Tabs.git
