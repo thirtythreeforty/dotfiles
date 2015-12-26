@@ -255,8 +255,10 @@ set completeopt-=preview
 " And I won't miss the default functionality if YCM isn't running
 autocmd FileType c nnoremap gd :YcmCompleter GoTo<cr>
 autocmd FileType cpp nnoremap gd :YcmCompleter GoTo<cr>
+autocmd FileType rust nnoremap gd :YcmCompleter GoTo<cr>
 autocmd FileType c nnoremap gD :vsplit<cr>:YcmCompleter GoTo<cr>
 autocmd FileType cpp nnoremap gD :vsplit<cr>:YcmCompleter GoTo<cr>
+autocmd FileType rust nnoremap gD :vsplit<cr>:YcmCompleter GoTo<cr>
 
 " Make Syntastic use C++11
 let g:syntastic_cpp_compiler = 'clang++'
@@ -295,12 +297,8 @@ if executable('okular')
 	let g:vimtex_view_general_options_latexmk = '--unique'
 endif
 
-" Configure Racer
-let g:racer_cmd = "~/dotfiles/racer/target/release/racer"
-"let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
-
-" Integrate Racer and YCM
-let g:ycm_semantic_triggers.rust = [ '->', '.', '::' ]
+" Configure YCM's Racer
+"let g:ycm_rust_src_path = '/path/to/rust/src'
 
 " Close buffer without closing window with :bc
 cabbrev bc Sayonara!
