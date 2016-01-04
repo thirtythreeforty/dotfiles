@@ -18,6 +18,9 @@
     .inputrc:
         relink: true
         path: inputrc
+    .magic:
+        relink: true
+        path: magic
     .minttyrc:
         relink: true
         path: minttyrc
