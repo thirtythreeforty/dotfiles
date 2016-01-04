@@ -326,6 +326,17 @@ let g:pymode_rope_completion = 0
 " Don't show the nag window full of errors (that's what the sidebar is for)
 let g:pymode_lint_cwindow = 0
 
+" vim-javascript allows concealing certain characters
+let g:javascript_conceal_function   = "ƒ"
+"let g:javascript_conceal_null       = "ø"
+"let g:javascript_conceal_this       = "@"
+"let g:javascript_conceal_return     = "⇚"
+"let g:javascript_conceal_undefined  = "¿"
+"let g:javascript_conceal_NaN        = "ℕ"
+"let g:javascript_conceal_prototype  = "¶"
+"let g:javascript_conceal_static     = "•"
+"let g:javascript_conceal_super      = "Ω"
+
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
 	source ~/.vimrc_local
