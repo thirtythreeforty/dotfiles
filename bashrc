@@ -93,6 +93,9 @@ function mdcd() { if [ -z "$1" ]; then return; fi; mkdir "$1" && cd "$1"; }
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 
+# Must source the Rust unlocking script because it exports variables
+alias unlock-rust='source ~/bin/unlock-rust'
+
 # Convenient and more memorable alias for combine (from moreutils)
 alias _=combine
 
