@@ -105,9 +105,6 @@
 [submodule "vim/bundle/vim-plugin-AnsiEsc"]
 	path = vim/bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
-[submodule "vim/bundle/vim-racer"]
-	path = vim/bundle/vim-racer
-	url = https://github.com/racer-rust/vim-racer.git
 [submodule "vim/bundle/vim-lawrencium"]
 	path = vim/bundle/vim-lawrencium
 	url = https://github.com/ludovicchabant/vim-lawrencium.git
