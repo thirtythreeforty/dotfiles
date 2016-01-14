@@ -337,6 +337,20 @@ let g:javascript_conceal_function   = "ƒ"
 "let g:javascript_conceal_static     = "•"
 "let g:javascript_conceal_super      = "Ω"
 
+" Configure EasyMotion as per recommendation of the developer
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+" `s{char}{char}{label}`
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_smartsign_us = 1
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'
+
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
 	source ~/.vimrc_local
