@@ -260,7 +260,7 @@ backward-delete-char otherwise."
       (if (string-match-p "^[[:space:]]+$" line-to-point)
           (clean-aindent--bsunindent num)
         (delete-backward-char num))))
-  (bind-key "<backspace>" #'backward-delete-char-maybe-unindent evil-insert-state-map)
+  (bind-key "DEL" #'backward-delete-char-maybe-unindent evil-insert-state-map)
   (setq-default tab-width my-preferred-indent
                 c-basic-offset my-preferred-indent
                 indent-tabs-mode t)
