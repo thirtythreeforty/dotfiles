@@ -10,6 +10,7 @@
 	co = checkout
 	ci = commit
 	ds = diff --staged
+	sm = submodule
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --all
 	amend = commit --amend -C HEAD
 	ignore = "!f() { curl http://www.gitignore.io/api/$@ ;}; f >> .gitignore"
