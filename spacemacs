@@ -293,7 +293,7 @@ backward-delete-char otherwise."
   (linum-relative-mode)
   (global-linum-mode)
   ;; ...except on Spacemacs home page.  It is already loaded when this function runs, so disable it there too.
-  (add-hook 'spacemacs-mode-hook (lambda () (linum-mode -1)))
+  (add-hook 'spacemacs-buffer-mode-hook (lambda () (linum-mode -1)))
   (with-current-buffer "*spacemacs*" (linum-mode -1))
   ;; Disable relative mode in INSERT state, and re-enable when leaving it.  Also make its format match that
   ;; of the default linum-mode.
