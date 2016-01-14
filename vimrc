@@ -347,7 +347,10 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_smartsign_us = 1
 " Use uppercase target labels and type as a lower case
 let g:EasyMotion_use_upper = 1
-let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'
+let g:EasyMotion_keys = 'FJDKSLA;GHRUEITYWOQPVNCMBXZ'
+
+" Recolor EasyMotion targets (I can't see reds very well)
+hi link EasyMotionTargetDefault ErrorMsg
 
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
