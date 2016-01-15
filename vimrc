@@ -356,6 +356,9 @@ hi link EasyMotionTargetDefault ErrorMsg
 " Update folds when opening/closing them
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
 
+" rainbow_parentheses.vim should rainbow-ify {} and [] too
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
 	source ~/.vimrc_local
