@@ -352,6 +352,10 @@ let g:EasyMotion_keys = 'FJDKSLA;GHRUEITYWOQPVNCMBXZ'
 " Recolor EasyMotion targets (I can't see reds very well)
 hi link EasyMotionTargetDefault ErrorMsg
 
+" FastFold settings:
+" Update folds when opening/closing them
+let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
+
 " Local hook:
 if filereadable(glob("~/.vimrc_local"))
 	source ~/.vimrc_local
