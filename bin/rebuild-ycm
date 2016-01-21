@@ -12,7 +12,11 @@ params=""
 
 if(is_installed clang); then
 	echo "C/C++ support detected"
-	params="$params --clang-completer --system-boost --system-libclang"
+	if [ $1 == "--extlibs" ]; then
+		params="$params --clang-completer"
+	else
+		params="$params --clang-completer --system-boost --system-libclang"
+	fi
 fi
 
 if(is_installed go); then
