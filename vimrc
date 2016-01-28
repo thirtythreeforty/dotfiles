@@ -297,6 +297,10 @@ if executable('okular')
 	let g:vimtex_view_general_options_latexmk = '--unique'
 endif
 
+" The ` mappings are more irritating than helpful.  In particular, they break
+" lexima.vim mappings.
+let g:vimtex_imaps_enabled = 0
+
 " Configure YCM's Racer
 "let g:ycm_rust_src_path = '/path/to/rust/src'
 
@@ -316,6 +320,19 @@ call lexima#add_rule({'char': ']', 'at': '\[.*\%#.*\]', 'leave': ']'})
 call lexima#add_rule({'char': '<Space>', 'at': '( \+.*\%# \+)', 'leave': ' '})
 call lexima#add_rule({'char': '<Space>', 'at': '{ \+.*\%# \+}', 'leave': ' '})
 call lexima#add_rule({'char': '<Space>', 'at': '\[ \+.*\%# \+\]', 'leave': ' '})
+" TeX rules for $ math regions $
+call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'tex'})
+call lexima#add_rule({'char': '<Space>', 'at': '\$\%#\$', 'input_after': '<Space>', 'filetype': 'tex'})
+call lexima#add_rule({'char': '$', 'at': '\$\%#\$', 'input_after': '$', 'filetype': 'tex'})
+call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'tex'})
+call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'tex'})
+call lexima#add_rule({'char': '<BS>', 'at': '\$ \%# \$', 'delete': 1, 'filetype': 'tex'})
+call lexima#add_rule({'char': '<BS>', 'at': "` \%# '", 'delete': 1, 'filetype': 'tex'})
+" TeX rules for ``smart quotes''
+call lexima#add_rule({'char': '`', 'input_after': '''', 'filetype': 'tex'})
+call lexima#add_rule({'char': '''', 'at': '`.\*\%#''', 'leave': 1, 'filetype': 'tex'})
+call lexima#add_rule({'char': '<BS>', 'at': '`\%#''', 'delete': 1, 'filetype': 'tex'})
+call lexima#add_rule({'char': "'", 'at': '\w\%#''', 'filetype': 'tex'})
 
 " Disable python-mode's completion in favor of YCM's
 let g:pymode_rope_completion = 0
