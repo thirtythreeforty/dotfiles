@@ -1,0 +1,10 @@
+#!/bin/bash
+
+hush pushd
+for i in `ls -d ~/dotfiles/vim/bundle/*`; do
+	cd "$i"
+	git fetch origin
+	echo -n "`basename $i`: "
+	git checkout origin/HEAD
+done
+hush popd

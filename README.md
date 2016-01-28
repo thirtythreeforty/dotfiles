@@ -45,6 +45,12 @@ There is also the corresponding command to remove a plugin:
 (You can pass the original URL too.)
 This will remove the plugin's directory and remove it as a submodule from the dotfiles repo.
 
+Finally, you can update all plugins in one fell swoop with:
+
+    update-vim-plugins
+
+This walks over each element in `~/dotfiles/vim/bundle` and fetches and checks out `origin/HEAD`.
+
 ### Emacs plugins
 
 Emacs performs its own package management via Spacemacs.
