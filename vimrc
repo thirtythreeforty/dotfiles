@@ -276,7 +276,7 @@ nnoremap <F12> :Goyo<CR>
 " DetectIndent defaults to 8, but that's ridiculous
 let g:detectindent_preferred_indent = 4
 let g:detectindent_min_indent = 2
-let g:detectindent_max_indent = 8
+let g:detectindent_max_indent = 4
 augroup DetectIndent
 	autocmd!
 	autocmd BufReadPost *  DetectIndent
