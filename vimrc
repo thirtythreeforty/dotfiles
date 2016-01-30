@@ -320,6 +320,10 @@ call lexima#add_rule({'char': ']', 'at': '\[.*\%#.*\]', 'leave': ']'})
 call lexima#add_rule({'char': '<Space>', 'at': '( \+.*\%# \+)', 'leave': ' '})
 call lexima#add_rule({'char': '<Space>', 'at': '{ \+.*\%# \+}', 'leave': ' '})
 call lexima#add_rule({'char': '<Space>', 'at': '\[ \+.*\%# \+\]', 'leave': ' '})
+" Disable matching quote insertion when at the beginning of a word
+call lexima#add_rule({'char': '''', 'at': '\%#\w'})
+call lexima#add_rule({'char': '"', 'at': '\%#\w'})
+call lexima#add_rule({'char': '`', 'at': '\%#\w'})
 " TeX rules for $ math regions $
 call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'tex'})
 call lexima#add_rule({'char': '<Space>', 'at': '\$\%#\$', 'input_after': '<Space>', 'filetype': 'tex'})
@@ -327,12 +331,13 @@ call lexima#add_rule({'char': '$', 'at': '\$\%#\$', 'input_after': '$', 'filetyp
 call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'tex'})
 call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'tex'})
 call lexima#add_rule({'char': '<BS>', 'at': '\$ \%# \$', 'delete': 1, 'filetype': 'tex'})
-call lexima#add_rule({'char': '<BS>', 'at': "` \%# '", 'delete': 1, 'filetype': 'tex'})
 " TeX rules for ``smart quotes''
 call lexima#add_rule({'char': '`', 'input_after': '''', 'filetype': 'tex'})
 call lexima#add_rule({'char': '''', 'at': '`.\*\%#''', 'leave': 1, 'filetype': 'tex'})
 call lexima#add_rule({'char': '<BS>', 'at': '`\%#''', 'delete': 1, 'filetype': 'tex'})
+call lexima#add_rule({'char': '<BS>', 'at': "` \%# '", 'delete': 1, 'filetype': 'tex'})
 call lexima#add_rule({'char': "'", 'at': '\w\%#''', 'filetype': 'tex'})
+call lexima#add_rule({'char': '`', 'at': '\%#\w', 'filetype': 'tex'})
 
 " Disable python-mode's completion in favor of YCM's
 let g:pymode_rope_completion = 0
