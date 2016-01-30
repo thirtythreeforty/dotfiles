@@ -313,31 +313,48 @@ nnoremap gs :Gstatus<CR>
 " Strip whitespace with <leader><space>
 nnoremap <leader><space> :StripWhitespace<CR>
 
+function s:lexima_add_rules(rules)
+	for rule in a:rules
+		call lexima#add_rule(rule)
+	endfor
+endfunction
+
 " Extra shortcuts for lexima.vim
-call lexima#add_rule({'char': ')', 'at': '(.*\%#.*)', 'leave': ')'})
-call lexima#add_rule({'char': '}', 'at': '{.*\%#.*}', 'leave': '}'})
-call lexima#add_rule({'char': ']', 'at': '\[.*\%#.*\]', 'leave': ']'})
-call lexima#add_rule({'char': '<Space>', 'at': '( \+.*\%# \+)', 'leave': ' '})
-call lexima#add_rule({'char': '<Space>', 'at': '{ \+.*\%# \+}', 'leave': ' '})
-call lexima#add_rule({'char': '<Space>', 'at': '\[ \+.*\%# \+\]', 'leave': ' '})
+call s:lexima_add_rules([
+	\ {'char': ')', 'at': '(.*\%#.*)', 'leave': ')'},
+	\ {'char': '}', 'at': '{.*\%#.*}', 'leave': '}'},
+	\ {'char': ']', 'at': '\[.*\%#.*\]', 'leave': ']'},
+	\ {'char': '<Space>', 'at': '( \+.*\%# \+)', 'leave': ' '},
+	\ {'char': '<Space>', 'at': '{ \+.*\%# \+}', 'leave': ' '},
+	\ {'char': '<Space>', 'at': '\[ \+.*\%# \+\]', 'leave': ' '},
+\ ])
+
 " Disable matching quote insertion when at the beginning of a word
-call lexima#add_rule({'char': '''', 'at': '\%#\w'})
-call lexima#add_rule({'char': '"', 'at': '\%#\w'})
-call lexima#add_rule({'char': '`', 'at': '\%#\w'})
+call s:lexima_add_rules([
+	\ {'char': '''', 'at': '\%#\w'},
+	\ {'char': '"', 'at': '\%#\w'},
+	\ {'char': '`', 'at': '\%#\w'},
+\ ])
+
 " TeX rules for $ math regions $
-call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'tex'})
-call lexima#add_rule({'char': '<Space>', 'at': '\$\%#\$', 'input_after': '<Space>', 'filetype': 'tex'})
-call lexima#add_rule({'char': '$', 'at': '\$\%#\$', 'input_after': '$', 'filetype': 'tex'})
-call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'tex'})
-call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'tex'})
-call lexima#add_rule({'char': '<BS>', 'at': '\$ \%# \$', 'delete': 1, 'filetype': 'tex'})
+call s:lexima_add_rules([
+	\ {'char': '$', 'input_after': '$', 'filetype': 'tex'},
+	\ {'char': '<Space>', 'at': '\$\%#\$', 'input_after': '<Space>', 'filetype': 'tex'},
+	\ {'char': '$', 'at': '\$\%#\$', 'input_after': '$', 'filetype': 'tex'},
+	\ {'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'tex'},
+	\ {'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'tex'},
+	\ {'char': '<BS>', 'at': '\$ \%# \$', 'delete': 1, 'filetype': 'tex'},
+\ ])
+
 " TeX rules for ``smart quotes''
-call lexima#add_rule({'char': '`', 'input_after': '''', 'filetype': 'tex'})
-call lexima#add_rule({'char': '''', 'at': '`.\*\%#''', 'leave': 1, 'filetype': 'tex'})
-call lexima#add_rule({'char': '<BS>', 'at': '`\%#''', 'delete': 1, 'filetype': 'tex'})
-call lexima#add_rule({'char': '<BS>', 'at': "` \%# '", 'delete': 1, 'filetype': 'tex'})
-call lexima#add_rule({'char': "'", 'at': '\w\%#''', 'filetype': 'tex'})
-call lexima#add_rule({'char': '`', 'at': '\%#\w', 'filetype': 'tex'})
+call s:lexima_add_rules([
+	\ {'char': '`', 'input_after': '''', 'filetype': 'tex'},
+	\ {'char': '''', 'at': '`.\*\%#''', 'leave': 1, 'filetype': 'tex'},
+	\ {'char': '<BS>', 'at': '`\%#''', 'delete': 1, 'filetype': 'tex'},
+	\ {'char': '<BS>', 'at': "` \%# '", 'delete': 1, 'filetype': 'tex'},
+	\ {'char': "'", 'at': '\w\%#''', 'filetype': 'tex'},
+	\ {'char': '`', 'at': '\%#\w', 'filetype': 'tex'},
+\ ])
 
 " Disable python-mode's completion in favor of YCM's
 let g:pymode_rope_completion = 0
