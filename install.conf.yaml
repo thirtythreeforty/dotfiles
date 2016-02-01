@@ -21,6 +21,9 @@
     .magic:
         relink: true
         path: magic
+    .Mathematica:
+        relink: true
+        path: Mathematica
     .minttyrc:
         relink: true
         path: minttyrc

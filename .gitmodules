@@ -151,6 +151,9 @@
 [submodule "vim/bundle/undotree"]
 	path = vim/bundle/undotree
 	url = https://github.com/mbbill/undotree
+[submodule "vim/bundle/vim-mathematica"]
+	path = vim/bundle/vim-mathematica
+	url = https://github.com/rsmenon/vim-mathematica.git
 [submodule "vim/bundle/textile.vim"]
 	path = vim/bundle/textile.vim
 	url = https://github.com/timcharper/textile.vim.git
