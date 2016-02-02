@@ -18,6 +18,7 @@ set guifont=Inconsolata-g\ for\ Powerline\ 11
 " Disable GUI's menu, scrollbar, and toolbar
 set guioptions-=m
 set guioptions-=T
+set guioptions-=l
 set guioptions-=r
 highlight Comment ctermfg=244
 highlight SpecialKey ctermfg=darkgrey
