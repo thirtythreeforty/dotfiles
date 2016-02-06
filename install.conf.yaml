@@ -27,6 +27,9 @@
     .minttyrc:
         relink: true
         path: minttyrc
+    .npmrc:
+        relink: true
+        path: npmrc
     .nvim:
         relink: true
         path: vim/
