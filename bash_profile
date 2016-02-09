@@ -1,7 +1,4 @@
-export PATH=~/bin:~/bin_local:$PATH
-
-# Help for Racer which is in dotfiles
-export PATH=$PATH:~/dotfiles/racer/target/release
+export PATH=~/bin:~/bin_local:~/.node_modules/bin:$PATH
 
 if [ -f ~/.bash_profile_local ]; then
 	source ~/.bash_profile_local
