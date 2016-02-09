@@ -89,6 +89,7 @@ au BufRead,BufNewFile *.tex set filetype=tex
 au BufRead,BufNewFile SConstruct set filetype=python
 au BufRead,BufNewFile SConscript set filetype=python
 au BufRead,BufNewFile TAG_EDITMSG set filetype=gitcommit
+au BufRead,BufNewFile *.tag set filetype=html
 syntax enable
 
 " Allow plugins to interact with filetypes!
