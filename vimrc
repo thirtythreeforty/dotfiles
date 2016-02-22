@@ -212,6 +212,9 @@ let g:gitgutter_sign_column_always = 1
 " CtrlPTag with <leader>.
 nnoremap <leader>. :CtrlPTag<cr>
 
+" CtrlPBuffer with gb
+nnoremap gb :CtrlPBuffer<cr>
+
 " CtrlP should not recurse ad nauseum
 let g:ctrlp_max_depth = 15
 
