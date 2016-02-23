@@ -78,9 +78,6 @@
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/bundle/racer"]
-	path = racer
-	url = https://github.com/phildawes/racer.git
 [submodule "vim/bundle/vim-sayonara"]
 	path = vim/bundle/vim-sayonara
 	url = https://github.com/mhinz/vim-sayonara.git
