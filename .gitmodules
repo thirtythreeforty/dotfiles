@@ -94,9 +94,6 @@
 [submodule "vim/bundle/rainbow_parentheses.vim"]
 	path = vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/junegunn/rainbow_parentheses.vim.git
-[submodule "vim/bundle/base16-vim"]
-	path = vim/bundle/base16-vim
-	url = https://github.com/chriskempson/base16-vim.git
 [submodule "vim/bundle/vim-plugin-AnsiEsc"]
 	path = vim/bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
@@ -120,9 +117,6 @@
 [submodule "spacemacs.d"]
 	path = spacemacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
-[submodule "vim/bundle/vim-speeddating"]
-	path = vim/bundle/vim-speeddating
-	url = https://github.com/tpope/vim-speeddating.git
 [submodule "vim/bundle/vim-table-mode"]
 	path = vim/bundle/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode.git
