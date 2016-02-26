@@ -382,7 +382,9 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Bi-directional find motion
 " `s{char}{char}{label}`
-nmap S <Plug>(easymotion-s2)
+nmap s <Plug>(easymotion-s2)
+" Replace original s (change character) with S
+nnoremap S s
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
