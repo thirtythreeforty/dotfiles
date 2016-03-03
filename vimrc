@@ -40,7 +40,6 @@ set linebreak
 set autoindent
 set smartindent
 set copyindent
-" Some older versions of Vim don't have this
 if exists('&breakindent')
 	set breakindent
 endif
@@ -81,8 +80,8 @@ set splitright
 let mapleader = ","
 
 " Search but don't jump
-nnoremap <leader>* :let b:wv = winsaveview()<CR>*``:call winrestview(b:wv)<CR>
-nnoremap <leader># :let b:wv = winsaveview()<CR>#``:call winrestview(b:wv)<CR>
+nnoremap <silent> <leader>* :let b:wv = winsaveview()<CR>*``:call winrestview(b:wv)<CR>
+nnoremap <silent> <leader># :let b:wv = winsaveview()<CR>#``:call winrestview(b:wv)<CR>
 
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.tex set filetype=tex
@@ -135,7 +134,7 @@ cnoreabbrev eunix :e ++ff=unix
 nnoremap <silent> <Leader>/ :noh<CR>
 
 " Toggle recent buffer with <Leader>-Tab
-nnoremap <Leader><Tab> :b#<CR>
+nnoremap <silent> <Leader><Tab> :b#<CR>
 
 " Delete previous word with Ctrl-Backspace
 imap <C-BS> <C-W>
@@ -147,7 +146,7 @@ inoremap <S-Tab> <C-D>
 nnoremap <Space> :
 
 " Easy mapping for Sayonara!
-nnoremap <leader>q :Sayonara!<CR>
+nnoremap <silent> <leader>q :Sayonara!<CR>
 
 " Disable auto-commenting new lines, everywhere.  Must use a FileType hook
 " because BufRead hooks execute before all the irritating builtin ones that
@@ -276,7 +275,7 @@ augroup Goyo
 	autocmd User GoyoEnter Limelight
 	autocmd User GoyoLeave Limelight!
 augroup end
-nnoremap <F12> :Goyo<CR>
+nnoremap <silent> <F12> :Goyo<CR>
 
 " DetectIndent defaults to 8, but that's ridiculous
 let g:detectindent_preferred_indent = 4
