@@ -374,9 +374,13 @@ call s:lexima_add_rules([
 	\ {'char': '<BS>', 'at': '\w<\%#>', 'delete': 1},
 \ ], ['rust', 'cpp'])
 
-" Especially disabling single-quote matching in <> for Rust
+" Extra rules for Rust, Especially disabling single-quote matching in <>
 call s:lexima_add_rules([
+	\ {'char': '<', 'at': '::\%#', 'input_after': '>'},
+	\ {'char': '>', 'at': '::<.*\%#>', 'leave': 1},
+	\ {'char': '<BS>', 'at': '::<\%#>', 'delete': 1},
 	\ {'char': "'", 'at': '\w<.*\%#.*>'},
+	\ {'char': "'", 'at': '::<.*\%#.*>'},
 	\ {'char': "'", 'at': '&\%#'},
 \ ], 'rust')
 
