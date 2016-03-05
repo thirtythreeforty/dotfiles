@@ -384,6 +384,13 @@ call s:lexima_add_rules([
 	\ {'char': "'", 'at': '&\%#'},
 \ ], 'rust')
 
+" Insert <> in C and C++ for #include statements
+call s:lexima_add_rules([
+	\ {'char': '<', 'at': '#include\s\+\%#', 'input_after': '>'},
+	\ {'char': '>', 'at': '#include\s\+<\%#>', 'leave': 1},
+	\ {'char': '<BS>', 'at': '#include\s\+<\%#>', 'delete': 1},
+\ ], ['c', 'cpp'])
+
 " Disable python-mode's completion in favor of YCM's
 let g:pymode_rope_completion = 0
 " Don't show the nag window full of errors (that's what the sidebar is for)
