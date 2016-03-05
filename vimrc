@@ -317,9 +317,13 @@ nnoremap gs :Gstatus<CR>
 " Strip whitespace with <leader><space>
 nnoremap <leader><space> :StripWhitespace<CR>
 
-function s:lexima_add_rules(rules)
+function s:lexima_add_rules(rules, ...)
 	for rule in a:rules
-		call lexima#add_rule(rule)
+		let patchedrule = copy(rule)
+		if a:0 > 0
+			call extend(patchedrule, {'filetype': a:1})
+		endif
+		call lexima#add_rule(patchedrule)
 	endfor
 endfunction
 
@@ -335,30 +339,42 @@ call s:lexima_add_rules([
 
 " Disable matching quote insertion when at the beginning of a word
 call s:lexima_add_rules([
-	\ {'char': '''', 'at': '\%#\w'},
+	\ {'char': "'", 'at': '\%#\w'},
 	\ {'char': '"', 'at': '\%#\w'},
 	\ {'char': '`', 'at': '\%#\w'},
 \ ])
 
 " TeX rules for $ math regions $
+" For some reason typing a $ at '$$ | $$' causes leaving the outer $, but this
+" is fine for me.
 call s:lexima_add_rules([
-	\ {'char': '$', 'input_after': '$', 'filetype': 'tex'},
-	\ {'char': '<Space>', 'at': '\$\%#\$', 'input_after': '<Space>', 'filetype': 'tex'},
-	\ {'char': '$', 'at': '\$\%#\$', 'input_after': '$', 'filetype': 'tex'},
-	\ {'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'tex'},
-	\ {'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'tex'},
-	\ {'char': '<BS>', 'at': '\$ \%# \$', 'delete': 1, 'filetype': 'tex'},
-\ ])
+	\ {'char': '$', 'input_after': '$'},
+	\ {'char': '<Space>', 'at': '\$\%#\$', 'input_after': '<Space>'},
+	\ {'char': '$', 'at': '\$\%#\$', 'input_after': '$'},
+	\ {'char': '$', 'at': '\%#\$', 'leave': '$'},
+	\ {'char': '$', 'at': '\%# \$', 'leave': '$'},
+	\ {'char': '<BS>', 'at': '\$\%#\$', 'delete': 1},
+	\ {'char': '<BS>', 'at': '\$ \%# \$', 'delete': 1},
+\ ], 'tex')
 
 " TeX rules for ``smart quotes''
 call s:lexima_add_rules([
-	\ {'char': '`', 'input_after': '''', 'filetype': 'tex'},
-	\ {'char': '''', 'at': '`.\*\%#''', 'leave': 1, 'filetype': 'tex'},
-	\ {'char': '<BS>', 'at': '`\%#''', 'delete': 1, 'filetype': 'tex'},
-	\ {'char': '<BS>', 'at': "` \%# '", 'delete': 1, 'filetype': 'tex'},
-	\ {'char': "'", 'at': '\w\%#''', 'filetype': 'tex'},
-	\ {'char': '`', 'at': '\%#\w', 'filetype': 'tex'},
-\ ])
+	\ {'char': '`', 'input_after': "'"},
+	\ {'char': "'", 'at': "`.\{-}\%#'", 'leave': 1},
+	\ {'char': '<BS>', 'at': "`\%#'", 'delete': 1},
+	\ {'char': '<BS>', 'at': "` \%# '", 'delete': 1},
+	\ {'char': "'", 'at': "\w\%#'"},
+	\ {'char': '`', 'at': '\%#\w'},
+\ ], 'tex')
+
+" Streamline generics in Rust, especially disabling single-quote matching in <>
+call s:lexima_add_rules([
+	\ {'char': '<', 'at': '\w\%#', 'input_after': '>'},
+	\ {'char': '>', 'at': '\w<.*\%#>', 'leave': 1},
+	\ {'char': '<BS>', 'at': '\w<\%#>', 'delete': 1},
+	\ {'char': "'", 'at': '\w<.*\%#.*>'},
+	\ {'char': "'", 'at': '&\%#'},
+\ ], 'rust')
 
 " Disable python-mode's completion in favor of YCM's
 let g:pymode_rope_completion = 0
