@@ -367,11 +367,15 @@ call s:lexima_add_rules([
 	\ {'char': '`', 'at': '\%#\w'},
 \ ], 'tex')
 
-" Streamline generics in Rust, especially disabling single-quote matching in <>
+" Streamline generics in Rust and C++
 call s:lexima_add_rules([
 	\ {'char': '<', 'at': '\w\%#', 'input_after': '>'},
 	\ {'char': '>', 'at': '\w<.*\%#>', 'leave': 1},
 	\ {'char': '<BS>', 'at': '\w<\%#>', 'delete': 1},
+\ ], ['rust', 'cpp'])
+
+" Especially disabling single-quote matching in <> for Rust
+call s:lexima_add_rules([
 	\ {'char': "'", 'at': '\w<.*\%#.*>'},
 	\ {'char': "'", 'at': '&\%#'},
 \ ], 'rust')
