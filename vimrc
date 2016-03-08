@@ -360,7 +360,6 @@ call s:lexima_add_rules([
 " TeX rules for ``smart quotes''
 call s:lexima_add_rules([
 	\ {'char': '`', 'input_after': "'"},
-	\ {'char': "'", 'at': "`.\{-}\%#'", 'leave': 1},
 	\ {'char': '<BS>', 'at': "`\%#'", 'delete': 1},
 	\ {'char': '<BS>', 'at': "` \%# '", 'delete': 1},
 	\ {'char': "'", 'at': "\w\%#'"},
@@ -370,14 +369,14 @@ call s:lexima_add_rules([
 " Streamline generics in Rust and C++
 call s:lexima_add_rules([
 	\ {'char': '<', 'at': '\w\%#', 'input_after': '>'},
-	\ {'char': '>', 'at': '\w<.*\%#>', 'leave': 1},
+	\ {'char': '>', 'at': '\%#>', 'leave': 1},
 	\ {'char': '<BS>', 'at': '\w<\%#>', 'delete': 1},
 \ ], ['rust', 'cpp'])
 
 " Extra rules for Rust, Especially disabling single-quote matching in <>
 call s:lexima_add_rules([
 	\ {'char': '<', 'at': '::\%#', 'input_after': '>'},
-	\ {'char': '>', 'at': '::<.*\%#>', 'leave': 1},
+	\ {'char': '>', 'at': '\%#>', 'leave': 1},
 	\ {'char': '<BS>', 'at': '::<\%#>', 'delete': 1},
 	\ {'char': "'", 'at': '\w<.*\%#.*>'},
 	\ {'char': "'", 'at': '::<.*\%#.*>'},
@@ -387,7 +386,7 @@ call s:lexima_add_rules([
 " Insert <> in C and C++ for #include statements
 call s:lexima_add_rules([
 	\ {'char': '<', 'at': '#include\s\+\%#', 'input_after': '>'},
-	\ {'char': '>', 'at': '#include\s\+<\%#>', 'leave': 1},
+	\ {'char': '>', 'at': '\%#>', 'leave': 1},
 	\ {'char': '<BS>', 'at': '#include\s\+<\%#>', 'delete': 1},
 \ ], ['c', 'cpp'])
 
