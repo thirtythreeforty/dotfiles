@@ -111,7 +111,7 @@ vnoremap < <gv
 
 " Disable Ex mode, replace it with Execute Lines in Vimscript
 function! ExecRange(line1, line2)
-	exec join(getline(a:line1, a:line2), "\n")
+	exec substitute(join(getline(a:line1, a:line2), "\n"), '\n\s*\\', ' ', 'g')
 	echom string(a:line2 - a:line1 + 1) . "L executed"
 endfunction
 command! -range ExecRange call ExecRange(<line1>, <line2>)
