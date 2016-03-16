@@ -120,7 +120,7 @@ nnoremap Q :ExecRange<CR>
 vnoremap Q :ExecRange<CR>
 
 " Make Y yank to end of line (as suggested by Vim help)
-:noremap Y y$
+noremap Y y$
 
 " Force quit with qq (easier to type)
 cnoreabbrev qq q!
