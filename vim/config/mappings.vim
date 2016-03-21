@@ -52,6 +52,3 @@ inoremap <S-Tab> <C-D>
 
 " Hitting Space is much easier than hitting Shift-;
 nnoremap <Space> :
-
-" Easy mapping for Sayonara!
-nnoremap <silent> <leader>q :Sayonara!<CR>

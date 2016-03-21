@@ -142,6 +142,7 @@ let g:vimtex_imaps_enabled = 0
 
 " Close buffer without closing window with :bc
 cabbrev bc Sayonara!
+nnoremap <silent> <leader>q :Sayonara!<CR>
 
 " Git status with gs
 nnoremap gs :Gstatus<CR>
