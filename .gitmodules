@@ -145,3 +145,7 @@
 [submodule "vim/bundle/textile.vim"]
 	path = vim/bundle/textile.vim
 	url = https://github.com/timcharper/textile.vim.git
+[submodule "vim/bundle/zeavim.vim"]
+	path = vim/bundle/zeavim.vim
+	url = https://github.com/KabbAmine/zeavim.vim
+	ignore = dirty
