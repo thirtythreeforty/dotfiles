@@ -17,7 +17,6 @@
         dtrt-indent
         smart-tabs-mode
         whitespace
-        ws-butler
         ))
 
 ;; List of packages to exclude.
@@ -49,25 +48,3 @@
 (defun whitespace/post-init-whitespace ()
   (when whitespace-global-show
     (global-whitespace-mode)))
-
-;; ws-butler initialization
-
-(defun whitespace/init-ws-butler ()
-  (use-package ws-butler
-    :commands (ws-butler-mode ws-butler-global-mode)))
-
-(defun whitespace/post-init-ws-butler ()
-  (when whitespace-global-butler
-    (ws-butler-global-mode))
-  (spacemacs|add-toggle whitespace-strip
-    :status ws-butler-mode
-    :on (ws-butler-mode)
-    :off (ws-butler-mode -1)
-    :documentation ("Strip whitespace on save.")
-    :evil-leader "tS")
-  (spacemacs|add-toggle whitespace-strip-globally
-    :status ws-butler-global-mode
-    :on (ws-butler-global-mode)
-    :off (ws-butler-global-mode -1)
-    :documentation ("Globally strip whitespace on save.")
-    :evil-leader "t C-S"))
