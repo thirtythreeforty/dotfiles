@@ -33,3 +33,7 @@ MinusPlus[{a1_, a2_}, {b1_, b2_}] := Module[{r},
 MinusPlus[{a1_, a2_}, b_] := MinusPlus[{a1, a2}, {b, b}];
 MinusPlus[a_, {b1_, b2_}] := MinusPlus[{a, a}, {b1, b2}];
 MinusPlus[a_, b_] := MinusPlus[{a, a}, {b, b}];
+
+AverageValue[f_, {x_, a_, b_}] := 1/(b - a) * Integrate[f, {x, a, b}];
+AverageValue::usage = "AverageValue[f[x], {x, a, b}] computes the average value of f[x] with respect to x over the interval {a, b}.";
+SyntaxInformation[AverageValue] = {"ArgumentsPattern" -> {_, {_, _, _}}, "LocalVariables" -> {"Plot", {2, 2}}};
