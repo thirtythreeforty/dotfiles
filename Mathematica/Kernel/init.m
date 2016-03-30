@@ -36,3 +36,12 @@ MinusPlus[a_, b_] := MinusPlus[{a, a}, {b, b}];
 AverageValue[f_, {x_, a_, b_}] := 1/(b - a) * Integrate[f, {x, a, b}];
 AverageValue::usage = "gives the average value of f[x] with respect to x over the interval {a, b}.";
 SyntaxInformation[AverageValue] = {"ArgumentsPattern" -> {_, {_, _, _}}, "LocalVariables" -> {"Plot", {2, 2}}};
+
+(* Functions for Radar and Signals & Systems *)
+
+InstantFreq[f_, t_] := 1/(2 \[Pi]) D[f, t];
+InstantFreq::usage = "InstantFreq[f[t], t] gives the instantaneous frequency of f[t] with respect to t";
+SyntaxInformation[InstantFreq] = {"ArgumentsPattern" -> {_, _}, "LocalVariables" -> {"D", {2, 2}}};
+
+ListConvolveLikeMATLAB[a_, b_] := ListConvolve[a, b, {1, -1}, 0]
+SyntaxInformation[ListConvolveLikeMATLAB] = {"ArgumentsPattern" -> {_, _}};
