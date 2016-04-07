@@ -317,6 +317,9 @@ backward-delete-char otherwise."
     "wv" 'split-window-right-and-focus
     "wV" 'split-window-right)
 
+  ;; Enter Ex mode with SPC SPC
+  (evil-leader/set-key "SPC" 'evil-ex)
+
   ;; Global visual-line-mode is like Vim's breakindent
   (global-visual-line-mode)
 
