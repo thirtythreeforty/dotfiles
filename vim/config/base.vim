@@ -49,7 +49,7 @@ autocmd FileType c setlocal foldmethod=syntax
 autocmd FileType cpp setlocal foldmethod=syntax
 autocmd FileType c setlocal cindent
 autocmd FileType cpp setlocal cindent
-set cinoptions=:0,l1,g0,(0
+set cinoptions=:0,l1,g0,(0,Ws,N-s,m1
 set cinkeys=0{,0},0),:,0#,!<Tab>,o,O,e
 
 set mouse=a
