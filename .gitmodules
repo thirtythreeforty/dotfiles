@@ -152,3 +152,6 @@
 [submodule "vim/bundle/vim-abolish"]
 	path = vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/bundle/targets.vim"]
+	path = vim/bundle/targets.vim
+	url = https://github.com/wellle/targets.vim.git
