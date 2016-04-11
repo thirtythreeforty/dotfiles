@@ -181,7 +181,7 @@ call s:lexima_add_rules([
 " For some reason typing a $ at '$$ | $$' causes leaving the outer $, but this
 " is fine for me.
 call s:lexima_add_rules([
-	\ {'char': '$', 'input_after': '$'},
+	\ {'char': '$', 'at': '[^\\]\%#', 'input_after': '$'},
 	\ {'char': '<Space>', 'at': '\$\%#\$', 'input_after': '<Space>'},
 	\ {'char': '$', 'at': '\$\%#\$', 'input_after': '$'},
 	\ {'char': '$', 'at': '\%#\$', 'leave': '$'},
