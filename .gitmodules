@@ -155,3 +155,6 @@
 [submodule "vim/bundle/targets.vim"]
 	path = vim/bundle/targets.vim
 	url = https://github.com/wellle/targets.vim.git
+[submodule "vim/bundle/vimagit"]
+	path = vim/bundle/vimagit
+	url = https://github.com/jreybert/vimagit.git
