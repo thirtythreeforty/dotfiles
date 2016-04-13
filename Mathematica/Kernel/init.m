@@ -31,6 +31,31 @@ MinusPlus[{a1_, a2_}, b_] := MinusPlus[{a1, a2}, {b, b}];
 MinusPlus[a_, {b1_, b2_}] := MinusPlus[{a, a}, {b1, b2}];
 MinusPlus[a_, b_] := MinusPlus[{a, a}, {b, b}];
 
+(* Annotate and display a Table as a LabeledGrid *)
+LabeledGrid[table_, {x_, y_},
+   opts : OptionsPattern[{LabeledGrid, Grid}]] :=
+  Module[{doneX, MakeLabel, maxX, maxY, styles, styleSeq},
+   styles = OptionValue[LabelStyle];
+   styleSeq = If[ListQ[styles],
+     Sequence @@ styles,
+     Sequence@styles];
+   MakeLabel[in_List, dim_] :=
+    PadRight[Map[Style[#, styleSeq] &, in], dim, ""];
+   MakeLabel[in_Function, dim_] :=
+    Table[Style[in[elem], styleSeq], {elem, 1, dim}];
+   maxX = Max @@ Length /@ table;
+   maxY = Length[table];
+   doneX = Prepend[table, MakeLabel[x, maxX]];
+   Grid[MapThread[Prepend, {doneX, Join[{""}, MakeLabel[y, maxY]]}],
+    opts]
+   ];
+Options[LabeledGrid] = {LabelStyle -> {}};
+LabeledGrid::usage =
+  "LabeledGrid[table, {column, row}, LabelStyle \[Rule] {}] adds \
+elements from column and row to each corresponding column and row of \
+table. Or, if column and row are functions, the labels are created by \
+evaluating the function with each row or column index.";
+
 (* Miscellaneous conveniences *)
 
 AverageValue[f_, {x_, a_, b_}] := 1/(b - a) * Integrate[f, {x, a, b}];
