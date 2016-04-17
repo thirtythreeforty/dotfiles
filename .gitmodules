@@ -94,9 +94,6 @@
 [submodule "vim/bundle/rainbow_parentheses.vim"]
 	path = vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/junegunn/rainbow_parentheses.vim.git
-[submodule "vim/bundle/vim-plugin-AnsiEsc"]
-	path = vim/bundle/vim-plugin-AnsiEsc
-	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
 [submodule "vim/bundle/vim-lawrencium"]
 	path = vim/bundle/vim-lawrencium
 	url = https://github.com/ludovicchabant/vim-lawrencium.git
