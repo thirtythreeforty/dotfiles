@@ -34,6 +34,9 @@ noremap Y y$
 cnoreabbrev qq q!
 cnoreabbrev qqq qall!
 
+" I mistype this often enough
+cnoreabbrev ww w
+
 " Reload in DOS line ending mode
 cnoreabbrev edos :e ++ff=dos
 cnoreabbrev eunix :e ++ff=unix
