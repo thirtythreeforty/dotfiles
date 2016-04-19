@@ -65,6 +65,10 @@ SyntaxInformation[AverageValue] = {"ArgumentsPattern" -> {_, {_, _, _}}, "LocalV
 dB[x_] := 10*Log10[x];
 idB[x_] := 10^(x/10);
 
+ToUnit[unit_][x__] := UnitConvert[x, unit];
+ToUnit::usage = "ToUnit[unit] represents an operator that converts its operand to unit.  It is most useful as a postfix operand.";
+SyntaxInformation[ToUnit] = {"ArgumentsPattern" -> {_}};
+
 (* Functions for Radar and Signals & Systems *)
 
 InstantFreq[f_, t_] := 1/(2 \[Pi]) D[f, t];
