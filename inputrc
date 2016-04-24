@@ -7,8 +7,9 @@ set completion-ignore-case on
 # NOTE: make sure the terminal emulator is set to XFree4 mode,
 # or you will have a bad time with fancy things like Home and End.
 # Also make sure that you don't rebind any keys before this line.
-set editing-mode vi
-set show-mode-in-prompt on
+# EDIT: disabled for now, I don't like it.
+#set editing-mode vi
+#set show-mode-in-prompt on
 
 # Vi mode seems to mess up some bindings that I like
 "\C-x\C-r": re-read-init-file
