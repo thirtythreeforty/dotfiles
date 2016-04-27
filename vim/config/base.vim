@@ -92,5 +92,18 @@ if exists('&undofile')
 	set undofile
 endif
 
+" Commands to swap j with gj as needed
+function! VisualLinewise(en)
+	if a:en == 1
+		nnoremap <buffer> j gj
+		nnoremap <buffer> k gk
+	else
+		nunmap <buffer> j
+		nunmap <buffer> k
+	endif
+endfunction
+command! EnableVisualLine call VisualLinewise(1)
+command! DisableVisualLine call VisualLinewise(0)
+
 " Use tree mode in netrw
 let g:netrw_liststyle=3

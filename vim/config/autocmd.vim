@@ -9,3 +9,8 @@ autocmd BufRead,BufNewFile *.tag set filetype=html
 " because BufRead hooks execute before all the irritating builtin ones that
 " add these options.
 autocmd FileType * setlocal formatoptions-=ro
+
+" Use visual linewise navigation in tex, markdown, and text files
+autocmd FileType markdown EnableVisualLine
+autocmd FileType text EnableVisualLine
+autocmd FileType tex EnableVisualLine
