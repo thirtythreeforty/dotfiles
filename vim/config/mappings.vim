@@ -54,7 +54,8 @@ nnoremap <leader>w <C-w>
 imap <C-BS> <C-W>
 imap <C-_> <C-W>
 
-inoremap <S-Tab> <C-D>
+" Unindent with Shift-Tab
+imap <S-Tab> <C-D>
 
 " Hitting Space is much easier than hitting Shift-;
 nnoremap <Space> :
