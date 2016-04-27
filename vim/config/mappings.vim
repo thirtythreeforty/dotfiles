@@ -47,6 +47,9 @@ nnoremap <silent> <Leader>/ :noh<CR>
 " Toggle recent buffer with <Leader>-Tab
 nnoremap <silent> <Leader><Tab> :b#<CR>
 
+" Switch windows with <leader>w, like in Spacemacs
+nnoremap <leader>w <C-w>
+
 " Delete previous word with Ctrl-Backspace
 imap <C-BS> <C-W>
 imap <C-_> <C-W>
