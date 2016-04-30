@@ -107,6 +107,7 @@
 [submodule "vim/bundle/lexima.vim"]
 	path = vim/bundle/lexima.vim
 	url = https://github.com/cohama/lexima.vim.git
+	ignore = dirty
 [submodule "vim/bundle/CursorLineCurrentWindow"]
 	path = vim/bundle/CursorLineCurrentWindow
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
