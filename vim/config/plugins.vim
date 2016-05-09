@@ -177,6 +177,13 @@ call s:lexima_add_rules([
 	\ {'char': '`', 'at': '\%#\w'},
 \ ])
 
+" Matching backspace motions for newline rules
+call s:lexima_add_rules([
+	\ {'char': '<BS>', 'at': '(\n\%#\n\s*)', 'input': '<BS>', 'delete': 1},
+	\ {'char': '<BS>', 'at': '\[\n\%#\n\s*]', 'input': '<BS>', 'delete': 1},
+	\ {'char': '<BS>', 'at': '{\n\%#\n\s*}', 'input': '<BS>', 'delete': 1},
+\ ])
+
 " TeX rules for $ math regions $
 " For some reason typing a $ at '$$ | $$' causes leaving the outer $, but this
 " is fine for me.
