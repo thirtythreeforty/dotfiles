@@ -213,7 +213,8 @@ call s:lexima_add_rules([
 	\ {'char': '<BS>', 'at': '\w<\%#>', 'delete': 1},
 \ ], ['rust', 'cpp'])
 
-" Extra rules for Rust, Especially disabling single-quote matching in <>
+" Extra rules for Rust, especially disabling single-quote matching in <>
+" and in where clauses
 call s:lexima_add_rules([
 	\ {'char': '<', 'at': '::\%#', 'input_after': '>'},
 	\ {'char': '>', 'at': '\%#>', 'leave': 1},
@@ -221,6 +222,7 @@ call s:lexima_add_rules([
 	\ {'char': "'", 'at': '\w<.*\%#.*>'},
 	\ {'char': "'", 'at': '::<.*\%#.*>'},
 	\ {'char': "'", 'at': '&\%#'},
+	\ {'char': "'", 'at': 'where.*:.*\%#'},
 \ ], 'rust')
 
 " Insert <> in C and C++ for #include statements
