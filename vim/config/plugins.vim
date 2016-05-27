@@ -264,5 +264,5 @@ let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R',
 " rainbow_parentheses.vim should rainbow-ify {} and [] too
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['\\{', '\\}']]
 
-" Swap ai and AI in targets.vim
-let g:targets_aiAI = 'AIai'
+" Swap i and I in targets.vim
+let g:targets_aiAI = 'aIAi'
