@@ -70,6 +70,8 @@ set list listchars=tab:»\
 set updatetime=500
 
 set scrolloff=2
+set sidescroll=1
+set sidescrolloff=3
 
 " Allow modified buffers to be hidden
 set hidden
