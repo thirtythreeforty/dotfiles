@@ -231,6 +231,10 @@ call s:lexima_add_rules([
 	\ {'char': '<BS>', 'at': '#include\s\+<\%#>', 'delete': 1},
 \ ], ['c', 'cpp'])
 
+" Suppress single-quote insertion for text files, except in double-quotes
+" as in nested quotations.
+call lexima#add_rule({'char': "'", 'except': '".*\%#.*"', 'filetype': 'text'})
+
 " Disable python-mode's completion in favor of YCM's
 let g:pymode_rope_completion = 0
 " Don't show the nag window full of errors (that's what the sidebar is for)
