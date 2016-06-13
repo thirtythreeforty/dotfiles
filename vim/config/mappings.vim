@@ -38,8 +38,8 @@ cnoreabbrev qqq qall!
 cnoreabbrev ww w
 
 " Reload in DOS line ending mode
-cnoreabbrev edos :e ++ff=dos
-cnoreabbrev eunix :e ++ff=unix
+cnoreabbrev edos e ++ff=dos
+cnoreabbrev eunix e ++ff=unix
 
 " Unhighlight with <Leader>/
 nnoremap <silent> <Leader>/ :noh<CR>
