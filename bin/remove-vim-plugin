@@ -7,7 +7,7 @@ DOTFILESDIR="$(dirname "$SCRIPTPATH")"
 REPONAME="$(basename ${@})"
 REPONAME=${REPONAME%%.git}
 
-pushd ${DOTFILESDIR} > /dev/null
+pushd "${DOTFILESDIR}" > /dev/null 
 	git submodule deinit -f "./vim/bundle/$REPONAME"
 	git rm -f "./vim/bundle/$REPONAME"
 	rm -rf ".git/modules/vim/bundle/$REPONAME"
