@@ -12,6 +12,9 @@ __vcprompt=""
 if [ -f /usr/share/git/git-prompt.sh ]; then
     source /usr/share/git/git-prompt.sh
     __vcprompt="$__vcprompt"'$(__git_ps1)'
+elif [ -f /etc/bash_completion.d/git-prompt ]; then
+    source /etc/bash_completion.d/git-prompt
+    __vcprompt="$__vcprompt"'$(__git_ps1)'
 fi
 if [ ! -z $(type -p hg) ]; then
     __hg_ps1() {
