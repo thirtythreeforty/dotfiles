@@ -1,11 +1,13 @@
 #!/bin/bash
 
-hush pushd
-for i in `ls -d ~/dotfiles/vim/bundle/*`; do
+pushd ~/dotfiles/vim/bundle
+for i in */; do
+	echo "Updating $i"
 	cd "$i"
 	git fetch origin
 	echo -n "`basename $i`: "
 	git checkout origin/HEAD
 	git submodule update --init --recursive
+	cd ..
 done
 hush popd
