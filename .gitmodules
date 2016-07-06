@@ -153,9 +153,6 @@
 [submodule "vim/bundle/targets.vim"]
 	path = vim/bundle/targets.vim
 	url = https://github.com/wellle/targets.vim.git
-[submodule "vim/bundle/vimagit"]
-	path = vim/bundle/vimagit
-	url = https://github.com/jreybert/vimagit.git
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
