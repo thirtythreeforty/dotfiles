@@ -27,7 +27,7 @@
 [fetch]
 	prune = true
 [core]
-	excludesfile = /home/georgev/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	pager = less -x1,5
 [rerere]
 	enabled = true
