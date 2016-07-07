@@ -20,6 +20,8 @@ let g:airline_detect_paste=1
 let g:airline#extensions#syntastic#enabled = 1
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 " Allow jumping to a buffer with <leader><number>
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 nmap <leader>1 <Plug>AirlineSelectTab1
