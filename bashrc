@@ -95,9 +95,6 @@ alias ll='ls -lh'
 alias cpr='cp -r'
 alias dfh='df -h'
 
-# Must source the Rust unlocking script because it exports variables
-alias unlock-rust='source ~/bin/unlock-rust'
-
 # Convenient and more memorable alias for combine (from moreutils)
 alias _=combine
 
