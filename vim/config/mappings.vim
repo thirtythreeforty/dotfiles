@@ -63,3 +63,5 @@ nnoremap <Space> :
 " Often I want to add a semicolon to the end of a word
 nnoremap <silent> <leader>; :let b:wv = winsaveview()<CR>:normal A;<CR>:call winrestview(b:wv)<CR>
 
+" In visual mode, . repeats on each selected line
+vnoremap . :norm.<CR>;
