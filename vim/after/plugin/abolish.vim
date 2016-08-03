@@ -7,3 +7,4 @@ Abolish seciton section
 Abolish becuase because
 Abolish actign acting
 Abolish ehtical ethical
+Abolish ture true
