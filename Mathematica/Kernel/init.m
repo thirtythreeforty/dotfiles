@@ -2,6 +2,8 @@
    Be warned: here be dragons of a noob's design! Anything that works is probably
    someone else's, and anything that is broken is probably mine. *)
 
+BeginPackage["thirtythreeforty`"]
+
 (* PlusMinus does not have an intrinsic definition and must be bound.  Similiar
    rules are recommended by the Wolfram manual, but I grabbed these in particular
    from `https://github.com/Tyilo/Mathematica-init.m`. *)
@@ -84,3 +86,5 @@ SyntaxInformation[ListCorrelateLikeMATLAB] = {"ArgumentsPattern" -> {_, _}};
 
 nPr[n_, r_] := n! / (n - k)!;
 nCr[n_, r_] := Binomial[n, r];
+
+EndPackage[]
