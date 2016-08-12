@@ -79,3 +79,8 @@ ListConvolveLikeMATLAB[a_, b_] := ListConvolve[a, b, {1, -1}, 0];
 SyntaxInformation[ListConvolveLikeMATLAB] = {"ArgumentsPattern" -> {_, _}};
 ListCorrelateLikeMATLAB[a_, b_] := ListCorrelate[a, b, {1, -1}, 0];
 SyntaxInformation[ListCorrelateLikeMATLAB] = {"ArgumentsPattern" -> {_, _}};
+
+(* Sometimes you just want the TI-84+ function *)
+
+nPr[n_, r_] := n! / (n - k)!;
+nCr[n_, r_] := Binomial[n, r];
