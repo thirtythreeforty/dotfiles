@@ -1,7 +1,3 @@
-" Search but don't jump
-nnoremap <silent> <leader>* :let b:wv = winsaveview()<CR>*``:call winrestview(b:wv)<CR>
-nnoremap <silent> <leader># :let b:wv = winsaveview()<CR>#``:call winrestview(b:wv)<CR>
-
 " Ctrl-J and Ctrl-K insert blank lines, remaining in command mode
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>

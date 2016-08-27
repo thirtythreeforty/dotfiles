@@ -271,3 +271,27 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['\\{', '\\}']]
 
 " Swap i and I in targets.vim
 let g:targets_aiAI = 'aIAi'
+
+" vim-asterisk bindings
+map *   <Plug>(asterisk-*)
+map #   <Plug>(asterisk-#)
+map g*  <Plug>(asterisk-g*)
+map g#  <Plug>(asterisk-g#)
+map z*  <Plug>(asterisk-z*)
+map gz* <Plug>(asterisk-gz*)
+map z#  <Plug>(asterisk-z#)
+map gz# <Plug>(asterisk-gz#)
+" Not sure if I like this yet.
+"let g:asterisk#keeppos = 1
+
+" vim-search-pulse integration with vim-asterisk
+let g:vim_search_pulse_disable_auto_mappings = 1
+
+nmap * <Plug>(asterisk-*)<Plug>Pulse
+nmap # <Plug>(asterisk-#)<Plug>Pulse
+nmap n n<Plug>Pulse
+nmap N N<Plug>Pulse
+
+" Pulses cursor line on first match
+" when doing search with / or ?
+cmap <silent> <expr> <enter> search_pulse#PulseFirst()
