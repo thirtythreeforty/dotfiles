@@ -22,6 +22,7 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=l
 set guioptions-=r
+set fillchars+=vert:┃,fold:┄
 highlight Comment ctermfg=244
 highlight SpecialKey ctermfg=darkgrey
 highlight CursorLine cterm=NONE ctermbg=235
