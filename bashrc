@@ -31,6 +31,8 @@ fi
 
 if [ -f /etc/profile.d/autojump.sh ]; then
     source /etc/profile.d/autojump.sh
+elif [ -f /usr/share/autojump/autojump.bash ]; then
+    source /usr/share/autojump/autojump.bash
 fi
 
 # Editor
@@ -94,6 +96,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias cpr='cp -r'
 alias dfh='df -h'
+alias clip='xsel --clipboard'
 
 # Convenient and more memorable alias for combine (from moreutils)
 alias _=combine
