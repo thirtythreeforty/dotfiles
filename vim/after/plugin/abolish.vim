@@ -8,3 +8,6 @@ Abolish becuase because
 Abolish actign acting
 Abolish ehtical ethical
 Abolish ture true
+Abolish toher other
+Abolish shceme scheme
+Abolish thsi this
