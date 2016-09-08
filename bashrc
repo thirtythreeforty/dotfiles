@@ -22,7 +22,13 @@ if [ ! -z $(type -p hg) ]; then
     }
     __vcprompt="$__vcprompt"'$(__hg_ps1)'
 fi
-PS1='\[\e[1;32m\][\u@\h \W\[\033[1;36m\]'"$__vcprompt"'\[\033[1;32m\]]\$\[\e[0m\] '
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    PROMPT_COLOR='\e[1;33m'
+else
+    PROMPT_COLOR='\e[1;32m'
+fi
+PS1='\['"$PROMPT_COLOR"'\][\u@\h \W\[\033[1;36m\]'"$__vcprompt"'\['"$PROMPT_COLOR"'\]]\$\[\e[0m\] '
 
 # CNF
 if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
