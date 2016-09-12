@@ -157,3 +157,6 @@
 	path = vim/bundle/vim-asterisk
 	url = https://github.com/haya14busa/vim-asterisk.git
 	ignore = dirty
+[submodule "vim/bundle/vim-searchindex"]
+	path = vim/bundle/vim-searchindex
+	url = https://github.com/google/vim-searchindex.git
