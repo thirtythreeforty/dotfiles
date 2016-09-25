@@ -1,6 +1,9 @@
 set nocompatible
 
 set t_Co=256
+if has('termguicolors')
+	set termguicolors
+endif
 
 set backspace=indent,eol,start
 set showcmd

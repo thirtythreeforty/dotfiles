@@ -1,7 +1,3 @@
-" Enable colors in the terminal
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
-
 " Enable cursor shapes in terminal
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 
