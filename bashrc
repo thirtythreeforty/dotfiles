@@ -48,6 +48,9 @@ else
     export EDITOR="vim"
 fi
 
+# Calculate with C-q, from http://askubuntu.com/a/379615/96292
+bind '"\C-q": "\C-aqalc \C-m"'
+
 # List largest files, with optional list of files
 function ducks() {
     local files=("${@}")
