@@ -53,6 +53,9 @@ imap <C-_> <C-W>
 " Unindent with Shift-Tab
 imap <S-Tab> <C-D>
 
+" <Delete> with <Alt-Backspace>
+imap <M-BS> <Del>
+
 " Hitting Space is much easier than hitting Shift-;
 nnoremap <Space> :
 
