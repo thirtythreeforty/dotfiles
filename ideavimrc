@@ -1,0 +1,3 @@
+source ~/.vim/config/base.vim
+source ~/.vim/config/mappings.vim
+source ~/.vim/config/autocmd.vim

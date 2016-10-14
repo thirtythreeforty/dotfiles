@@ -15,6 +15,9 @@
     .hgrc:
         relink: true
         path: hgrc
+    .ideavimrc:
+        relink: true
+        path: ideavimrc
     .inputrc:
         relink: true
         path: inputrc
