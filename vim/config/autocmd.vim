@@ -5,6 +5,10 @@ autocmd BufRead,BufNewFile SConscript set filetype=python
 autocmd BufRead,BufNewFile TAG_EDITMSG set filetype=gitcommit
 autocmd BufRead,BufNewFile *.tag set filetype=html
 
+" 2iC's Lean Service definitions are really JSON
+autocmd BufRead,BufNewFile *.lsd set filetype=json
+autocmd BufRead,BufNewFile *.lsr set filetype=json
+
 " Disable auto-commenting new lines, everywhere.  Must use a FileType hook
 " because BufRead hooks execute before all the irritating builtin ones that
 " add these options.
