@@ -101,6 +101,11 @@ autocmd FileType rust nnoremap gD :vsplit<cr>:YcmCompleter GoTo<cr>
 " Make Syntastic use C++11
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++14'
+" Don't use Java plugin (use vim-javacomplete).  Java plugin is dumb anyway.
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["java"]
+\ }
 
 " Goyo and Limelight for anti-distraction writing
 let g:goyo_width=100
@@ -295,3 +300,6 @@ nmap N N<Plug>Pulse
 " Pulses cursor line on first match
 " when doing search with / or ?
 cmap <silent> <expr> <enter> search_pulse#PulseFirst()
+
+" JavaComplete
+autocmd FileType java setlocal omnifunc=javacomplete#Complete

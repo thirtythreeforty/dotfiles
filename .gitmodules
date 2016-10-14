@@ -160,3 +160,9 @@
 [submodule "vim/bundle/vim-searchindex"]
 	path = vim/bundle/vim-searchindex
 	url = https://github.com/google/vim-searchindex.git
+[submodule "vim/bundle/vim-headerguard"]
+	path = vim/bundle/vim-headerguard
+	url = https://github.com/drmikehenry/vim-headerguard.git
+[submodule "vim/bundle/vim-javacomplete2"]
+	path = vim/bundle/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2.git
