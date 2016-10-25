@@ -276,6 +276,11 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['\\{', '\\}']]
 
 " Swap i and I in targets.vim
 let g:targets_aiAI = 'aIAi'
+" Angle brackets are containers too (think Rust/Java generics, C++ templates)
+let g:targets_argOpening = '[([<]'
+let g:targets_argClosing = '[])>]'
+" Semicolons can separate arguments in for(;;) loops
+let g:targets_argSeparator = '[,;]'
 
 " vim-asterisk bindings
 map *   <Plug>(asterisk-*)
