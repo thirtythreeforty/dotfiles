@@ -254,6 +254,7 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 " `s{char}{char}{label}`
 nmap s <Plug>(easymotion-s2)
 vmap s <Plug>(easymotion-s2)
+omap S <Plug>(easymotion-s2)
 " Replace original s (change character) with S
 nnoremap S s
 
