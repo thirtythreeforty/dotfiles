@@ -6,4 +6,4 @@ source ~/.vim/config/autocmd.vim
 set surround
 
 " Bind AceJump to s (like sneak for real Vim)
-nmap s :action AceJumpAction<CR>
+nmap s :action AceAction<CR>
