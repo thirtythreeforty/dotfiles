@@ -252,7 +252,7 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Bi-directional find motion
 " `s{char}{char}{label}`
-nmap s <Plug>(easymotion-s2)
+nmap s <Plug>(easymotion-overwin-f2)
 vmap s <Plug>(easymotion-s2)
 omap S <Plug>(easymotion-s2)
 " Replace original s (change character) with S
