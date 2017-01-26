@@ -309,3 +309,8 @@ cmap <silent> <expr> <enter> search_pulse#PulseFirst()
 
 " JavaComplete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+" Incsearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
