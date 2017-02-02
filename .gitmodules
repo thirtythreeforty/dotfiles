@@ -163,6 +163,7 @@
 [submodule "vim/bundle/vim-headerguard"]
 	path = vim/bundle/vim-headerguard
 	url = https://github.com/drmikehenry/vim-headerguard.git
+	ignore = dirty
 [submodule "vim/bundle/vim-javacomplete2"]
 	path = vim/bundle/vim-javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2.git
