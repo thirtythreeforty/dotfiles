@@ -49,7 +49,15 @@ nnoremap <leader>. :CtrlPTag<cr>
 nnoremap gb :CtrlPBuffer<cr>
 
 " CtrlP should not recurse ad nauseum
-let g:ctrlp_max_depth = 15
+let g:ctrlp_max_depth = 8
+
+" CtrlP should ignore what VCS ignores (pasted from its manual)
+let g:ctrlp_user_command = {
+\ 'types': {
+  \ 1: ['.git', 'cd ''%s'' && git ls-files --exclude-standard -co'],
+  \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+  \ },
+\ }
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -58,7 +66,7 @@ if executable('ag')
 	set grepformat=%f:%l:%c%m
 
 	" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+	let g:ctrlp_user_command['fallback'] = 'ag %s -l --nocolor -g ""'
 
 	" ag is fast enough that CtrlP doesn't need to cache
 	let g:ctrlp_use_caching = 0
