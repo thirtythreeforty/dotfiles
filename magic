@@ -3,6 +3,7 @@
 >&0   string 1\n version 1
 >&0   string 2\n version 2
 >&0   string 3\n version 3
+>&0   string 4\n version 4
 >&0   default x  unknown version
 >&2  string 1\n \b, compressed
 >&2  string 0\n \b, uncompressed
