@@ -38,3 +38,5 @@
 	templatedir = ~/.git_template
 [include]
 	path = .gitconfig_local
+[branch "master"]
+	mergeoptions = --no-ff
