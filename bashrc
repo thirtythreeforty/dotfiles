@@ -121,6 +121,7 @@ alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/u
 # Ignore space commands and repeated commands from history
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=500000
+export HISTSIZE=500000
 
 # tabs should be 4 chars long
 tabs 4
