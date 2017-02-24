@@ -179,3 +179,9 @@
 [submodule "vim/bundle/vimagit"]
 	path = vim/bundle/vimagit
 	url = https://github.com/jreybert/vimagit
+[submodule "vim/bundle/breezy"]
+	path = vim/bundle/breezy
+	url = https://github.com/fneu/breezy.git
+[submodule "vim/bundle/poppy.vim"]
+	path = vim/bundle/poppy.vim
+	url = https://github.com/bounceme/poppy.vim.git
