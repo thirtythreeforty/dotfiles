@@ -2,12 +2,11 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 execute pathogen#helptags()
 
-" Don't touch my transparency!
-"autocmd ColorScheme * hi! Normal ctermbg=none guibg=NONE
-
-colorscheme breezy
-let g:airline_theme='breezy'
-let python_highlight_all=1
+" Colorscheme is PaperColor, but change the background
+let g:PaperColor_Dark_Override = {
+	\ 'background': '#000000',
+\ }
+colorscheme PaperColor
 
 " Display Airline
 set laststatus=2
