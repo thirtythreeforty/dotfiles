@@ -9,16 +9,6 @@ endfunction
 nnoremap <silent>\ :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap <silent><C-\> :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 
-function! MoveFollowIndent(key, default)
-	if match(getline('.'), '\v^\s*\zs') + 1 < col('.')
-		call feedkeys(a:default, 'n')
-	else
-		call feedkeys(a:key)
-	endif
-endfunction
-nnoremap <silent> j :call MoveFollowIndent('+', 'j')<CR>
-nnoremap <silent> k :call MoveFollowIndent('-', 'k')<CR>
-
 " Keep selection after (un)indent
 vnoremap > >gv
 vnoremap < <gv
