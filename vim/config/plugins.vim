@@ -2,11 +2,8 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 execute pathogen#helptags()
 
-" Colorscheme is PaperColor, but change the background
-let g:PaperColor_Dark_Override = {
-	\ 'background': '#000000',
-\ }
-colorscheme PaperColor
+let g:onedark_terminal_italics=1
+colorscheme onedark
 
 " Display Airline
 set laststatus=2

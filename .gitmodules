@@ -185,3 +185,6 @@
 [submodule "vim/bundle/poppy.vim"]
 	path = vim/bundle/poppy.vim
 	url = https://github.com/bounceme/poppy.vim.git
+[submodule "vim/bundle/onedark.vim"]
+	path = vim/bundle/onedark.vim
+	url = https://github.com/joshdick/onedark.vim
