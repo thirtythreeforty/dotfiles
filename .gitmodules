@@ -54,9 +54,6 @@
 [submodule "vim/bundle/YCM-Generator"]
 	path = vim/bundle/YCM-Generator
 	url = https://github.com/rdnetto/YCM-Generator.git
-[submodule "vim/bundle/papercolor-theme"]
-	path = vim/bundle/papercolor-theme
-	url = https://github.com/NLKNguyen/papercolor-theme.git
 [submodule "vim/bundle/goyo.vim"]
 	path = vim/bundle/goyo.vim
 	url = https://github.com/junegunn/goyo.vim.git
