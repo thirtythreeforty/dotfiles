@@ -22,6 +22,7 @@
 [diff]
 	algorithm = patience
 	tool = xxdiff
+	compactionHeuristic = true
 [color]
 	ui = true
 [gui]
