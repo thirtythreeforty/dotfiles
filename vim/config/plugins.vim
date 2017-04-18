@@ -2,12 +2,8 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 execute pathogen#helptags()
 
-" Don't touch my transparency!
-"autocmd ColorScheme * hi! Normal ctermbg=none guibg=NONE
-
-colorscheme breezy
-let g:airline_theme='breezy'
-let python_highlight_all=1
+let g:onedark_terminal_italics=1
+colorscheme onedark
 
 " Display Airline
 set laststatus=2
@@ -55,7 +51,7 @@ let g:ctrlp_max_depth = 8
 " CtrlP should ignore what VCS ignores (pasted from its manual)
 let g:ctrlp_user_command = {
 \ 'types': {
-  \ 1: ['.git', 'cd ''%s'' && git ls-files --exclude-standard -co'],
+  \ 1: ['.git', "cd '%s' && git ls-files --exclude-standard -co"],
   \ 2: ['.hg', 'hg --cwd %s locate -I .'],
   \ },
 \ }
@@ -286,9 +282,10 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['\\{', '\\}']]
 
 " Swap i and I in targets.vim
 let g:targets_aiAI = 'aIAi'
-" Angle brackets are containers too (think Rust/Java generics, C++ templates)
-let g:targets_argOpening = '[([<]'
-let g:targets_argClosing = '[])>]'
+" Angle and curly brackets are containers too
+" (think Rust/Java generics, C++ templates, and C++ constructors)
+let g:targets_argOpening = '[{(<[]'
+let g:targets_argClosing = '[])>}]'
 " Semicolons can separate arguments in for(;;) loops
 let g:targets_argSeparator = '[,;]'
 

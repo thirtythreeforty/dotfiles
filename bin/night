@@ -1,3 +1,9 @@
 #!/bin/bash
 
-xflux -z 39232 -k 3000 -r 1
+if command -v redshift >/dev/null 2>&1; then
+	redshift -t 6500:3000
+elif command -v xflux >/dev/null 2>&1; then
+	xflux -z 39232 -k 3000 -r 1
+else
+	echo 'No suitable program installed; try redshift or xflux.'
+fi
