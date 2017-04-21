@@ -27,6 +27,10 @@
 	ui = true
 [gui]
 	historybrowser = gitk
+[pull]
+	ff = only
+[merge]
+	ff = false
 [push]
 	default = simple
 [fetch]
@@ -40,5 +44,3 @@
 	templatedir = ~/.git_template
 [include]
 	path = .gitconfig_local
-[branch "master"]
-	mergeoptions = --no-ff
