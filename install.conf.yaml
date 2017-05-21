@@ -43,6 +43,9 @@
     .nvimrc:
         relink: true
         path: nvimrc
+    .parallel:
+        relink: true
+        path: parallel
     .screenrc:
         relink: true
         path: screenrc
