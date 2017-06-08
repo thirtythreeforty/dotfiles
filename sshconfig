@@ -14,5 +14,5 @@ Host insomnia247.nl
   HostName insomnia247.nl
   User thirtythreeforty
 
-Host *.kopismobile.org:
+Host *.kopismobile.org
   User ghilliard
