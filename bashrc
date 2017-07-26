@@ -106,6 +106,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias cpr='cp -r'
 alias dfh='df -h'
+alias kill9='kill -9'
 alias clip='xsel --clipboard'
 
 # Convenient and more memorable alias for combine (from moreutils)

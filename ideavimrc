@@ -7,3 +7,9 @@ set surround
 
 " Bind AceJump to s (like sneak for real Vim)
 nmap s :action AceAction<CR>
+
+" I have zero clue what these do by default but they suck.
+nnoremap <C-O> :action Back<CR>
+nnoremap <C-I> :action Forward<CR>
+inoremap <C-S-J> <C-o>:action InsertLiveTemplate<CR>
+nnoremap <S-J> :action EditorJoinLines<CR>

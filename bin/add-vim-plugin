@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Get real path
-SCRIPTPATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )"
+SCRIPTPATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" || exit; pwd -P )"
 DOTFILESDIR="$(dirname "$SCRIPTPATH")"
 
-REPOPATH="${@}"
-REPONAME="$(basename $REPOPATH)"
+REPOPATH="${*}"
+REPONAME="$(basename "$REPOPATH")"
 REPONAME=${REPONAME%%.git}
 
 pushd "${DOTFILESDIR}" > /dev/null
