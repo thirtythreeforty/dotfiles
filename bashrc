@@ -16,12 +16,6 @@ elif [ -f /etc/bash_completion.d/git-prompt ]; then
     source /etc/bash_completion.d/git-prompt
     __vcprompt="$__vcprompt"'$(__git_ps1)'
 fi
-if [ ! -z $(type -p hg) ]; then
-    __hg_ps1() {
-        hg prompt ' ({branch}{ - {bookmark}})' 2> /dev/null
-    }
-    __vcprompt="$__vcprompt"'$(__hg_ps1)'
-fi
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     PROMPT_COLOR='\e[1;33m'
