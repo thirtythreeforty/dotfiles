@@ -9,7 +9,6 @@ groups = wheel
 [extensions]
 churn =
 color =
-prompt = ~/bin/prompt-hg.py
 purge =
 rebase =
 record =

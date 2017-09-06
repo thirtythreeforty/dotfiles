@@ -14,7 +14,5 @@ Host insomnia247.nl
   HostName insomnia247.nl
   User thirtythreeforty
 
-Host crane
-  HostName 130.18.118.227
-
-
+Host *.kopismobile.org
+  User ghilliard

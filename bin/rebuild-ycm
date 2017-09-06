@@ -5,7 +5,7 @@
 pushd ~/.vim/bundle/YouCompleteMe >/dev/null 2>&1
 
 is_installed() {
-	command -v $1 >/dev/null 2>&1
+	command -v "$1" >/dev/null 2>&1
 }
 
 params=""
@@ -39,7 +39,7 @@ if(is_installed npm); then
 	params="$params --tern-completer"
 fi
 
-echo "All flags detected: \`"$params"\`"
+echo "All flags detected: \`$params\`"
 
 python2 install.py $params
 

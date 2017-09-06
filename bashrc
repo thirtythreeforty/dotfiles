@@ -16,12 +16,6 @@ elif [ -f /etc/bash_completion.d/git-prompt ]; then
     source /etc/bash_completion.d/git-prompt
     __vcprompt="$__vcprompt"'$(__git_ps1)'
 fi
-if [ ! -z $(type -p hg) ]; then
-    __hg_ps1() {
-        hg prompt ' ({branch}{ - {bookmark}})' 2> /dev/null
-    }
-    __vcprompt="$__vcprompt"'$(__hg_ps1)'
-fi
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     PROMPT_COLOR='\e[1;33m'
@@ -99,12 +93,14 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
+alias -- -='cd -'
 alias dammit='sudo $(history -p \!\!)'
 function mdcd() { if [ -z "$1" ]; then return; fi; mkdir "$1" && cd "$1"; }
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias cpr='cp -r'
 alias dfh='df -h'
+alias kill9='kill -9'
 alias clip='xsel --clipboard'
 
 # Convenient and more memorable alias for combine (from moreutils)

@@ -3,9 +3,9 @@
 pushd ~/dotfiles/vim/bundle
 for i in */; do
 	echo "Updating $i"
-	cd "$i"
+	cd "$i" || exit
 	git fetch origin
-	echo -n "`basename $i`: "
+	echo -n "$(basename "$i"): "
 	git checkout origin/HEAD
 	git submodule update --init --recursive
 	cd ..
