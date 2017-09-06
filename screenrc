@@ -9,3 +9,8 @@ defutf8 on
 
 # Scroll with mouse wheel (http://stackoverflow.com/a/1125947)
 termcapinfo xterm* ti@:te@
+
+# Some settings for screen + vim
+term xterm-256color
+maptimeout 10
+
