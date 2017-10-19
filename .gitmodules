@@ -185,3 +185,7 @@
 [submodule "vim/bundle/onedark.vim"]
 	path = vim/bundle/onedark.vim
 	url = https://github.com/joshdick/onedark.vim
+[submodule "vim/bundle/vim-highlightedyank"]
+	path = vim/bundle/vim-highlightedyank
+	url = https://github.com/machakann/vim-highlightedyank.git
+	ignore = dirty

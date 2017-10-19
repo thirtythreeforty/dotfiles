@@ -320,3 +320,6 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+" vim-highlightedyank
+let g:highlightedyank_highlight_duration = 600
