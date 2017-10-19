@@ -19,6 +19,8 @@ fi
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     PROMPT_COLOR='\e[1;33m'
+elif [ -n "$container" ]; then
+    PROMPT_COLOR='\e[1;36m'
 else
     PROMPT_COLOR='\e[1;32m'
 fi
