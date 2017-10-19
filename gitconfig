@@ -19,7 +19,7 @@
 	amen = !echo 'git: Amen, brother.\n\nDid you mean this?\n    amend'
 	ignore = "!f() { curl https://www.gitignore.io/api/$@ ;}; f >> .gitignore"
 	undo-merge = reset --merge HEAD@{1}
-	makethis = "!f() { git branch -f $@ $(git rev-parse HEAD); }; f"
+	makethis = "!f() { git branch -f $@ $(git rev-parse HEAD); git checkout $@; }; f"
 [diff]
 	algorithm = patience
 	tool = xxdiff
