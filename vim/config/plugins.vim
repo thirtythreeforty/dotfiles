@@ -247,11 +247,6 @@ call s:lexima_add_rules([
 " as in nested quotations.
 call lexima#add_rule({'char': "'", 'except': '".*\%#.*"', 'filetype': 'text'})
 
-" Disable python-mode's completion in favor of YCM's
-let g:pymode_rope_completion = 0
-" Don't show the nag window full of errors (that's what the sidebar is for)
-let g:pymode_lint_cwindow = 0
-
 " Configure EasyMotion as per recommendation of the developer
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
@@ -276,9 +271,6 @@ hi link EasyMotionTargetDefault ErrorMsg
 " FastFold settings:
 " Update folds when opening/closing them
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
-
-" rainbow_parentheses.vim should rainbow-ify {} and [] too
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['\\{', '\\}']]
 
 " Swap i and I in targets.vim
 let g:targets_aiAI = 'aIAi'
@@ -323,3 +315,8 @@ map g/ <Plug>(incsearch-stay)
 
 " vim-highlightedyank
 let g:highlightedyank_highlight_duration = 600
+
+" vim-yankstack
+let g:yankstack_map_keys = 0
+nmap <M-p> <Plug>yankstack_substitute_older_paste
+nmap <M-n> <Plug>yankstack_substitute_newer_paste
