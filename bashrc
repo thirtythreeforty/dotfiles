@@ -55,7 +55,7 @@ function ducks() {
     fi
     du -cksh "${files[@]}" | sort -rh |
         ( [ ${#@} -eq 0 ] && head -11 || cat ) |
-        sed 's|\s\+|/|' | column -s '/' -t | sed '0,/$/{s/$/\n/}'
+        sed 's|\s\+|\\|' | column -s '\' -t | sed '0,/$/{s/$/\n/}'
 }
 
 function ups() {
