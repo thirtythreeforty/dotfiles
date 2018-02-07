@@ -320,3 +320,6 @@ let g:highlightedyank_highlight_duration = 600
 let g:yankstack_map_keys = 0
 nmap <M-p> <Plug>yankstack_substitute_older_paste
 nmap <M-n> <Plug>yankstack_substitute_newer_paste
+" Default is ['c', 'C', 'd', 'D', 's', 'S', 'x', 'X', 'y', 'Y']; omit S and s
+" because we remap those to surround and sneak
+let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
