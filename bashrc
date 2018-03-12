@@ -97,7 +97,7 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias -- -='cd -'
 alias dammit='sudo $(history -p \!\!)'
-function mdcd() { if [ -z "$1" ]; then return; fi; mkdir "$1" && cd "$1"; }
+function mdcd() { if [ -z "$1" ]; then return; fi; mkdir -p "$1" && cd "$1"; }
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias cpr='cp -r'
