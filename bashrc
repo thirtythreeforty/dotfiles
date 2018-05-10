@@ -55,7 +55,7 @@ function ducks() {
     fi
     du -cksh "${files[@]}" | sort -rh |
         ( [ ${#@} -eq 0 ] && head -11 || cat ) |
-        sed 's|\s\+|/|' | column -s '/' -t | sed '0,/$/{s/$/\n/}'
+        sed 's|\s\+|\\|' | column -s '\' -t | sed '0,/$/{s/$/\n/}'
 }
 
 function ups() {
@@ -97,7 +97,7 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias -- -='cd -'
 alias dammit='sudo $(history -p \!\!)'
-function mdcd() { if [ -z "$1" ]; then return; fi; mkdir "$1" && cd "$1"; }
+function mdcd() { if [ -z "$1" ]; then return; fi; mkdir -p "$1" && cd "$1"; }
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias cpr='cp -r'
