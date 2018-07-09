@@ -111,6 +111,7 @@ let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "passive_filetypes": ["java"]
 \ }
+let g:syntastic_python_flake8_args='--ignore=E501'
 
 " Goyo and Limelight for anti-distraction writing
 let g:goyo_width=100
@@ -308,6 +309,10 @@ cmap <silent> <expr> <enter> search_pulse#PulseFirst()
 " JavaComplete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
+" jedi.vim
+let g:jedi#popup_select_first = 0
+let g:jedi#goto_assignments_command="gd"
+
 " Incsearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -315,11 +320,3 @@ map g/ <Plug>(incsearch-stay)
 
 " vim-highlightedyank
 let g:highlightedyank_highlight_duration = 600
-
-" vim-yankstack
-let g:yankstack_map_keys = 0
-nmap <M-p> <Plug>yankstack_substitute_older_paste
-nmap <M-n> <Plug>yankstack_substitute_newer_paste
-" Default is ['c', 'C', 'd', 'D', 's', 'S', 'x', 'X', 'y', 'Y']; omit S and s
-" because we remap those to surround and sneak
-let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
