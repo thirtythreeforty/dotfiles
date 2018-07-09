@@ -16,3 +16,6 @@ Host insomnia247.nl
 
 Host *.kopismobile.org
   User ghilliard
+
+Host lhdgroups.org
+  User ghilliard
