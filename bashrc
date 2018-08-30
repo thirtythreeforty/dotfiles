@@ -20,7 +20,7 @@ fi
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     PROMPT_COLOR='\e[1;33m'
 elif [ -n "$container" ]; then
-    PROMPT_COLOR='\e[1;36m'
+    PROMPT_COLOR='\e[1;37m'
 else
     PROMPT_COLOR='\e[1;32m'
 fi
@@ -31,10 +31,20 @@ if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
     source /usr/share/doc/pkgfile/command-not-found.bash
 fi
 
+# Autojump
 if [ -f /etc/profile.d/autojump.sh ]; then
     source /etc/profile.d/autojump.sh
 elif [ -f /usr/share/autojump/autojump.bash ]; then
     source /usr/share/autojump/autojump.bash
+fi
+
+# Bash completion (stolen from Ubuntu's skeleton bashrc)
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
 # Editor
@@ -96,7 +106,21 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias -- -='cd -'
-alias dammit='sudo $(history -p \!\!)'
+function dammit() {
+	shuf -n1 <<- EOF
+		Okay, okay.
+		You don't have to yell.
+		Everyone remain calm.
+		Let's keep it down over here.
+		Look buddy, I don't want any trouble here.
+		Ever heard of 'please'?
+		Next time just use 'sudo' from the get-go.
+		You're the boss!
+		EOF
+	last_cmd="$(history -p \!\!)"
+	history -d "$(history 1 | awk '{print $1}')" && history -s "sudo $last_cmd"
+	sudo $last_cmd
+}
 function mdcd() { if [ -z "$1" ]; then return; fi; mkdir -p "$1" && cd "$1"; }
 alias ls='ls --color=auto'
 alias ll='ls -lh'
