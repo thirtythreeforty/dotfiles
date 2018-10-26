@@ -154,10 +154,6 @@
 [submodule "vim/bundle/jedi-vim"]
 	path = vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
-[submodule "vim/bundle/whitespaste.vim"]
-	path = vim/bundle/whitespaste.vim
-	url = https://github.com/AndrewRadev/whitespaste.vim.git
-	ignore = dirty
 [submodule "vim/bundle/editorconfig-vim"]
 	path = vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
