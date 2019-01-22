@@ -3,8 +3,8 @@
 	name = George Hilliard
 [alias]
 	unstage = reset HEAD --
-	visual = !gitk --all
-	vis = !gitk --all
+	visual = !gitk --all -n10000
+	vis = !gitk --all -n10000
 	ours   = "!f() { git checkout --ours ${@} && git add ${@}; }; f"
 	theirs = "!f() { git checkout --theirs ${@} && git add ${@}; }; f"
 	st = status
@@ -32,6 +32,7 @@
 	ff = only
 [merge]
 	ff = false
+	renamelimit = 5000
 [push]
 	default = simple
 [fetch]
@@ -50,3 +51,11 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[protocol]
+	version = 2
+[sendemail]
+  smtpserver = smtp.gmail.com
+  smtpserverport = 587
+  smtpencryption = tls
+  smtpuser = thirtythreeforty@gmail.com
+  from = George Hilliard <thirtythreeforty@gmail.com>
