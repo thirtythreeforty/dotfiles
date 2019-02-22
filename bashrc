@@ -128,6 +128,8 @@ alias cpr='cp -r'
 alias dfh='df -h'
 alias kill9='kill -9'
 alias clip='xsel --clipboard'
+alias ipy=ipython
+alias ipy3=ipython3
 
 # Convenient and more memorable alias for combine (from moreutils)
 alias _=combine
