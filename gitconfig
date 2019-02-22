@@ -3,8 +3,8 @@
 	name = George Hilliard
 [alias]
 	unstage = reset HEAD --
-	visual = !gitk --all
-	vis = !gitk --all
+	visual = !gitk --all -n10000
+	vis = !gitk --all -n10000
 	ours   = "!f() { git checkout --ours ${@} && git add ${@}; }; f"
 	theirs = "!f() { git checkout --theirs ${@} && git add ${@}; }; f"
 	st = status
@@ -35,6 +35,7 @@
 [merge]
 	ff = false
 	tool = kdiff3
+	renamelimit = 5000
 [push]
 	default = simple
 [fetch]
@@ -57,3 +58,9 @@
 	version = 2
 [interactive]
 	singleKey = true
+[sendemail]
+  smtpserver = smtp.gmail.com
+  smtpserverport = 587
+  smtpencryption = tls
+  smtpuser = thirtythreeforty@gmail.com
+  from = George Hilliard <thirtythreeforty@gmail.com>
