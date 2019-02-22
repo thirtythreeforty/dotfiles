@@ -157,3 +157,6 @@
 [submodule "vim/bundle/editorconfig-vim"]
 	path = vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vim/bundle/sideways.vim"]
+	path = vim/bundle/sideways.vim
+	url = https://github.com/AndrewRadev/sideways.vim.git
