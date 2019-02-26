@@ -11,7 +11,7 @@
 	co = checkout
 	ci = commit
 	ds = diff --staged
-	rp = rev-parse
+	rp = "!f() { git rev-parse ${@}^{commit}; }; f"
 	sm = submodule
 	rset = reset
 	lg = log --graph --pretty=format:'%Cgreen%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --all
