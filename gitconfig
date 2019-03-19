@@ -66,3 +66,4 @@
   from = George Hilliard <thirtythreeforty@gmail.com>
 [rebase]
 	autoStash = true
+	multiEdit = true
