@@ -5,5 +5,6 @@ if command -v redshift >/dev/null 2>&1; then
 elif command -v xflux >/dev/null 2>&1; then
 	xflux -z 39232 -k 3000 -r 1
 else
-	echo 'No suitable program installed; try redshift or xflux.'
+	echo "$0: No suitable program installed; try redshift or xflux." >&2
+	exit 1
 fi
