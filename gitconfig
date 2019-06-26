@@ -64,3 +64,5 @@
   smtpencryption = tls
   smtpuser = thirtythreeforty@gmail.com
   from = George Hilliard <thirtythreeforty@gmail.com>
+[rebase]
+	autoStash = true
