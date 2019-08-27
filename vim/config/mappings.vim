@@ -13,6 +13,9 @@ nnoremap <silent><C-\> :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:co
 vnoremap > >gv
 vnoremap < <gv
 
+" Re-highlight paste, using same mode as last visual
+nnoremap <silent><expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
 " Disable Ex mode, replace it with Execute Lines in Vimscript
 function! ExecRange(line1, line2)
 	exec substitute(join(getline(a:line1, a:line2), "\n"), '\n\s*\\', ' ', 'g')
