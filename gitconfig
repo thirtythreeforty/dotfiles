@@ -21,6 +21,7 @@
 	ignore = "!f() { curl https://www.gitignore.io/api/$@ ;}; f >> .gitignore"
 	undo-merge = reset --merge HEAD@{1}
 	makethis = "checkout -B"
+	quickserve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 [diff]
 	algorithm = patience
 	tool = xxdiff
