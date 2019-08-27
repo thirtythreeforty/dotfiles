@@ -1,6 +1,3 @@
-" Enable cursor shapes in terminal
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
-
 " Escape should exit terminal insert mode
 :tnoremap <Esc><Esc> <C-\><C-n>
 

@@ -18,7 +18,16 @@ set encoding=utf-8
 
 set background=dark
 set cursorline
-set guicursor+=a:blinkon0
+
+" Enable cursor shapes in terminal, unless it's SSH because it doesn't send
+" termcodes correctly.  Actually for some reason Neovim is the only one that
+" actually sends the troublesome codes (Vim 8 is fine) but this doesn't hurt
+" on both.
+if !empty($SSH_CONNECTION)
+	autocmd OptionSet guicursor noautocmd set guicursor=
+	set guicursor=
+endif
+
 set guifont=Inconsolata-g\ for\ Powerline\ 11
 " Disable GUI's menu, scrollbar, and toolbar
 set guioptions-=m
