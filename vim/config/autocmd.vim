@@ -9,6 +9,9 @@ autocmd BufRead,BufNewFile *.tag set filetype=html
 autocmd BufRead,BufNewFile *.lsd set filetype=json
 autocmd BufRead,BufNewFile *.lsr set filetype=json
 
+" Windows INF files are kinda INI files
+autocmd BufRead,BufNewFile *.ini set filetype=dosini
+
 " Disable auto-commenting new lines, everywhere.  Must use a FileType hook
 " because BufRead hooks execute before all the irritating builtin ones that
 " add these options.
