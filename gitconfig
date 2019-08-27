@@ -68,3 +68,6 @@
 [rebase]
 	autoStash = true
 	multiEdit = true
+[mergetool "gitblade"]
+	cmd = \"/usr/lib/gitblade/gitblade\" -c \"\"
+	trustExitCode = true
