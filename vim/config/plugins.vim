@@ -322,3 +322,6 @@ map g/ <Plug>(incsearch-stay)
 
 " vim-highlightedyank
 let g:highlightedyank_highlight_duration = 600
+
+" ALE
+let g:airline#extensions#ale#enabled = 1

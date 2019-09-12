@@ -47,10 +47,6 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-	ignore = dirty
 [submodule "vim/bundle/YCM-Generator"]
 	path = vim/bundle/YCM-Generator
 	url = https://github.com/rdnetto/YCM-Generator.git
@@ -157,3 +153,6 @@
 [submodule "vim/bundle/sideways.vim"]
 	path = vim/bundle/sideways.vim
 	url = https://github.com/AndrewRadev/sideways.vim.git
+[submodule "vim/bundle/ale"]
+	path = vim/bundle/ale
+	url = https://github.com/dense-analysis/ale.git
