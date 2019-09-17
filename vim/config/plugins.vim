@@ -84,26 +84,7 @@ endif
 
 " Wrestle YouCompleteMe into behaving
 " Tweak the identifier popup, and disable some highlighting
-let g:ycm_min_num_of_chars_for_completion = 4
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_complete_in_comments = 1
-let g:ycm_confirm_extra_conf = 0
-if !exists('g:ycm_semantic_triggers')
-	let g:ycm_semantic_triggers = {}
-endif
 set completeopt-=preview
-" Bind YCM's GoTo to something useful: currently the brain-dead `gd`
-" function does nothing useful most of the time
-" And I won't miss the default functionality if YCM isn't running
-autocmd FileType c nnoremap gd :YcmCompleter GoTo<cr>
-autocmd FileType cpp nnoremap gd :YcmCompleter GoTo<cr>
-autocmd FileType rust nnoremap gd :YcmCompleter GoTo<cr>
-autocmd FileType c nnoremap gD :vsplit<cr>:YcmCompleter GoTo<cr>
-autocmd FileType cpp nnoremap gD :vsplit<cr>:YcmCompleter GoTo<cr>
-autocmd FileType rust nnoremap gD :vsplit<cr>:YcmCompleter GoTo<cr>
 
 " Make Syntastic use C++11
 let g:syntastic_cpp_compiler = 'clang++'
@@ -133,11 +114,6 @@ augroup DetectIndent
 	autocmd BufReadPost *  DetectIndent
 augroup end
 
-" Integrate YCM and VimTex, from the VimTex help file
-let g:ycm_semantic_triggers.tex = [
-	\ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
-	\ ]
-
 " Use XeLaTeX
 let g:vimtex_latexmk_options = "-pdf -lualatex"
 
@@ -151,9 +127,6 @@ endif
 " The ` mappings are more irritating than helpful.  In particular, they break
 " lexima.vim mappings.
 let g:vimtex_imaps_enabled = 0
-
-" Configure YCM's Racer
-"let g:ycm_rust_src_path = '/path/to/rust/src'
 
 " Close buffer without closing window with :bc
 cabbrev bc Sayonara!
@@ -324,4 +297,18 @@ map g/ <Plug>(incsearch-stay)
 let g:highlightedyank_highlight_duration = 600
 
 " ALE
+let g:ale_c_parse_compile_commands = 1
 let g:airline#extensions#ale#enabled = 1
+let g:ale_linters = {
+\   'c': ['gcc'],
+\   'cpp': ['gcc'],
+\}
+" Bind ALE's GoTo to something useful: currently the brain-dead `gd`
+" function does nothing useful most of the time
+" And I won't miss the default functionality if ALE isn't running
+autocmd FileType c nnoremap gd :ALEGoToDefinition<cr>
+autocmd FileType cpp nnoremap gd :ALEGoToDefinition<cr>
+autocmd FileType rust nnoremap gd :ALEGoToDefinition<cr>
+autocmd FileType c nnoremap gD :vsplit<cr>:ALEGoToDefinition<cr>
+autocmd FileType cpp nnoremap gD :vsplit<cr>:ALEGoToDefinition<cr>
+autocmd FileType rust nnoremap gD :vsplit<cr>:ALEGoToDefinition<cr>
