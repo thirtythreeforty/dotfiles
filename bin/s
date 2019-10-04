@@ -1,0 +1,55 @@
+#!/bin/bash
+# A generic "show me this" command that uses ls on directories, less on text
+# files, and shows the output of file on everything else
+
+set -euo pipefail
+
+s_classify() {
+	if [ -d "$1" ]; then
+		echo "directory"
+	elif [ -L "$1" ]; then
+		echo "symlink"
+	elif [ -f "$1" ]; then
+		echo "file"
+	else
+		echo "none"
+	fi
+}
+
+s_show_directory() {
+	ls -lh --color=auto "$1"
+}
+
+s_show_file() {
+	local filetype="$(file $1)"
+	if [[ "$filetype" =~ "text" ]]; then
+		if [[ $(wc -l < "$1") -ge $(tput lines) ]]; then
+			less "$1"
+		else
+			cat "$1"
+		fi
+	else
+		echo "$filetype"
+	fi
+}
+
+s_do() {
+	case $(s_classify "$1") in
+	symlink)
+		s_show_file "$1"
+		s_do "$(readlink -m $1)"
+	;;
+	directory)
+		s_show_directory "$1"
+	;;
+	file)
+		s_show_file "$1"
+	;;
+	none)
+		>&2 echo "s: $1: no such file or directory"
+	;;
+	esac
+}
+
+FILE=${1-.}
+s_do $FILE
