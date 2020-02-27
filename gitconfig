@@ -58,11 +58,14 @@
 [interactive]
 	singleKey = true
 [sendemail]
-  smtpserver = smtp.gmail.com
-  smtpserverport = 587
-  smtpencryption = tls
-  smtpuser = thirtythreeforty@gmail.com
-  from = George Hilliard <thirtythreeforty@gmail.com>
+	identity = thirtythreeforty
+[sendemail.thirtythreeforty]
+	# smtpPass = *****
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = thirtythreeforty
+	from = George Hilliard <thirtythreeforty@gmail.com>
 [rebase]
 	autoStash = true
 	multiEdit = true
