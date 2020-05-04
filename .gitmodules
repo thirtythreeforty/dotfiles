@@ -86,9 +86,6 @@
 	path = vim/bundle/CursorLineCurrentWindow
 	url = https://github.com/vim-scripts/CursorLineCurrentWindow.git
 	ignore = dirty
-[submodule "spacemacs.d"]
-	path = spacemacs.d
-	url = https://github.com/syl20bnr/spacemacs.git
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git

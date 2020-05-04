@@ -50,10 +50,3 @@ Finally, you can update all plugins in one fell swoop with:
     update-vim-plugins
 
 This walks over each element in `~/dotfiles/vim/bundle` and fetches and checks out `origin/HEAD`.
-
-### Emacs plugins
-
-Emacs performs its own package management via Spacemacs.
-See the layer and package list definitions in `~/.spacemacs`.
-Of course, you could append to this list on a per-machine basis using the above file.
-Once you change these lists, Emacs will need to be restarted, then maybe restarted again.
