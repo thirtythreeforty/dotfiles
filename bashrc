@@ -122,7 +122,9 @@ function dammit() {
 	sudo $last_cmd
 }
 function mdcd() { if [ -z "$1" ]; then return; fi; mkdir -p "$1" && cd "$1"; }
-alias ls='ls --color=auto'
+# GNU ls would say --color=auto
+alias ls='ls -G'
+
 alias ll='ls -lh'
 alias cpr='cp -r'
 alias dfh='df -h'
