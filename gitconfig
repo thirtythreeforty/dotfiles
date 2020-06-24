@@ -1,5 +1,4 @@
 [user]
-	email = thirtythreeforty@gmail.com
 	name = George Hilliard
 [alias]
 	unstage = reset HEAD --
