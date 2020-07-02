@@ -5,6 +5,9 @@ autocmd BufRead,BufNewFile SConscript set filetype=python
 autocmd BufRead,BufNewFile TAG_EDITMSG set filetype=gitcommit
 autocmd BufRead,BufNewFile *.tag set filetype=html
 
+" Cadence/Tensilica's TIE files are kinda Verilog
+autocmd BufRead,BufNewFile *.tie set filetype=verilog
+
 " 2iC's Lean Service definitions are really JSON
 autocmd BufRead,BufNewFile *.lsd set filetype=json
 autocmd BufRead,BufNewFile *.lsr set filetype=json
