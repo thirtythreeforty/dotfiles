@@ -21,7 +21,7 @@ s_show_directory() {
 }
 
 s_show_file() {
-	local filetype="$(file $1)"
+	local filetype=$(file "$1")
 	if [[ "$filetype" =~ "text" ]]; then
 		if [[ $(wc -l < "$1") -ge $(tput lines) ]]; then
 			less "$1"
@@ -51,5 +51,5 @@ s_do() {
 	esac
 }
 
-FILE=${1-.}
-s_do $FILE
+FILE="${1-.}"
+s_do "$FILE"
