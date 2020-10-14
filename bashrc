@@ -144,6 +144,9 @@ alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/u
 
 # Various shell settings:
 
+# Even on systems without autocomplete, it's nice to have cd only autocomplete directories:
+complete -d cd
+
 # Ignore space commands and repeated commands from history
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=500000
