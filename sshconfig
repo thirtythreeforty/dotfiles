@@ -1,3 +1,5 @@
+Include config_local
+
 Host pluto
   HostName pluto.cse.msstate.edu
   User gh403
