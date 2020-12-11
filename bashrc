@@ -150,6 +150,8 @@ alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/u
 
 # Even on systems without autocomplete, it's nice to have cd only autocomplete directories:
 complete -d cd
+# and don't tab-complete .hidden_files
+bind 'set match-hidden-files off'
 
 # Ignore space commands and repeated commands from history
 export HISTCONTROL=ignoreboth
