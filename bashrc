@@ -95,7 +95,7 @@ function down() {
     if [[ "$UPDIR" && "$UPDIR" == $PWD* ]]; then
         cd "$UPDIR"
     else
-        echo "`basename $0`: can't go down" >&2
+        echo "`basename -- $0`: can't go down" >&2
         return 127
     fi
 }
