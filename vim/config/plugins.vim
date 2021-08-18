@@ -2,8 +2,11 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 execute pathogen#helptags()
 
-let g:onedark_terminal_italics=1
-colorscheme onedark
+"let g:onedark_terminal_italics=1
+"colorscheme onedark
+colorscheme one
+let g:one_allow_italics = 1
+set background=dark
 
 " Display Airline
 set laststatus=2
