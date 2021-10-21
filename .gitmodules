@@ -153,3 +153,12 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "vim/bundle/vim-racer"]
+	path = vim/bundle/vim-racer
+	url = https://github.com/racer-rust/vim-racer
+[submodule "vim/bundle/vim-yaml-folds"]
+	path = vim/bundle/vim-yaml-folds
+	url = https://github.com/pedrohdz/vim-yaml-folds
+[submodule "vim/bundle/vim-terraform"]
+	path = vim/bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
