@@ -42,11 +42,12 @@
 	prune = true
 [core]
 	excludesfile = ~/.gitignore_global
-	pager = less -x1,5
+	pager = less -S -x1,5
 [rerere]
 	enabled = true
 [init]
 	templatedir = ~/.git_template
+	defaultBranch = master
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

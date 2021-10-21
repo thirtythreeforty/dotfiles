@@ -140,8 +140,8 @@ alias ipy3=ipython3
 # Convenient and more memorable alias for combine (from moreutils)
 alias _=combine
 
-# Less should scroll with the mouse wheel
-export LESS="$LESS -r"
+# Less should scroll with the mouse wheel, and trim long lines
+export LESS=" -rS"
 
 # '[r]emove [o]rphans' - recursively remove ALL orphaned packages
 alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rs \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;\$!ba;s/\n/ /g')"

@@ -1,3 +1,5 @@
+augroup vimrc
+autocmd!
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile *.tex set filetype=tex
 autocmd BufRead,BufNewFile SConstruct set filetype=python
@@ -24,3 +26,4 @@ autocmd FileType * setlocal formatoptions-=ro
 autocmd FileType markdown EnableVisualLine
 autocmd FileType text EnableVisualLine
 autocmd FileType tex EnableVisualLine
+augroup end
