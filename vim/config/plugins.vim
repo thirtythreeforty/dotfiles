@@ -84,6 +84,7 @@ let g:gitgutter_map_keys = 0
 if executable('fortune')
 	let g:startify_custom_header = map(split(system('fortune'), '\n'), '"   ". v:val') + ['','']
 endif
+let g:startify_fortune_use_unicode = 0
 
 " Wrestle YouCompleteMe into behaving
 " Tweak the identifier popup, and disable some highlighting
@@ -117,6 +118,7 @@ augroup DetectIndent
 	autocmd BufReadPost *  DetectIndent
 augroup end
 
+let g:tex_flavor = 'latex'
 " Use XeLaTeX
 let g:vimtex_latexmk_options = "-pdf -lualatex"
 
@@ -305,7 +307,11 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'c': ['gcc'],
 \   'cpp': ['gcc'],
+\   'rust': ['rls', 'cargo'],
+\   'systemverilog': ['yosys'],
+\   'verilog': ['yosys'],
 \}
+imap <C-Space> <Plug>(ale_complete)
 " Bind ALE's GoTo to something useful: currently the brain-dead `gd`
 " function does nothing useful most of the time
 " And I won't miss the default functionality if ALE isn't running
@@ -315,3 +321,9 @@ autocmd FileType rust nnoremap gd :ALEGoToDefinition<cr>
 autocmd FileType c nnoremap gD :vsplit<cr>:ALEGoToDefinition<cr>
 autocmd FileType cpp nnoremap gD :vsplit<cr>:ALEGoToDefinition<cr>
 autocmd FileType rust nnoremap gD :vsplit<cr>:ALEGoToDefinition<cr>
+
+let g:ale_verilog_yosys_options = '-Q -T -p ''read_verilog -sv %s'''
+let g:ale_systemverilog_yosys_options = '-Q -T -p ''read_verilog -sv %s'''
+
+" https://github.com/vim-python/python-syntax
+let g:python_highlight_all = 1
