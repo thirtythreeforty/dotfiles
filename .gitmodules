@@ -165,3 +165,9 @@
 [submodule "vim/bundle/vim-one"]
 	path = vim/bundle/vim-one
 	url = https://github.com/rakr/vim-one
+[submodule "vim/bundle/python-syntax"]
+	path = vim/bundle/python-syntax
+	url = https://github.com/vim-python/python-syntax
+[submodule "vim/bundle/vim-lark-syntax"]
+	path = vim/bundle/vim-lark-syntax
+	url = https://github.com/lark-parser/vim-lark-syntax
