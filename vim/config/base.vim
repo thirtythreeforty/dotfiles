@@ -53,7 +53,7 @@ set wildignorecase
 set wrap
 set linebreak
 set autoindent
-set smartindent
+"set smartindent
 set copyindent
 if exists('&breakindent')
 	set breakindent
