@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# shorthand: curl -OJLf
+curl \
+    --remote-name-all \
+    --remote-header-name \
+    --location \
+    --fail \
+    "$@"
