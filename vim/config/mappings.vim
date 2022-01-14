@@ -67,3 +67,8 @@ nnoremap <silent> <leader>; :let b:wv = winsaveview()<CR>:normal A;<CR>:call win
 
 " In visual mode, . repeats on each selected line
 vnoremap . :norm.<CR>;
+
+augroup markdown_helpers
+	autocmd!
+	autocmd FileType markdown nnoremap <silent> <leader>l ya]}O<Esc>o": 
+augroup end
