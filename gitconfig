@@ -17,7 +17,7 @@
 	hlg = "!f() { git lg ${@} | head -n20; }; f"
 	amend = commit --amend -C HEAD
 	amen = !echo 'git: Amen, brother.\n\nDid you mean this?\n    amend'
-	ignore = "!f() { curl https://www.gitignore.io/api/$@ ;}; f >> .gitignore"
+	ignore = "!f() { curl -LJf https://www.gitignore.io/api/$@ ;}; f >> .gitignore"
 	undo-merge = reset --merge HEAD@{1}
 	makethis = "checkout -B"
 	quickserve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
