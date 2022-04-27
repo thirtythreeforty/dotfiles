@@ -1,98 +1,31 @@
 - clean: []
+- defaults:
+    link:
+      relink: true
+      relative: true
+      create: true
 - link:
-    .abcde.conf:
-        relink: true
-        relative: true
-        path: abcde.conf
-    .bash_profile:
-        relink: true
-        relative: true
-        path: bash_profile
-    .bashrc:
-        relink: true
-        relative: true
-        path: bashrc
-    .emacs.d:
-        relink: true
-        relative: true
-        path: spacemacs.d
-    .hgrc:
-        relink: true
-        relative: true
-        path: hgrc
-    .ideavimrc:
-        relink: true
-        relative: true
-        path: ideavimrc
-    .inputrc:
-        relink: true
-        relative: true
-        path: inputrc
-    .magic:
-        relink: true
-        relative: true
-        path: magic
-    .Mathematica:
-        relink: true
-        relative: true
-        path: Mathematica
-    .minttyrc:
-        relink: true
-        relative: true
-        path: minttyrc
-    .npmrc:
-        relink: true
-        relative: true
-        path: npmrc
-    .nvim:
-        relink: true
-        relative: true
-        path: vim/
-    .config/nvim:
-        relink: true
-        relative: true
-        create: true
-        path: vim/
-    .nvimrc:
-        relink: true
-        relative: true
-        path: nvimrc
-    .parallel:
-        relink: true
-        relative: true
-        path: parallel
-    .screenrc:
-        relink: true
-        relative: true
-        path: screenrc
-    .ssh/config:
-        relink: true
-        relative: true
-        path: sshconfig
-    .spacemacs:
-        relink: true
-        relative: true
-        path: spacemacs
-    .vim:
-        relink: true
-        relative: true
-        path: vim/
-    .vimrc:
-        relink: true
-        relative: true
-        path: vimrc
-    .Xmodmap:
-        relink: true
-        relative: true
-        path: Xmodmap
-    .git_template:
-        relink: true
-        relative: true
-        path: git_template
-    .gitconfig:
-        relink: true
-        relative: true
-        path: gitconfig
-    bin: bin/
+    ~/.abcde.conf: abcde.conf
+    ~/.bash_profile: bash_profile
+    ~/.bashrc: bashrc
+    ~/.hgrc: hgrc
+    ~/.ideavimrc: ideavimrc
+    ~/.inputrc: inputrc
+    ~/.magic: magic
+    ~/.Mathematica: Mathematica
+    ~/.minttyrc: minttyrc
+    ~/.npmrc: npmrc
+    ~/.nvim: vim/
+    ~/.config/nvim: vim/
+    ~/.nvimrc: nvimrc
+    ~/.parallel: parallel
+    ~/.screenrc: screenrc
+    ~/.ssh/config: sshconfig
+    ~/.vim: vim/
+    ~/.vimrc: vimrc
+    ~/.Xmodmap: Xmodmap
+    ~/.git_template: git_template
+    ~/.gitconfig: gitconfig
+    ~/bin: bin/
 
 - shell: []
