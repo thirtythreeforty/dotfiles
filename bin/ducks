@@ -6,6 +6,12 @@ set -euo pipefail
 files=("${@}")
 if [ ${#files[@]} -eq 0 ]; then
     files=(*);
+    # filter mountpoints from list of things to ask for
+    for index in "${!files[@]}"; do
+        if mountpoint -q "${files[$index]}"; then
+            unset -v 'files[$index]'
+        fi
+    done
 fi
 
 du -ckshx "${files[@]}" | # list files, human readable, do not cross filesystems
