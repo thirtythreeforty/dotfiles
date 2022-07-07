@@ -57,17 +57,6 @@ fi
 # Calculate with C-q, from http://askubuntu.com/a/379615/96292
 bind '"\C-q": "\C-aqalc \C-m"'
 
-# List largest files, with optional list of files
-function ducks() {
-    local files=("${@}")
-    if [ ${#files[@]} -eq 0 ]; then
-        files=(*);
-    fi
-    du -cksh "${files[@]}" | sort -rh |
-        ( [ ${#@} -eq 0 ] && head -11 || cat ) |
-        sed 's|\s\+|\\|' | column -s '\' -t | sed '0,/$/{s/$/\n/}'
-}
-
 function ups() {
     if [ $# -eq 0 ]; then
         echo "`basename "$0"`: specify a number" >&2

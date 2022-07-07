@@ -1,0 +1,14 @@
+#!/bin/bash
+# List largest files, with optional list of files
+
+set -euo pipefail
+
+files=("${@}")
+if [ ${#files[@]} -eq 0 ]; then
+    files=(*);
+fi
+
+du -ckshx "${files[@]}" | # list files, human readable, do not cross filesystems
+    sort -rh | # sort by size
+    ( [ ${#@} -eq 0 ] && head -11 || cat ) | # If no requested list of files, take just top 10
+    sed 's|\s\+|\\|' | column -s '\' -t | sed '0,/$/{s/$/\n/}' # format
