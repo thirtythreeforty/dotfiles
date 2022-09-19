@@ -3,8 +3,17 @@
 
 set -euo pipefail
 
+topten=0
+
 files=("${@}")
+if [ ${#files[@]} -eq 1 -a -d "${files[0]:-}" ]; then
+    # List contents of single directory given
+    cd ${files[0]}
+    files=()
+fi
+
 if [ ${#files[@]} -eq 0 ]; then
+    topten=1
     files=(*);
     # filter mountpoints from list of things to ask for
     for index in "${!files[@]}"; do
@@ -16,5 +25,5 @@ fi
 
 du -ckshx "${files[@]}" | # list files, human readable, do not cross filesystems
     sort -rh | # sort by size
-    ( [ ${#@} -eq 0 ] && head -11 || cat ) | # If no requested list of files, take just top 10
+    ( [ $topten -eq 1 ] && head -11 || cat ) | # If no requested list of files, take just top 10
     sed 's|\s\+|\\|' | column -s '\' -t | sed '0,/$/{s/$/\n/}' # format
