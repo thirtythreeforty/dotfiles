@@ -1,13 +1,5 @@
 Include config_local
 
-Host pluto
-  HostName pluto.cse.msstate.edu
-  User gh403
-
-Host yavin
-  HostName yavin.ece.msstate.edu
-  User gh403
-
 Host anapnea.net
   HostName anapnea.net
   User thirtythreeforty
@@ -16,8 +8,6 @@ Host insomnia247.nl
   HostName insomnia247.nl
   User thirtythreeforty
 
-Host *.kopismobile.org
-  User ghilliard
-
-Host lhdgroups.org
-  User ghilliard
+Host aur.archlinux.org
+  IdentityFile ~/.ssh/aur
+  User aur
