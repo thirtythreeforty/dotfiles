@@ -56,7 +56,7 @@ let g:ctrlp_max_depth = 8
 " CtrlP should ignore what VCS ignores (pasted from its manual)
 let g:ctrlp_user_command = {
 \ 'types': {
-  \ 1: ['.git', "cd '%s' && git ls-files --exclude-standard -co"],
+  \ 1: ['.git', "cd '%s' && git ls-files --recurse-submodules --exclude-standard -c"],
   \ 2: ['.hg', 'hg --cwd %s locate -I .'],
   \ },
 \ }
