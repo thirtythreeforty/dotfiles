@@ -1,9 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "vim/bundle/file-line"]
 	path = vim/bundle/file-line
 	url = https://github.com/bogado/file-line.git
@@ -171,3 +168,12 @@
 [submodule "vim/bundle/vim-lark-syntax"]
 	path = vim/bundle/vim-lark-syntax
 	url = https://github.com/lark-parser/vim-lark-syntax
+[submodule "vim/bundle/telescope.nvim"]
+	path = vim/bundle/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule "vim/bundle/plenary.nvim"]
+	path = vim/bundle/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "vim/bundle/nvim-treesitter"]
+	path = vim/bundle/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter.git

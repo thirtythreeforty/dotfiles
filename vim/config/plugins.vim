@@ -44,22 +44,9 @@ if has('signcolumn')
   set signcolumn=yes
 end
 
-" CtrlPTag with <leader>.
-nnoremap <leader>. :CtrlPTag<cr>
-
-" CtrlPBuffer with gb
-nnoremap gb :CtrlPBuffer<cr>
-
-" CtrlP should not recurse ad nauseum
-let g:ctrlp_max_depth = 8
-
-" CtrlP should ignore what VCS ignores (pasted from its manual)
-let g:ctrlp_user_command = {
-\ 'types': {
-  \ 1: ['.git', "cd '%s' && git ls-files --recurse-submodules --exclude-standard -c"],
-  \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-  \ },
-\ }
+nnoremap <C-P> <cmd>Telescope git_files<cr>
+nnoremap gb <cmd>Telescope buffers<cr>
+nnoremap <leader>. <cmd>Telescope tags<cr>
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
