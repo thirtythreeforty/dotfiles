@@ -17,7 +17,6 @@
     ~/.npmrc: npmrc
     ~/.nvim: vim/
     ~/.config/nvim: vim/
-    ~/.nvimrc: nvimrc
     ~/.parallel: parallel
     ~/.screenrc: screenrc
     ~/.ssh/config: sshconfig
