@@ -8,7 +8,7 @@ topten=0
 files=("${@}")
 if [ ${#files[@]} -eq 1 -a -d "${files[0]:-}" ]; then
     # List contents of single directory given
-    cd ${files[0]}
+    cd "${files[0]}"
     files=()
 fi
 
