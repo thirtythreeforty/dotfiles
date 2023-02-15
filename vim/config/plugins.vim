@@ -286,12 +286,16 @@ let g:highlightedyank_highlight_duration = 600
 let g:ale_c_parse_compile_commands = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
-\   'c': ['gcc'],
-\   'cpp': ['gcc'],
+\   'c': ['clangtidy'],
+\   'cpp': ['clangtidy'],
 \   'rust': ['rls', 'cargo'],
 \   'systemverilog': ['yosys'],
 \   'verilog': ['yosys'],
 \}
+g:ale_c_build_dir_names = ['build', 'bin', 'build-debug', 'build-release']
+" You should not turn this setting on if you wish to use ALE as a completion
+" source for other completion plugins, like Deoplete.
+let g:ale_completion_enabled = 1
 imap <C-Space> <Plug>(ale_complete)
 " Bind ALE's GoTo to something useful: currently the brain-dead `gd`
 " function does nothing useful most of the time
