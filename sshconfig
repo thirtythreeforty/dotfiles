@@ -1,5 +1,7 @@
 Include config_local
 
+VerifyHostKeyDNS yes
+
 Host anapnea.net
   HostName anapnea.net
   User thirtythreeforty
