@@ -177,3 +177,6 @@
 [submodule "vim/bundle/nvim-treesitter"]
 	path = vim/bundle/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter.git
+[submodule "vim/bundle/vim-cpp-modern"]
+	path = vim/bundle/vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern
