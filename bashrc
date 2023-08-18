@@ -110,7 +110,7 @@ function dammit() {
 		EOF
 	last_cmd="$(history -p \!\!)"
 	history -d "$(history 1 | awk '{print $1}')" && history -s "sudo $last_cmd"
-	sudo "$last_cmd"
+	sudo ${last_cmd}
 }
 function mdcd() { if [ -z "$1" ]; then return; fi; mkdir -p "$1" && cd "$1"; }
 # GNU ls would say --color=auto; BSD says -G
