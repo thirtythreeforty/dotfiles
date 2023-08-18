@@ -101,6 +101,8 @@ function dammit() {
 		You don't have to yell.
 		Everyone remain calm.
 		Let's keep it down over here.
+		You're not the President.
+		Wheels are turning, $(whoami), wheels are turning.
 		Look buddy, I don't want any trouble here.
 		Ever heard of 'please'?
 		Next time just use 'sudo' from the get-go.
