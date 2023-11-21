@@ -13,7 +13,7 @@
 	rp = "!f() { git rev-parse ${@:-@}^{commit}; }; f"
 	sm = submodule
 	rset = reset
-	lg = log --graph --pretty=format:'%Cgreen%h%Creset -%C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --all
+	lg = log --graph --pretty=format:'%Cgreen%h%C(reset) %C(cyan)%ar %C(bold yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --all
 	hlg = "!f() { git lg ${@} | head -n20; }; f"
 	amend = commit --amend -C HEAD
 	amen = !echo 'git: Amen, brother.\n\nDid you mean this?\n    amend'
