@@ -4,6 +4,7 @@ source ~/.vim/config/autocmd.vim
 
 " Support for vim-surround commands
 set surround
+let mapleader = ","
 
 " Bind AceJump to s (like sneak for real Vim)
 nmap s :action AceAction<CR>
