@@ -292,7 +292,7 @@ let g:ale_linters = {
 \   'systemverilog': ['yosys'],
 \   'verilog': ['yosys'],
 \}
-g:ale_c_build_dir_names = ['build', 'bin', 'build-debug', 'build-release']
+let g:ale_c_build_dir_names = ['build', 'bin', 'build-debug', 'build-release']
 " You should not turn this setting on if you wish to use ALE as a completion
 " source for other completion plugins, like Deoplete.
 let g:ale_completion_enabled = 1
