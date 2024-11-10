@@ -163,6 +163,4 @@ fi
 # Fortune! (if available)
 fortune 2> /dev/null
 
-complete -d cd
-
 export PATH=$HOME/.toolbox/bin:$PATH
