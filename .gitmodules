@@ -180,3 +180,6 @@
 [submodule "vim/bundle/typst.vim"]
 	path = vim/bundle/typst.vim
 	url = https://github.com/kaarmu/typst.vim
+[submodule "vim/bundle/vim-titlecase"]
+	path = vim/bundle/vim-titlecase
+	url = https://github.com/christoomey/vim-titlecase
