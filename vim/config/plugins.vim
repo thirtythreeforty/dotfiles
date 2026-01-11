@@ -286,8 +286,8 @@ let g:highlightedyank_highlight_duration = 600
 let g:ale_c_parse_compile_commands = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
-\   'c': ['clangtidy'],
-\   'cpp': ['clangtidy'],
+\   'c': ['clangd', 'clangtidy'],
+\   'cpp': ['clangd', 'clangtidy'],
 \   'rust': ['rls', 'cargo'],
 \   'systemverilog': ['yosys'],
 \   'verilog': ['yosys'],

@@ -164,3 +164,4 @@ fi
 fortune 2> /dev/null
 
 export PATH=$HOME/.toolbox/bin:$PATH
+[ -f /opt/miniforge/etc/profile.d/conda.sh ] && source /opt/miniforge/etc/profile.d/conda.sh

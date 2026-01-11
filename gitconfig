@@ -1,5 +1,6 @@
 [user]
 	name = George Hilliard
+	email = thirtythreeforty@gmail.com
 [alias]
 	unstage = reset HEAD --
 	visual = !gitk --all -n10000
@@ -76,3 +77,9 @@
 	useSparse = true
 [include]
 	path = .gitconfig_local
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

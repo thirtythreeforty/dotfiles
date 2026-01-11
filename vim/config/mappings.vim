@@ -68,6 +68,10 @@ nnoremap <silent> <leader>; :let b:wv = winsaveview()<CR>:normal A;<CR>:call win
 " In visual mode, . repeats on each selected line
 vnoremap . :norm.<CR>;
 
+" In the ALE popup, tab cycles through completions
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
 augroup markdown_helpers
 	autocmd!
 	autocmd FileType markdown nnoremap <silent> <leader>l ya]}O<Esc>o": 

@@ -156,9 +156,6 @@
 [submodule "vim/bundle/vim-yaml-folds"]
 	path = vim/bundle/vim-yaml-folds
 	url = https://github.com/pedrohdz/vim-yaml-folds
-[submodule "vim/bundle/vim-terraform"]
-	path = vim/bundle/vim-terraform
-	url = https://github.com/hashivim/vim-terraform.git
 [submodule "vim/bundle/vim-one"]
 	path = vim/bundle/vim-one
 	url = https://github.com/rakr/vim-one
