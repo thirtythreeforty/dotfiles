@@ -180,3 +180,6 @@
 [submodule "vim/bundle/vim-cpp-modern"]
 	path = vim/bundle/vim-cpp-modern
 	url = https://github.com/bfrg/vim-cpp-modern
+[submodule "vim/bundle/typst.vim"]
+	path = vim/bundle/typst.vim
+	url = https://github.com/kaarmu/typst.vim
