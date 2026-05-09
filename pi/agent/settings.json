@@ -1,0 +1,12 @@
+{
+  "lastChangelogVersion": "0.74.0",
+  "npmCommand": [
+    "bun"
+  ],
+  "defaultProvider": "openrouter",
+  "defaultModel": "deepseek/deepseek-v4-flash",
+  "defaultThinkingLevel": "high",
+  "packages": [
+    "npm:@juicesharp/rpiv-todo"
+  ]
+}
