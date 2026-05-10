@@ -23,7 +23,7 @@
     ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.Xmodmap: Xmodmap
-    ~/.pi/agent/settings.json: pi/agent/settings.json
+    ~/.pi: pi/
     ~/.git_template: git_template
     ~/.gitconfig: gitconfig
     ~/bin: bin/
