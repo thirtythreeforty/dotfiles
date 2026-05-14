@@ -18,9 +18,9 @@ function formatCost(model?: ModelDescriptor | null, dim?: (s: string) => string)
 	if (!model?.cost) return undefined;
 	const { input, output, cacheRead, cacheWrite } = model.cost;
 
-	// Free / local model
+	// Free / local model: show nothing
 	if (input === 0 && output === 0 && cacheRead === 0 && cacheWrite === 0) {
-		return dim ? dim("free") : "free";
+		return undefined;
 	}
 
 	const fmt = (n: number) => `$${n.toFixed(2)}`;
