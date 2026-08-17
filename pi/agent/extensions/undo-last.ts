@@ -39,8 +39,8 @@ import type {
 	ExtensionCommandContextActions,
 	ExtensionContext,
 	SessionEntry,
-} from "@mariozechner/pi-coding-agent";
-import { ExtensionRunner } from "@mariozechner/pi-coding-agent";
+} from "@earendil-works/pi-coding-agent";
+import { ExtensionRunner } from "@earendil-works/pi-coding-agent";
 
 type NavigateTree = ExtensionCommandContext["navigateTree"];
 

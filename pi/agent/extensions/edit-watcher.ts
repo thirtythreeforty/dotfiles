@@ -14,6 +14,10 @@
  *     re-attach watchers on paths that are in `watched` — paths whose very
  *     first write was blocked shouldn't be watched at all.
  *   - Accumulate externally modified paths in a Map so duplicates collapse.
+ *   - After a successful agent write/edit, hash the file and remember it. At
+ *     flush time, drop any pending modified paths whose current content
+ *     matches that hash (e.g. user typed and then undid the change), so we
+ *     don't pester the agent about a no-op edit.
  *   - Flush pending notices:
  *       - in `before_agent_start` via the `{ message }` return (zero lag for
  *         edits made before the user submitted their prompt),
@@ -29,6 +33,7 @@
  *     subsequent edits go undetected until the agent next writes that file.
  */
 
+import * as crypto from "node:crypto";
 import * as fs from "node:fs";
 import * as path from "node:path";
 import {
@@ -48,11 +53,24 @@ export default function (pi: ExtensionAPI) {
 	const suppressed = new Set<string>();
 	// Externally observed changes since last flush; dedup by path.
 	const pending = new Map<string, ChangeKind>();
+	// MD5 of file content immediately after the agent's last successful
+	// write/edit. Used to suppress notices when the user reverts a change so
+	// the file ends up byte-identical to what the agent wrote.
+	const lastWrittenHash = new Map<string, string>();
 	let cwd = process.cwd();
 	let shuttingDown = false;
 
 	function resolvePath(input: string): string {
 		return path.resolve(cwd, input);
+	}
+
+	function hashFile(absPath: string): string | null {
+		try {
+			const content = fs.readFileSync(absPath);
+			return crypto.createHash("md5").update(content).digest("hex");
+		} catch {
+			return null;
+		}
 	}
 
 	function closeWatcher(absPath: string): void {
@@ -136,12 +154,12 @@ export default function (pi: ExtensionAPI) {
 		const parts: string[] = [];
 		if (modified.length > 0) {
 			parts.push(
-				`${modified.length === 1 ? "This file was" : "These files were"} modified by the user since the last turn: ${modified.join(", ")}.`,
+				`Note: ${modified.length === 1 ? "this file was" : "these files were"} modified (perhaps by the user): ${modified.join(", ")}.`,
 			);
 		}
 		if (deleted.length > 0) {
 			parts.push(
-				`${deleted.length === 1 ? "This file was" : "These files were"} deleted by the user: ${deleted.join(", ")}.`,
+				`Note: ${deleted.length === 1 ? "this file was" : "these files were"} deleted: ${deleted.join(", ")}.`,
 			);
 		}
 		parts.push("Re-read before making further changes if the content is relevant.");
@@ -149,6 +167,15 @@ export default function (pi: ExtensionAPI) {
 	}
 
 	function drainPending(): string | null {
+		// Drop modified paths whose current content matches what the agent
+		// last wrote (e.g. user undid their edit). Deletions can't be checked
+		// this way and always pass through.
+		for (const [absPath, kind] of Array.from(pending)) {
+			if (kind !== "modified") continue;
+			const expected = lastWrittenHash.get(absPath);
+			if (!expected) continue;
+			if (hashFile(absPath) === expected) pending.delete(absPath);
+		}
 		if (pending.size === 0) return null;
 		const content = formatNotice();
 		pending.clear();
@@ -160,6 +187,7 @@ export default function (pi: ExtensionAPI) {
 		watched.clear();
 		suppressed.clear();
 		pending.clear();
+		lastWrittenHash.clear();
 	}
 
 	// --- lifecycle ----------------------------------------------------------
@@ -197,6 +225,8 @@ export default function (pi: ExtensionAPI) {
 		suppressed.delete(absPath);
 		if (!event.isError) {
 			watched.add(absPath);
+			const hash = hashFile(absPath);
+			if (hash !== null) lastWrittenHash.set(absPath, hash);
 			attachWatcher(absPath);
 		}
 	});
