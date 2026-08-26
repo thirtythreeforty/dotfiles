@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "ghidra-mcp": {
+      "command": "bridge-mcp-ghidra"
+    }
+  }
+}
