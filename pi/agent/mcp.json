@@ -1,7 +1,17 @@
 {
+  "imports": [
+    "claude-code"
+  ],
   "mcpServers": {
     "ghidra-mcp": {
       "command": "bridge-mcp-ghidra"
+    },
+    "writeragent": {
+      "url": "http://localhost:8765/mcp"
+    },
+    "obscura": {
+      "command": "obscura",
+      "args": ["mcp", "--stealth"]
     }
   }
 }

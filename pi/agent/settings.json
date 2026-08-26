@@ -7,17 +7,22 @@
   "defaultModel": "gpt-5.6-terra",
   "defaultThinkingLevel": "high",
   "packages": [
+    "npm:pi-agent-browser-native",
     "npm:pi-mcp-adapter",
-    "npm:pi-agent-loop",
+    "npm:pi-memory",
     "npm:@tintinweb/pi-subagents",
     "npm:@narumitw/pi-goal",
     "npm:@latentminds/pi-quotas",
     "npm:@dietrichgebert/ponytail"
   ],
+  "hideThinkingBlock": false,
+  "steeringMode": "all",
   "theme": "dark",
   "enabledModels": [
     "openai-codex/gpt-5.6-luna",
     "openai-codex/gpt-5.6-sol",
     "openai-codex/gpt-5.6-terra"
-  ]
+  ],
+  "tuiMode": "regular",
+  "fullscreenScrollbar": "auto"
 }

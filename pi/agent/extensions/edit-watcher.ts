@@ -154,12 +154,12 @@ export default function (pi: ExtensionAPI) {
 		const parts: string[] = [];
 		if (modified.length > 0) {
 			parts.push(
-				`Note: ${modified.length === 1 ? "this file was" : "these files were"} modified (perhaps by the user): ${modified.join(", ")}.`,
+				`Note: ${modified.length === 1 ? "this file was" : "these files were"} modified since the last turn: ${modified.join(", ")}.`,
 			);
 		}
 		if (deleted.length > 0) {
 			parts.push(
-				`Note: ${deleted.length === 1 ? "this file was" : "these files were"} deleted: ${deleted.join(", ")}.`,
+				`Note: ${deleted.length === 1 ? "this file was" : "these files were"} deleted since the last turn: ${deleted.join(", ")}.`,
 			);
 		}
 		parts.push("Re-read before making further changes if the content is relevant.");
